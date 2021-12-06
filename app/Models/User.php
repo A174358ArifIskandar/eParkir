@@ -12,15 +12,21 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    protected $primaryKey = 'matric_no';
+    public $incrementing = false;
     /**
      * The attributes that are mass assignable.
      *
      * @var string[]
      */
     protected $fillable = [
-        'name',
-        'email',
+        'matric_no',
+        'user_name',
+        'user_email',
         'password',
+        'remember_token',
+        'role',
+        'user_phone',
     ];
 
     /**
@@ -41,4 +47,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function hasRole($role)
+    {
+        if ($this->role === $role)
+            return true;
+
+        return false;
+    }
 }
