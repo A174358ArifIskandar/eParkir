@@ -3,7 +3,7 @@
 @section('content')
 <style>
     .background-img{
-        background-image:url('/images/bg-parking.jpg');
+        background-image:url('/images/bg-kpz.jpg');
         background-position: center center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -11,13 +11,20 @@
         width: 100%;
         
     }
+    .card-login{
+        background-color: rgba(245, 245, 245, 0.7);
+        /* opacity: 0.9; */
+    }
+    .card-header{
+        color: white;
+    }
 </style>
 <body class="background-img">
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header" style="background-color:#01949A;">{{ __('Login') }}</div>
+            <div class="card card-login" style="margin-top: 100px;">
+                <div class="card-header" style="background-color: #01949A">{{ __('Login') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
