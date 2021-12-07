@@ -2,35 +2,144 @@
 
 @section('title','Add Parking Area')
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-    <div class="card">
-        <div class="card-header">
-            <h3 class="card-title">Title</h3>
+<style>
+    body {
+  background-color: #efefef;
+  color: white;
+  font-size: 100%;
+  font-family: 'PT Sans Caption', sans-serif;
+  font-weight: 400;
+}
 
-            <!-- Card Button (Remove if needed) -->
-            <div class="card-tools">
-                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                    <i class="fas fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-                    <i class="fas fa-times"></i>
-                </button>
+form {
+  border-top: 5px solid #01caa7;
+  width: 552px;
+  margin: 40px auto;
+}
+
+fieldset {
+  margin: auto;
+  width: auto;
+  height: auto;
+  border: 1px solid #e5e5e5;
+  border-top: 0px solid #e5e5e5;
+  background: #fdfdfd;
+  padding: 40px;
+}
+
+form div {
+  padding: 0 0 40px 0;
+}
+
+form label {
+  float: left;
+  width: 200px;
+  font-size: 1em;
+  color: #111;
+}
+
+form label.mid {
+  line-height: 40px;
+}
+
+form input, form select {
+ background: #01949A;
+	border: 2px solid #fff;
+	color: #fff;
+	font-family: 'PT Sans Caption', sans-serif;
+	font-size: 1em;
+	font-weight: 400;
+	height: 40px;
+	margin: 0;
+	padding: 0 10px;
+	width: auto;
+ vertical-align: middle;
+}
+
+form input:hover, form select:hover, form textarea:hover {
+	border: 2px solid #2b7b5c;
+}
+
+form input:focus, form select:focus, form textarea:focus {
+  border-color: #2b7b5c;
+  outline: none;
+}
+
+form select {
+  float: left;
+  margin-bottom: 40px;
+  appearance: none;
+  width: 260px;
+  border-radius: 0;
+}
+
+form input.button {
+  width: 270px;
+  height: 40px;
+  border: 0px solid #fff;
+}
+
+
+form input.submit { 
+  float: left;
+  margin-left: 200px;
+  width: 100px;
+  height: 40px;
+  color: #fff;
+}
+
+form input.submit:hover { 
+ background: #01949A;
+	background: -webkit-linear-gradient(#01949A, #01caa7);	
+	background: -moz-linear-gradient(#01949A, #01caa7);	
+	background: -o-linear-gradient(#01949A, #01caa7);	
+	background: -ms-linear-gradient(#01949A, #01caa7);	
+	background: linear-gradient(#01949A, #01caa7);	
+}
+</style>
+
+<body>
+<form action="#" method="post">
+    <fieldset>
+        <div style="color: black;" style="text-align: center;">
+            <h2>Add Parking Area</h2>
+        </div>
+    <div>
+        <label for="id" class="mid">Area ID:</label>
+        <input type="text" name="pid" id="id" value="" tabindex="1">
+    </div>
+  
+    <div>
+        <label for="name" class="mid">Area Name:</label>
+        <input type="text" name="name" id="name" value="" tabindex="2">
+    </div>
+
+    <div>
+        <label for="quantity" class="mid">No of Parking</label>
+            <input name="quantity" type="number" class="form-control" id="qty" min="1">
+      </div>
+
+    <div class="col-md-4" style="height: 100%" style="vertical-align: auto;">
+                <div class="thumbnail">
+                    <img src="images/no-photo.jpg" id="productPhoto" alt="Product Image" style="width: 100%;">
+                    <div class="caption text-center">
+                        <!-- <h3 id="productImageTitle" style="word-break: break-all;">Product Image</h3> -->
+                        <p>
+                            <label class="btn">
+                                <input type="file" accept="image/*" name="fileToUpload" id="inputImage" onchange="loadFile(event);"/>
+                                <!-- <span style="color: white" class="glyphicon glyphicon-cloud" aria-hidden="true"></span> Browse -->
+                            </label>
+                        </p>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="card-body">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-            industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-            scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
-            electronic typesetting, remaining essentially unchanged.
-        </div>
-        <!-- /.card-body -->
-        <div class="card-footer">
-            Footer
-        </div>
-        <!-- /.card-footer-->
+
+    <div>
+        <input type="submit" value="Submit" class="submit">
     </div>
-    <!-- /.card -->
-    </div>
-</div>
+      
+    </fieldset>
+
+</form>
+</body>
 @endsection

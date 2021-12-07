@@ -1,4 +1,5 @@
 @extends('layouts.app')
+<head>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -174,6 +175,7 @@ $(document).ready(function(){
 });
 </script>
 </head>
+
 <body>
 <div class="container">
     <div class="table-responsive">
@@ -269,6 +271,8 @@ $(document).ready(function(){
                     <li class="page-item"><a href="#" class="page-link">5</a></li>
                     <li class="page-item"><a href="#" class="page-link">Next</a></li>
                 </ul>
+                
+            </nav>
             </div>
         </div>
     </div>        
