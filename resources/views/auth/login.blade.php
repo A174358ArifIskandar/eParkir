@@ -1,6 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
+<style>
+    .background-img{
+        background-image:url('/images/bg-parking.jpg');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+        width: 100%;
+        
+    }
+</style>
+<body class="background-img">
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -15,7 +27,7 @@
                             <label for="matric_no" class="col-md-4 col-form-label text-md-right">{{ __('Matric no') }}</label>
 
                             <div class="col-md-6">
-                                <input id="matric_no" type="matric_no" class="form-control @error('matric_no') is-invalid @enderror" name="matric_no" value="{{ old('matric_no') }}" required autocomplete="matric_no" autofocus>
+                                <input id="matric_no" type="matric_no" class="form-control @error('matric_no') is-invalid @enderror" name="matric_no" value="{{ old('matric_no') }}" placeholder="UKMper/No.Matrik" required autocomplete="matric_no" autofocus>
 
                                 @error('matric_no')
                                     <span class="invalid-feedback" role="alert">
@@ -70,4 +82,5 @@
         </div>
     </div>
 </div>
+</body>
 @endsection
