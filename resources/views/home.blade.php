@@ -51,7 +51,7 @@
           <div class="col-12">
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Parking Area</h3>
+                <a href="editParkingArea"><h3 class="card-title">Parking Area</h3></a>
               </div>
               <!-- /.card-header -->
               <div class="card-body">

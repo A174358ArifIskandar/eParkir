@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 <head>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+@section('title','Edit Parking Lot')
 @section('content')
 <style>
     body {
@@ -176,14 +176,33 @@ $(document).ready(function(){
 </script>
 </head>
 
-<body>
+<!-- <body> -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Edit Parking Lot</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="home">Home</a></li>
+              <li class="breadcrumb-item"><a href="editParkingArea">Edit Parking</a></li>
+              <li class="breadcrumb-item active">Edit Parking Lot</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
 <div class="container">
     <div class="table-responsive">
         <div class="table-wrapper">
             <div class="table-title">
                 <div class="row">
                     <div class="col-xs-5">
-                        <h2><b>Edit Parking</b></h2>
+                        <h2><b>Edit Parking Lot</b></h2>
                     </div>
                     <div class="col-xs-7">
                         <a href="#" class="btn btn-primary"><i class="material-icons">&#xE147;</i> <span>Add New User</span></a>
@@ -276,6 +295,13 @@ $(document).ready(function(){
             </div>
         </div>
     </div>        
-</div>     
-</body>
+</div>    
+
+<!-- /.col-md-6 -->
+</div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content -->
+<!-- </body> -->
 @endsection

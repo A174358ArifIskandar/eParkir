@@ -22,6 +22,7 @@ Auth::routes(['register'=>false]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+// Route::get('/editParkingArea', [App\Http\Controllers\ParkingController::class, 'index'])->name('editParkingArea');
 
 Route::get('/addParkingArea', function () {     
     return view('editParking.addParkingArea'); 

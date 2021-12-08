@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('title','Add Parking Area')
 @section('content')
@@ -98,7 +98,26 @@ form input.submit:hover {
 }
 </style>
 
-<body>
+<!-- <body> -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 style="color: black;" class="m-0">Add Parking Area</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="home">Home</a></li>
+              <li class="breadcrumb-item"><a href="editParkingArea">Edit Parking</a></li>
+              <li class="breadcrumb-item active">Add Parking Area</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
 <form action="#" method="post">
     <fieldset>
         <div style="color: black;" style="text-align: center;">
@@ -139,7 +158,11 @@ form input.submit:hover {
     </div>
       
     </fieldset>
-
+    </div>
+    <!-- /.content -->
 </form>
-</body>
+
+    
+    
+<!-- </body> -->
 @endsection
