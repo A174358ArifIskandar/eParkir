@@ -66,10 +66,9 @@
                 <br>
                       <div class="container1" style="border:3px solid black;">
                       <br>
-                      <a href="editParkingLot"><button class="button button1">BLOK A</button></a>
-                      <a href="editParkingLot"><button class="button button1">BLOK C</button></a>
-                      <a href="editParkingLot"><button class="button button1">BLOK F</button></a>
-                      <a href="editParkingLot"><button class="button button1">DATARAN DINAMIS</button></a>
+                      @foreach($parkings as $parking)
+                      <a href="editParkingLot"><button class="button button1">{{$parking->area_name}}</button></a>
+                      @endforeach
                       
                       <a href="addParkingArea"><button type="button" class="btn btn-outline-secondary">
                     

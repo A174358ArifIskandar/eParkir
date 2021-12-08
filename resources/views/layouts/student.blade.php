@@ -89,7 +89,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <img src="dist/img/boxed-bg.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Hanis Batrisyia | Student</a>
+          <a href="#" class="d-block">{{ \Illuminate\Support\Facades\Auth::user()->user_name }} | {{ ucfirst(\Illuminate\Support\Facades\Auth::user()->role) }}</a>
         </div>
       </div>
 
@@ -142,24 +142,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <p>
                 My Parking
                 <span class="right badge badge-danger">1</span>
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-cog"></i>
-              <p>
-                Settings
-                <span class="right badge badge-danger"></span>
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-phone"></i>
-              <p>
-                Contact Us
-                <span class="right badge badge-danger"></span>
               </p>
             </a>
           </li>

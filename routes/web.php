@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ParkingController;
+use App\Http\Controllers\ParkingAreaController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -35,3 +37,5 @@ Route::get('/editParkingArea', function () {
 Route::get('/editParkingLot', function () {     
     return view('editParking.editParkingLot'); 
 });
+
+Route::resource('parkingArea', ParkingAreaController::class);

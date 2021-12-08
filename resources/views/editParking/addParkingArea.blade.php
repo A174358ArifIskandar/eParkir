@@ -118,19 +118,20 @@ form input.submit:hover {
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
-<form action="#" method="post">
+<form action="{{ route('parkingArea.store') }}" method="post" enctype="multipart/form-data">
+    @csrf
     <fieldset>
         <div style="color: black;" style="text-align: center;">
             <h2>Add Parking Area</h2>
         </div>
     <div>
         <label for="id" class="mid">Area ID:</label>
-        <input type="text" name="pid" id="id" value="" tabindex="1">
+        <input type="text" name="area_id" id="id" value="" tabindex="1">
     </div>
   
     <div>
         <label for="name" class="mid">Area Name:</label>
-        <input type="text" name="name" id="name" value="" tabindex="2">
+        <input type="text" name="area_name" id="name" value="" tabindex="2">
     </div>
 
     <div>

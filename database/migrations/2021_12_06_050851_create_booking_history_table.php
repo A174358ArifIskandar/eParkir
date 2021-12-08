@@ -15,11 +15,11 @@ class CreateBookingHistoryTable extends Migration
     {
         Schema::create('booking_history', function (Blueprint $table) {
             $table->string('book_details_id')->primary();
-            $table->string('book_id');
+            $table->string('matric_no');
             $table->string('book_status');
             $table->string('description');
 
-            $table->foreign('book_id')->references('book_id')->on('book_parking')->onDelete('cascade');
+            $table->foreign('matric_no')->references('matric_no')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
