@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.student')
 @section('title','Dashboard')
 @section('content')
 <!-- Content Wrapper. Contains page content -->
@@ -12,7 +12,7 @@
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="home">Home</a></li>
               <li class="breadcrumb-item active">Dashboard</li>
             </ol>
           </div><!-- /.col -->
@@ -28,12 +28,13 @@
           <div class="col-12">
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Incoming Request</h3>
+                <h3 class="card-title">My Profile</h3>
               </div>
                   <div class="card-body">
                     <p class="card-text">Hanis Batrisyia</p>
-                    <a href="#" class="card-link">Accept</a>
-                    <a href="#" class="card-link text-danger">Reject</a>
+                    <p class="card-text">A123456</p>
+                    <a href="#" class="card-link">See more</a>
+                    <a href="#" class="card-link text-danger">Edit profile</a>
                   
                   </div>
                   </div>
@@ -52,11 +53,13 @@
             <div class="card card-primary">
               <div class="card-header">
                 <h3 class="card-title">Parking Area</h3>
+                <i class="fas fa-angle-double-right"></i>
               </div>
+              
               <!-- /.card-header -->
               <div class="card-body">
-                <div class="row">
-                <div class="col-md-3 col-sm-6 col-12">
+              <div class="row">
+          <div class="col-md-3 col-sm-6 col-12">
             <div class="info-box bg-info">
               <span class="info-box-icon"><i class="far fa-bookmark"></i></span>
 
@@ -137,7 +140,7 @@
           </div>
           <!-- /.col -->
         </div>
-                  
+                
               <!-- /.card-body -->
             </div>
             <!-- /.card -->
@@ -147,7 +150,6 @@
         <!-- /.row -->
       </div>
       <!-- /.container-fluid -->
-    
     <!-- /.content -->
   </div>
   </section>
