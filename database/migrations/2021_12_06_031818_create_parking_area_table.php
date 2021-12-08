@@ -17,6 +17,7 @@ class CreateParkingAreaTable extends Migration
             $table->string('area_id')->primary();
             $table->string('area_name');
             $table->string('area_image');
+            $table->integer('area_total_availability');
             $table->timestamps();
         });
     }
