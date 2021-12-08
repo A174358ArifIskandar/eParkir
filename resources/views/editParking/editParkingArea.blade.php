@@ -1,38 +1,8 @@
 @extends('layouts.admin')
-@section('title','Edit Parking')
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+@section('title','Parking Area')
+
 @section('content')
 
-<style>
-  .button {
-  border: none;
-  color: white;
-  padding: 30px 35px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 7px 9px;
-  cursor: pointer;
-  }
-
-  .button1 {background-color: #CD0046;} 
-  
-  .container1 { 
-  height: 500px;
-  position: relative; 
-  }
-
-  .center {
-   margin: 0;
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   -ms-transform: translate(-50%, -50%);
-   transform: translate(-50%, -50%);
-  }
-
-</style>
 <!-- <body> -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -40,12 +10,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Edit Parking</h1>
+            <h1 class="m-0">@yield('title')</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Edit Parking</li>
+              <li class="breadcrumb-item active">@yield('title')</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -60,15 +30,54 @@
           <div class="col-12">
             <div class="card card-info">
               <div class="card-header">
-                <h3 class="card-title">Edit Parking Area</h3>
+                <h3 class="card-title">List of @yield('title')</h3>
               </div>
-              <div class="container">
-                <br>
-                      <div class="container1" style="border:3px solid black;">
-                      <br>
-                      @foreach($parkings as $parking)
+              <!-- /.card-header -->
+              @foreach($parkings as $parking)
+              <div class="card-body">
+              <div class="row">
+              <div class="col-md-3 col-sm-6 col-12">
+              <div class="info-box bg-danger">
+              <!-- <span class="info-box-icon"><i class="far fa-bookmark"></i></span> -->
+
+              <div class="info-box-content">
+                
+                <span class="info-box-text">{{$parking->area_name}}</span>
+                <span class="info-box-number">20 Parking Lots</span>
+
+                <div class="progress">
+                  <div class="progress-bar" style="width: 70%"></div>
+                </div>
+                <span class="progress-description">
+                  5 Parking Lots Available
+                </span>
+                <div class="btn-group">
+                          <button type="button" class="btn btn-default dropdown-toggle dropdown-icon" data-toggle="dropdown">
+                          </button>
+                          <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Edit</a>
+                            <a class="dropdown-item" href="#">Delete</a>
+                          </div>
+                        </div>
+              </div>
+              <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+              </div>
+              </div>
+              </div>
+              
+              @endforeach
+                      <!-- @foreach($parkings as $parking)
+                      <div class="card-tools">
+                      
                       <a href="editParkingLot"><button class="button button1">{{$parking->area_name}}</button></a>
-                      @endforeach
+                      <div class="card-tools">
+                      <a href="#" class="btn btn-tool">
+                        <i class="fas fa-pen"></i>
+                      </a>
+                
+                      @endforeach -->
                       
                       <a href="addParkingArea"><button type="button" class="btn btn-outline-secondary">
                     
@@ -80,8 +89,8 @@
                       </button></a>
                     </div>
                   </div>
-                  </div>
-                  </div>
+                  <!-- </div> -->
+                  <!-- </div> -->
             
           <!-- /.col-md-6 -->
         </div>
