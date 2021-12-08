@@ -10,4 +10,12 @@ class ParkingArea extends Model
     use HasFactory;
     protected $table = 'parking_area';
     protected $fillable = ['area_id','area_name','area_image','area_total_availability'];
+    protected $primaryKey = 'area_id';
+    public $incrementing = false;
+    protected $keyType = 'string';
+
+    public function getRouteKeyName()
+    {
+        return 'area_id';
+    }
 }

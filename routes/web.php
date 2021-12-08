@@ -26,9 +26,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 // Route::get('/editParkingArea', [App\Http\Controllers\ParkingController::class, 'index'])->name('editParkingArea');
 
-Route::get('/addParkingArea', function () {     
-    return view('editParking.addParkingArea'); 
-});
+// Route::get('/addParkingArea', function () {     
+//     return view('editParking.addParkingArea'); 
+// });
 
 Route::get('/editParkingArea', function () {     
     return view('editParking.editParkingArea'); 

@@ -15,7 +15,7 @@ class ParkingAreaController extends Controller
     public function index()
     {
         //
-        $parkings = ParkingArea::all(); 
+        $parkings = ParkingArea::all();
         return view('editParking.editParkingArea', compact('parkings'));
     }
 
@@ -27,7 +27,7 @@ class ParkingAreaController extends Controller
     public function create()
     {
         //
-        return view('parkingArea.create');
+        return view('editParking.addParkingArea');
     }
 
     /**
@@ -42,20 +42,20 @@ class ParkingAreaController extends Controller
         $validatedData = $request->validate([
             'fileToUpload' => 'required|image|mimes:jpeg,png,jpg|max:2048',
             'area_id' => 'required|alpha|unique:parking_area'
-            
-           ]);
-    
-           $name = $request->file('fileToUpload')->getClientOriginalName();
-    
-           $path = $request->file('fileToUpload')->store('public/files');
-    
+
+        ]);
+
+        $name = $request->file('fileToUpload')->getClientOriginalName();
+
+        $path = $request->file('fileToUpload')->store('public/files');
+
         ParkingArea::create([
             'area_id' => $request->area_id,
             'area_name' => $request->area_name,
             'area_image' => $path,
             'area_total_availability' => $request->quantity
-            ]);
-            return redirect()->route('parkingArea.index')->with('status', 'File Has been uploaded successfully');
+        ]);
+        return redirect()->route('parkingArea.index')->with('status', 'File Has been uploaded successfully');
     }
 
     /**
@@ -67,6 +67,7 @@ class ParkingAreaController extends Controller
     public function show($id)
     {
         //
+
     }
 
     /**
@@ -75,9 +76,11 @@ class ParkingAreaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($parking_id)
     {
-        //
+        $parking_id = ParkingArea::findOrFail($parking_id);
+
+        return view('edit', compact('parking'));
     }
 
     /**
@@ -90,7 +93,7 @@ class ParkingAreaController extends Controller
     public function update(Request $request, $id)
     {
         //
-        
+
     }
 
     /**
@@ -99,8 +102,11 @@ class ParkingAreaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($parking_id)
     {
-        //
+        $color = ParkingArea::find($parking_id);
+        $color->delete();
+        return redirect()->route('parkingArea.index')
+            ->with('success', 'Parking Area deleted successfully');
     }
 }
