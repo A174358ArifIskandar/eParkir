@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ParkingArea;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -29,7 +30,8 @@ class HomeController extends Controller
 
         if($role=='admin')
         {
-            return view('home');
+            $parkings = ParkingArea::all();
+            return view('home', compact('parkings'));
         }
         else
         {

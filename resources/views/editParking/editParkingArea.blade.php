@@ -33,52 +33,54 @@
                 <h3 class="card-title">List of @yield('title')</h3>
               </div>
               <!-- /.card-header -->
-              @foreach($parkings as $parking)
               <div class="card-body">
               <div class="row">
+              @foreach($parkings as $parking)
               <div class="col-md-3 col-sm-6 col-12">
               <div class="info-box bg-danger">
               <!-- <span class="info-box-icon"><i class="far fa-bookmark"></i></span> -->
-
               <div class="info-box-content">
-                
                 <span class="info-box-text">{{$parking->area_name}}</span>
                 <span class="info-box-number">20 Parking Lots</span>
-
                 <div class="progress">
                   <div class="progress-bar" style="width: 70%"></div>
                 </div>
                 <span class="progress-description">
                   5 Parking Lots Available
                 </span>
-                <div class="btn-group">
+                <!-- <div class="btn-group">
                           <button type="button" class="btn btn-default dropdown-toggle dropdown-icon" data-toggle="dropdown">
                           </button>
                           <div class="dropdown-menu">
                             <a class="dropdown-item" href="#">Edit</a>
                             <a class="dropdown-item" href="#">Delete</a>
                           </div>
-                        </div>
+                        </div> -->
+                        <!-- <li class="nav-item dropdown">
+                          <a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="false">
+                            <i class="far fa-bell"></i>
+                          </a>
+                          <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right" style="left: inherit; right: 0px;">
+                            
+                            <div class="dropdown-divider"></div>
+                            <a href="#" class="dropdown-item">
+                              <i class="fas fa-envelope mr-2"></i> 4 new messages
+                              <span class="float-right text-muted text-sm">3 mins</span>
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="#" class="dropdown-item">
+                              <i class="fas fa-users mr-2"></i> 8 friend requests
+                              <span class="float-right text-muted text-sm">12 hours</span>
+                            </a>
+                        </li> -->
               </div>
               <!-- /.info-box-content -->
               </div>
               <!-- /.info-box -->
               </div>
-              </div>
-              </div>
-              
               @endforeach
-                      <!-- @foreach($parkings as $parking)
-                      <div class="card-tools">
-                      
-                      <a href="editParkingLot"><button class="button button1">{{$parking->area_name}}</button></a>
-                      <div class="card-tools">
-                      <a href="#" class="btn btn-tool">
-                        <i class="fas fa-pen"></i>
-                      </a>
-                
-                      @endforeach -->
-                      
+              <!-- </div> -->
+              
                       <a href="addParkingArea"><button type="button" class="btn btn-outline-secondary">
                     
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="30" fill="currentColor" color="#000000" class="bi bi-plus" viewBox="0 0 16 16">
@@ -89,9 +91,9 @@
                       </button></a>
                     </div>
                   </div>
+                  </div>
                   <!-- </div> -->
-                  <!-- </div> -->
-            
+                  </div>
           <!-- /.col-md-6 -->
         </div>
         <!-- /.row -->

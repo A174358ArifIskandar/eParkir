@@ -2,102 +2,15 @@
 
 @section('title','Add Parking Area')
 @section('content')
-<link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+
 <style>
-     body {
-  background-color: #efefef;
-  color: white;
-  font-size: 100%;
-  font-family: 'PT Sans Caption', sans-serif;
-  font-weight: 400;
-}
 
 form {
-  border-top: 5px solid ;
+  /* border-top: 5px solid ; */
   width: 552px;
   margin: 40px auto;
 }
 
-fieldset {
-  margin: auto;
-  width: auto;
-  height: auto;
-  border: 1px solid #e5e5e5;
-  border-top: 0px solid #e5e5e5;
-  background: #fdfdfd;
-  padding: 40px;
-}
-
-form div {
-  padding: 0 0 40px 0;
-}
-
-form label {
-  float: left;
-  width: 200px;
-  font-size: 1em;
-  color: #111;
-}
-
-form label.mid {
-  line-height: 40px;
-}
-
-form input, select {
- /* background: #01949A; */
-	border: 2px solid #fff;
-  /* border-color: #01949A; */
-	color: black;
-	font-family: 'PT Sans Caption', sans-serif;
-	font-size: 1em;
-	font-weight: 400;
-	height: 40px;
-	margin: 0;
-	padding: 0 10px;
-	width: auto;
- vertical-align: middle;
-}
-
-form input:hover, form select:hover, form textarea:hover {
-	border: 2px solid #CD0046;
-}
-
-form input:focus, form select:focus, form textarea:focus {
-  border-color: #CD0046;
-  outline: none;
-}
-
-form select {
-  float: left;
-  margin-bottom: 40px;
-  appearance: none;
-  width: 260px;
-  border-radius: 0;
-}
-
-form input.button {
-  width: 270px;
-  height: 40px;
-  border: 0px solid #fff;
-}
-
-
-form input.submit { 
-  float: left;
-  margin-left: 200px;
-  width: 100px;
-  height: 40px;
-  color: #fff;
-}
-
-form input.submit:hover { 
- background: #CD0046;
-	/* background: -webkit-linear-gradient(#CD0046, #01caa7);	
-	background: -moz-linear-gradient(#CD0046, #01caa7);	
-	background: -o-linear-gradient(#CD0046, #01caa7);	
-	background: -ms-linear-gradient(#CD0046, #01caa7);	
-	background: linear-gradient(#CD0046, #01caa7);	 */
-} 
 </style>
 
 <!-- <body> -->
@@ -190,7 +103,7 @@ form input.submit:hover {
 
     <!-- <div class="col-md-4" style="height: 100%" style="vertical-align: auto;">
                 <div class="thumbnail">
-                    <!-- <img src="images/no-photo.jpg" id="productPhoto" alt="Product Image" style="width: 100%;"> 
+                    <img src="images/no-photo.jpg" id="productPhoto" alt="Product Image" style="width: 100%;"> 
                     <div class="caption text-center">
                          <h3 id="productImageTitle" style="word-break: break-all;">Product Image</h3>
                          <p>
