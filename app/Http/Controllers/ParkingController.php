@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ParkingArea;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -22,18 +23,15 @@ class ParkingController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    // public function index()
-    // {
-    // $role=Auth::user()->role;
+    public function index()
+    {
+        $role = Auth::user()->role;
 
-    //     if($role=='admin')
-    //     {
-    //         return view('editParkingArea');
-    //     }
-    //     else
-    //     {
-    //         return view('dashboard');
-    //     }
-
-    // }   
+        if ($role == 'admin') {
+            $parkings = ParkingArea::all();
+            return view('displayParking', compact('parkings'));
+        } else {
+            return view('dashboard');
+        }
+    }
 }

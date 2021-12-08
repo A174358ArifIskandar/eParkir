@@ -39,3 +39,5 @@ Route::get('/editParkingLot', function () {
 });
 
 Route::resource('parkingArea', ParkingAreaController::class);
+
+Route::get('/displayParking', [App\Http\Controllers\ParkingController::class, 'index'])->name('displayParking');
