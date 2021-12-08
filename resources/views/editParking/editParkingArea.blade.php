@@ -67,9 +67,9 @@
                       <div class="container1" style="border:3px solid black;">
                       <br>
                       <a href="editParkingLot"><button class="button button1">BLOK A</button></a>
-                      <button class="button button1">BLOK C</a></button>
-                      <button class="button button1">BLOK F</a></button>
-                      <button class="button button1">DATARAN DINAMIS</a></button>
+                      <a href="editParkingLot"><button class="button button1">BLOK C</button></a>
+                      <a href="editParkingLot"><button class="button button1">BLOK F</button></a>
+                      <a href="editParkingLot"><button class="button button1">DATARAN DINAMIS</button></a>
                       
                       <a href="addParkingArea"><button type="button" class="btn btn-outline-secondary">
                     
