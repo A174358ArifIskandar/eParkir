@@ -25,7 +25,6 @@ class CreateBookParkingTable extends Migration
 
             $table->foreign('matric_no')->references('matric_no')->on('users')->onDelete('cascade');
             $table->foreign('area_id')->references('area_id')->on('parking_area')->onDelete('cascade');
-            // $table->foreign('lot_id')->references('lot_id')->on('parking_lot')->onDelete('cascade');
             $table->timestamps();
         });
     }
