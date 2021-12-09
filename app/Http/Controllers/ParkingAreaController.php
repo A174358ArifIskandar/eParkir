@@ -20,6 +20,7 @@ class ParkingAreaController extends Controller
 
         $parkinglists = ParkingArea::all();
         return view('displayParking', compact('parkinglists'));
+
     }
 
     /**
@@ -72,6 +73,7 @@ class ParkingAreaController extends Controller
         //
         $parkings = ParkingArea::findOrFail($id);
             return view('displayParking', compact('parkings'));
+
     }
 
     /**
@@ -83,8 +85,8 @@ class ParkingAreaController extends Controller
     public function edit($parking_id)
     {
         $parking_id = ParkingArea::findOrFail($parking_id);
+        return view('editParking.updateParkingArea', compact('parking_id'));
 
-        return view('edit', compact('parking'));
     }
 
     /**
