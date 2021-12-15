@@ -22,8 +22,8 @@
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="home">Home</a></li>
-            <li class="breadcrumb-item"><a href="updateParkingArea">Edit Parking</a></li>
+            <li class="breadcrumb-item"><a href="/home">Home</a></li>
+            <li class="breadcrumb-item"><a href="{{route('parkingArea.index')}}">Parking Area</a></li>
             <li class="breadcrumb-item active">Edit Parking Area</li>
           </ol>
         </div><!-- /.col -->

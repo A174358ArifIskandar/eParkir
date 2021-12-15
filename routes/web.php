@@ -20,7 +20,7 @@ Route::get('/', function () {
     return redirect('login');
 });
 
-Auth::routes(['register'=>false]);
+Auth::routes(['register' => false]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -30,14 +30,14 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //     return view('editParking.addParkingArea'); 
 // });
 
-Route::get('/editParkingArea', function () {     
-    return view('editParking.editParkingArea'); 
-});
+// Route::get('/editParkingArea', function () {     
+//     return view('editParking.editParkingArea'); 
+// });
 
-Route::get('/editParkingLot', function () {     
-    return view('editParking.editParkingLot'); 
-});
+// Route::get('/editParkingLot', function () {     
+//     return view('editParking.editParkingLot'); 
+// });
 
 Route::resource('parkingArea', ParkingAreaController::class);
 
-Route::get('/displayParking', [App\Http\Controllers\ParkingController::class, 'index'])->name('displayParking');
+// Route::get('/displayParking', [App\Http\Controllers\ParkingController::class, 'index'])->name('displayParking');

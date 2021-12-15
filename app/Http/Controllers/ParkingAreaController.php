@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\ParkingArea;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ParkingAreaController extends Controller
 {
@@ -14,13 +15,15 @@ class ParkingAreaController extends Controller
      */
     public function index()
     {
+        $role=Auth::user()->role;
         //
-        $parkings = ParkingArea::all();
-        return view('editParking.editParkingArea', compact('parkings'));
-
-        $parkinglists = ParkingArea::all();
-        return view('displayParking', compact('parkinglists'));
-
+        if ($role == 'admin') {
+            $parkings = ParkingArea::all();
+            return view('admin.editParking.editParkingArea', compact('parkings'));
+        } else {
+            $parkings = ParkingArea::all();
+            return view('student.bookParking.studentParkingArea' , compact('parkings'));
+        }
     }
 
     /**
@@ -31,7 +34,7 @@ class ParkingAreaController extends Controller
     public function create()
     {
         //
-        return view('editParking.addParkingArea');
+        return view('admin.editParking.addParkingArea');
     }
 
     /**
@@ -72,8 +75,7 @@ class ParkingAreaController extends Controller
     {
         //
         $parkings = ParkingArea::findOrFail($id);
-            return view('displayParking', compact('parkings'));
-
+        return view('admin.editParking.displayParking', compact('parkings'));
     }
 
     /**
@@ -85,8 +87,7 @@ class ParkingAreaController extends Controller
     public function edit($parking_id)
     {
         $parking_id = ParkingArea::findOrFail($parking_id);
-        return view('editParking.updateParkingArea', compact('parking_id'));
-
+        return view('admin.editParking.updateParkingArea', compact('parking_id'));
     }
 
     /**

@@ -12,7 +12,7 @@
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="/home">Home</a></li>
               <li class="breadcrumb-item active">@yield('title')</li>
             </ol>
           </div><!-- /.col -->
@@ -48,7 +48,7 @@
           <div class="col-12">
             <div class="card card-primary">
               <div class="card-header">
-                <a href="editParkingArea"><h3 class="card-title">Parking Area</h3></a>
+                <a href="{{route('parkingArea.index')}}"><h3 class="card-title">Parking Area</h3></a>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
