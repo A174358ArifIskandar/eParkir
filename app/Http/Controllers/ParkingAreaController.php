@@ -15,14 +15,14 @@ class ParkingAreaController extends Controller
      */
     public function index()
     {
-        $role=Auth::user()->role;
+        $role = Auth::user()->role;
         //
         if ($role == 'admin') {
             $parkings = ParkingArea::all();
             return view('admin.editParking.editParkingArea', compact('parkings'));
         } else {
             $parkings = ParkingArea::all();
-            return view('student.bookParking.studentParkingArea' , compact('parkings'));
+            return view('student.bookParking.studentParkingArea', compact('parkings'));
         }
     }
 
@@ -74,8 +74,14 @@ class ParkingAreaController extends Controller
     public function show($id)
     {
         //
-        $parkings = ParkingArea::findOrFail($id);
-        return view('admin.editParking.displayParking', compact('parkings'));
+        $role = Auth::user()->role;
+        if ($role == 'admin') {
+            $parkings = ParkingArea::findOrFail($id);
+            return view('admin.editParking.displayParking', compact('parkings'));
+        } else {
+            $parkings = ParkingArea::findOrFail($id);
+            return view('student.bookParking.studentDisplay', compact('parkings'));
+        }
     }
 
     /**
