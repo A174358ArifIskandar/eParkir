@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ParkingController;
 use App\Http\Controllers\ParkingAreaController;
+use App\Http\Controllers\BookParkingController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -39,5 +40,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // });
 
 Route::resource('parkingArea', ParkingAreaController::class);
+Route::resource('bookParking', BookParkingController::class);
 
 // Route::get('/displayParking', [App\Http\Controllers\ParkingController::class, 'index'])->name('displayParking');

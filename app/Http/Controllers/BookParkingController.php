@@ -17,6 +17,7 @@ class BookParkingController extends Controller
         //
         $studentParking = BookParking::all();
         return view('student.bookParking.bookingform', compact('studentParking'));
+
     }
 
     /**
@@ -26,7 +27,8 @@ class BookParkingController extends Controller
      */
     public function create()
     {
-        //
+        $MyParking = BookParking::all();
+        return view('student.myParking.studentmyParking', compact('MyParking'));
     }
 
     /**
@@ -48,7 +50,7 @@ class BookParkingController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
