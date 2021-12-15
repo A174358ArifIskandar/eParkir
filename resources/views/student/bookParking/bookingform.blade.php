@@ -14,7 +14,7 @@
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="/home">Home</a></li>
-            <li class="breadcrumb-item"><a href="">Parking Area</a></li>
+            <li class="breadcrumb-item"><a href="{{route('parkingArea.index')}}">Parking Area</a></li>
             <li class="breadcrumb-item active">Book Parking</li>
           </ol>
         </div><!-- /.col -->
@@ -34,19 +34,36 @@
         <form>
           <div class="card-body">
             <div class="form-group">
-              <label for="id">Area ID:</label>
-              <input type="text" name="area_id" id="id" class="form-control" placeholder="Enter ID">
+              <!-- <label for="id">Book ID:</label> -->
+              <input type="hidden" name="book_id" id="id" class="form-control">
             </div>
             <div class="form-group">
-              <label for="name">Area Name:</label>
-              <input type="text" name="area_name" id="name" class="form-control" placeholder="Enter Name">
+              <label for="matric">Matric No:</label>
+              <input type="" name="matric" id="matric" class="form-control" placeholder="">
+            </div>
+            <div class="form-group">
+              <label for="name">Student Name:</label>
+              <input type="" name="student_name" id="name" class="form-control" placeholder="">
+            </div>
+            <div class="form-group">
+              <label for="session">Student Session:</label>
+              <input type="" name="student_session" id="student_session" class="form-control" placeholder="">
+            </div>
+            <div class="form-group">
+              <label for="plate">Plate No:</label>
+              <input type="text" name="plate" id="name" class="form-control" placeholder="Enter plate no">
+            </div>
+            <div class="form-group">
+              <label for="area_name">Area Name:</label>
+              <input type="" value="" name="area_name" id="area_name" class="form-control" placeholder="">
+            </div>
+            <div class="form-group">
+              <label for="lot_id">Lot ID:</label>
+              <input type="" value="" name="lot_id" id="lot_id" class="form-control" placeholder="">
             </div>
             <div>
-              <label for="quantity">No of Parking</label>
-              <input name="quantity" type="number" class="form-control" id="qty" min="1">
-            </div>
             <div>
-              <label for="exampleInputFile">Area Image</label>
+              <label for="exampleInputFile">License Card</label>
               <div class="custom-file">
                 <input type="file" accept="image/*" name="fileToUpload" id="inputImage" onchange="loadFile(event);" />
             </div>

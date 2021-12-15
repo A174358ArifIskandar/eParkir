@@ -15,8 +15,8 @@ class CreateStudentDetailsTable extends Migration
     {
         Schema::create('student_details', function (Blueprint $table) {
             $table->string('matric_no');
-            $table->string("user_faculty");
-            $table->string("user_session");
+            $table->string("student_faculty");
+            $table->string("student_session");
 
             $table->foreign('matric_no')->references('matric_no')->on('users')->onDelete('cascade');
             $table->timestamps();
