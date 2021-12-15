@@ -15,14 +15,14 @@ class ParkingAreaController extends Controller
      */
     public function index()
     {
-        $role = Auth::user()->role;
+        $role=Auth::user()->role;
         //
         if ($role == 'admin') {
             $parkings = ParkingArea::all();
             return view('admin.editParking.editParkingArea', compact('parkings'));
         } else {
             $parkings = ParkingArea::all();
-            return view('student.bookParking.studentParkingArea', compact('parkings'));
+            return view('student.bookParking.studentParkingArea' , compact('parkings'));
         }
     }
 
@@ -74,14 +74,8 @@ class ParkingAreaController extends Controller
     public function show($id)
     {
         //
-        $role = Auth::user()->role;
-        if ($role == 'admin') {
-            $parkings = ParkingArea::findOrFail($id);
-            return view('admin.editParking.displayParking', compact('parkings'));
-        } else {
-            $parkings = ParkingArea::findOrFail($id);
-            return view('student.bookParking.studentDisplay', compact('parkings'));
-        }
+        $parkings = ParkingArea::findOrFail($id);
+        return view('admin.editParking.displayParking', compact('parkings'));
     }
 
     /**
@@ -103,12 +97,25 @@ class ParkingAreaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $parking_id)
     {
-        //
+        $validatedData = $request->validate([
+            'fileToUpload' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'area_id' => 'required|alpha|unique:parking_area'
 
+        ]);
+        $name = $request->file('fileToUpload')->getClientOriginalName();
+
+        $path = $request->file('fileToUpload')->store('public/files');
+
+        ParkingArea::whereId($parking_id)->update($validatedData)([
+            'area_id' => $request->area_id,
+            'area_name' => $request->area_name,
+            'area_image' => $path,
+            'area_total_availability' => $request->quantity
+        ]);
+        return redirect()->route('parkingArea.index')->with('status', 'File Has been uploaded successfully');
     }
-
     /**
      * Remove the specified resource from storage.
      *
