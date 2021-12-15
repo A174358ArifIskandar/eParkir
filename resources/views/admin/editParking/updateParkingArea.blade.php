@@ -31,9 +31,9 @@
     </div><!-- /.container-fluid -->
   </div>
   <!-- /.content-header -->
-  <form action="{{ route('parkingArea.update',$parking_id->id) }}" method="post" enctype="multipart/form-data">
+  <form action="{{ route('parkingArea.update',$parkings->area_id) }}" method="post" enctype="multipart/form-data">
     @csrf
-    @method('PATCH')
+    @method('PUT')
     <fieldset>
       <div class="card card-info">
         <div class="card-header">
@@ -45,21 +45,21 @@
           <div class="card-body">
             <div class="form-group">
               <label for="id">Area ID:</label>
-              <input type="text" name="area_id" value="{{ $parking_id->area_id }}" id="id" class="form-control">
+              <input type="text" name="area_id" value="{{ $parkings->area_id }}" id="id" class="form-control">
             </div>
             <div class="form-group">
               <label for="name">Area Name:</label>
-              <input type="text" name="area_name" value="{{ $parking_id->area_name }}" id="name" class="form-control">
+              <input type="text" name="area_name" value="{{ $parkings->area_name }}" id="name" class="form-control">
             </div>
             <div>
               <label for="quantity">No of Parking</label>
-              <input name="quantity" type="number" value="{{ $parking_id->area_total_availability }}" class="form-control" id="qty" min="1">
+              <input name="quantity" type="number" value="{{ $parkings->area_total_availability }}" class="form-control" id="qty" min="1">
             </div>
             <div>
               <label for="exampleInputFile">Area Image</label>
               <!-- <div class="input-group"> -->
               <div class="custom-file">
-                <input type="file" accept="image/*" name="fileToUpload" value="{{ $parking_id->area_image }}" id="inputImage" onchange="loadFile(event);" />
+                <input type="file" accept="image/*" name="fileToUpload" value="{{ $parkings->area_image }}" id="inputImage" onchange="loadFile(event);" />
                 <!-- <input type="file" accept="image/*" name="fileToUpload" id="inputImage" onchange="loadFile(event);"/> -->
                 <!-- <input type="file" accept="image/*" name="fileToUpload" onchange="loadFile(event)" class="custom-file-input" id="exampleInputFile"> -->
                 <!-- <label class="custom-file-label" accept="image/*" name="fileToUpload" onchange="loadFile(event)" for="exampleInputFile">Choose file</label> -->

@@ -84,10 +84,11 @@ class ParkingAreaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($parking_id)
+    
+    public function edit($id)
     {
-        $parking_id = ParkingArea::findOrFail($parking_id);
-        return view('admin.editParking.updateParkingArea', compact('parking_id'));
+        $parkings = ParkingArea::find($id);
+        return view('admin.editParking.updateParkingArea', compact('parkings'));
     }
 
     /**
@@ -97,18 +98,21 @@ class ParkingAreaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $parking_id)
+    public function update(Request $request, $id)
     {
         $validatedData = $request->validate([
             'fileToUpload' => 'required|image|mimes:jpeg,png,jpg|max:2048',
-            'area_id' => 'required|alpha|unique:parking_area'
+            'area_id' => 'required|alpha|unique:parking_area',
+            'area_name' => 'required',
+            'area_image' => 'required',
+            'area_total_availability' => 'required',
 
         ]);
         $name = $request->file('fileToUpload')->getClientOriginalName();
 
         $path = $request->file('fileToUpload')->store('public/files');
 
-        ParkingArea::whereId($parking_id)->update($validatedData)([
+        ParkingArea::whereId($id)->update([
             'area_id' => $request->area_id,
             'area_name' => $request->area_name,
             'area_image' => $path,
