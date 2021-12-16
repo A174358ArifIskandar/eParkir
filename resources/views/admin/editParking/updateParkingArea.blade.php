@@ -2,7 +2,14 @@
 
 @section('title','Update & Edit Parking Area')
 @section('content')
-
+@if($errors->any())
+        <div class="alert alert-danger">
+            <h5><i class="icon fas fa-ban"></i> Error!</h5>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </div>
+    @endif
 <style>
   form {
     /* border-top: 5px solid ; */

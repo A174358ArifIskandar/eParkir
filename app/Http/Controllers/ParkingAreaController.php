@@ -108,11 +108,6 @@ class ParkingAreaController extends Controller
     {
         $validatedData = $request->validate([
             'fileToUpload' => 'required|image|mimes:jpeg,png,jpg|max:2048',
-            'area_id' => 'required|alpha|unique:parking_area',
-            'area_name' => 'required',
-            'area_image' => 'required',
-            'area_total_availability' => 'required',
-
         ]);
         $name = $request->file('fileToUpload')->getClientOriginalName();
 
@@ -124,7 +119,7 @@ class ParkingAreaController extends Controller
             'area_image' => $path,
             'area_total_availability' => $request->quantity
         ]);
-        return redirect()->route('parkingArea.index')->with('status', 'File Has been uploaded successfully');
+        return redirect()->route('parkingArea.index')->with('status', 'File Has been updated successfully');
     }
     /**
      * Remove the specified resource from storage.
