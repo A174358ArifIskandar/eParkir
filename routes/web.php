@@ -35,9 +35,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //     return view('editParking.editParkingArea'); 
 // });
 
-// Route::get('/editParkingLot', function () {     
-//     return view('editParking.editParkingLot'); 
-// });
+Route::get('/invoice', function () {     
+     return view('student.myParking.invoice'); 
+ });
 
 Route::resource('parkingArea', ParkingAreaController::class);
 Route::resource('bookParking', BookParkingController::class);
