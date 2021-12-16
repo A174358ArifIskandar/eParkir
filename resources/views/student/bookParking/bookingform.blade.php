@@ -22,7 +22,16 @@
     </div><!-- /.container-fluid -->
   </div>
   <!-- /.content-header -->
-  <form action="" method="post" enctype="multipart/form-data">
+  <section class="content">
+  @if($errors->any())
+        <div class="alert alert-danger">
+            <h5><i class="icon fas fa-ban"></i> Error!</h5>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </div>
+    @endif
+  <form action="{{ route('bookParking.store') }}" method="post" enctype="multipart/form-data">
     @csrf
     <fieldset>
       <div class="card card-info">
@@ -39,47 +48,43 @@
             </div>
             <div class="form-group">
               <label for="matric">Matric No:</label>
-              <input type="" name="matric" id="matric" class="form-control" placeholder="">
+              <input type="" value="{{ \Illuminate\Support\Facades\Auth::user()->matric_no }}" name="matric_no" id="matric" class="form-control" placeholder="" readonly>
             </div>
             <div class="form-group">
               <label for="name">Student Name:</label>
-              <input type="" name="student_name" id="name" class="form-control" placeholder="">
+              <input type="" value="{{ \Illuminate\Support\Facades\Auth::user()->user_name }}" name="student_name" id="name" class="form-control" placeholder="" readonly>
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
               <label for="session">Student Session:</label>
               <input type="" name="student_session" id="student_session" class="form-control" placeholder="">
-            </div>
+            </div> -->
             <div class="form-group">
               <label for="plate">Plate No:</label>
-              <input type="text" name="plate" id="name" class="form-control" placeholder="Enter plate no">
+              <input type="text" name="plate_no" id="name" class="form-control" placeholder="Enter plate no">
             </div>
             <div class="form-group">
-              <label for="area_name">Area Name:</label>
-              <input type="" value="" name="area_name" id="area_name" class="form-control" placeholder="">
+              <label for="area_name">Blok:</label>
+              <input type="" value="{{ $parkings->area_id }}" name="area_id" id="area_id" class="form-control" placeholder="" readonly>
             </div>
             <div class="form-group">
-              <label for="lot_id">Lot ID:</label>
-              <input type="" value="" name="lot_id" id="lot_id" class="form-control" placeholder="">
+              <label for="lot_id">Lot ID:</label>  
+              <input type="" value="{{ $parkings->area_id }}{{ $lot }}" name="lot_id" id="lot_id" class="form-control" placeholder="" readonly>
             </div>
-            <div>
+            <div class="form-group">
+              <input type="hidden" name="lot_status" value="pending" id="id" class="form-control">
+            </div>
             <div>
               <label for="exampleInputFile">License Card</label>
               <div class="custom-file">
                 <input type="file" accept="image/*" name="fileToUpload" id="inputImage" onchange="loadFile(event);" />
             </div>
             </div>
-
-
             <div class="text-center">
               <input type="submit" value="Submit" class="btn btn-primary">
             </div>
-
     </fieldset>
 </div>
 <!-- /.content -->
 </form>
-
-
-
 <!-- </body> -->
 @endsection

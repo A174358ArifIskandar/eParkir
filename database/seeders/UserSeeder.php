@@ -36,5 +36,15 @@ class UserSeeder extends Seeder
             'role' => 'student',
             'user_phone' => '011-2345510'
         ]);
+
+        DB::table('users')->insert([
+            'matric_no' => 'A174485',
+            'user_name' => 'Fadzrul Aiman',
+            'user_email' => 'a174485@siswa.ukm.edu.my',
+            'password' => Hash::make('password'), // password
+            'remember_token' => Str::random(10),
+            'role' => 'student',
+            'user_phone' => '011-2345512'
+        ]);
     }
 }

@@ -35,7 +35,8 @@ class HomeController extends Controller
         }
         else
         {
-            return view('dashboard');
+            $parkings = ParkingArea::all();
+            return view('dashboard', compact('parkings'));
         }
         
     }

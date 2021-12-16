@@ -64,7 +64,7 @@
                                     <span class="badge badge-success">Available</span>
                                 </td>
                                 <td class="project-actions text-right center">
-                                    <a class="btn btn-primary btn-sm" href="{{ route('bookParking.index') }}">
+                                    <a class="btn btn-primary btn-sm" href="{{ route('bookParking.edit', [$parkings->area_id, $i]) }}">
                                         <i class="fas fa-folder">
                                         </i>
                                         Book

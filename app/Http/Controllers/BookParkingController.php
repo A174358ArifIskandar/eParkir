@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\BookParking;
 use App\Models\ParkingArea;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -46,7 +47,7 @@ class BookParkingController extends Controller
         //
         $validatedData = $request->validate([
             'fileToUpload' => 'required|image|mimes:jpeg,png,jpg|max:2048',
-            'matric_id' => 'required|alpha|unique:parking_area'
+            'matric_no' => 'unique:book_parking'
 
         ]);
 
@@ -55,15 +56,15 @@ class BookParkingController extends Controller
         $path = $request->file('fileToUpload')->store('public/files');
 
         BookParking::create([
-            'book_id' => $request->book_id,
+            'book_id' => uniqid('B', true),
             'matric_no' => $request->matric_no,
-            'plate_no' => $request ->plate_no,
-            'area_id' => $request ->area_id,
-            'lot_id' => $request ->lot_id,
-            'lot_status' => $request ->lot_status,
+            'plate_no' => $request->plate_no,
+            'area_id' => $request->area_id,
+            'lot_id' => $request->lot_id,
+            'lot_status' => $request->lot_status,
             'license_image' => $path,
         ]);
-        return redirect()->route('bookParking.index')->with('status', 'File Has been uploaded successfully');
+        return redirect()->route('parkingArea.index')->with('status', 'File Has been uploaded successfully');
     }
 
     /**
@@ -73,10 +74,10 @@ class BookParkingController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-{
-            $parkings = ParkingArea::find($id);
-            return view('student.bookParking.bookingform', compact('parkings'));
-}
+    {
+        $myParking = BookParking::findOrFail($id);
+        return view('student.myParking.studentmyParking', compact('myParking'));
+    }
 
     /**
      * Show the form for editing the specified resource.
@@ -84,9 +85,13 @@ class BookParkingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id, $lot)
     {
-        //
+        $parkings = ParkingArea::find($id);
+        return view('student.bookParking.bookingform', [
+            'parkings' => $parkings,
+            'lot' => $lot
+        ]);
     }
 
     /**

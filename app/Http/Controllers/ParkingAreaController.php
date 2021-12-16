@@ -106,19 +106,22 @@ class ParkingAreaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $validatedData = $request->validate([
-            'fileToUpload' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+        $request->validate([
+            'fileToUpload' => 'image|mimes:jpeg,png,jpg|max:2048',
+            
         ]);
-        $name = $request->file('fileToUpload')->getClientOriginalName();
-
+        $parking_id = ParkingArea::find($id);
+        if ($request->hasFile('fileToUpload')){
         $path = $request->file('fileToUpload')->store('public/files');
-
-        ParkingArea::whereId($id)->update([
-            'area_id' => $request->area_id,
-            'area_name' => $request->area_name,
-            'area_image' => $path,
-            'area_total_availability' => $request->quantity
-        ]);
+        $parking_id->area_image = $path;
+        }
+        
+        $parking_id->area_id = $request->input('area_id');
+        $parking_id->area_name = $request->input('area_name');
+        
+        $parking_id->area_total_availability = $request->input('quantity');
+        $parking_id->update();
+       
         return redirect()->route('parkingArea.index')->with('status', 'File Has been updated successfully');
     }
     /**

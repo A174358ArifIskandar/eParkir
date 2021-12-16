@@ -40,6 +40,7 @@ Route::get('/invoice', function () {
  });
 
 Route::resource('parkingArea', ParkingAreaController::class);
-Route::resource('bookParking', BookParkingController::class);
+Route::get('/bookParking/{id}/edit/{lot}',[BookParkingController::class,'edit'])->name('bookParking.edit');
+Route::resource('bookParking', BookParkingController::class)->except(['edit']);
 
 // Route::get('/displayParking', [App\Http\Controllers\ParkingController::class, 'index'])->name('displayParking');

@@ -52,95 +52,27 @@
           <div class="col-12">
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Parking Area</h3>
-                <i class="fas fa-angle-double-right"></i>
+                <a href="{{route('parkingArea.index')}}"><h3 class="card-title">Parking Area</h3></a>
               </div>
-              
               <!-- /.card-header -->
               <div class="card-body">
               <div class="row">
-          <div class="col-md-3 col-sm-6 col-12">
-            <div class="info-box bg-info">
-              <span class="info-box-icon"><i class="far fa-bookmark"></i></span>
-
+              @foreach($parkings as $parking)  
+              <div class="col-md-3 col-sm-6 col-12">
+              <div class="info-box bg-success">
               <div class="info-box-content">
-                <span class="info-box-text">Blok A</span>
-                <span class="info-box-number">20 Parking Lots</span>
-
+                <span class="info-box-text">{{$parking->area_name}}</span>
+                <span class="info-box-number">{{$parking->area_total_availability}} Parking Lots</span>
                 <div class="progress">
-                  <div class="progress-bar" style="width: 70%"></div>
+                <div class="progress-bar" style="width: 70%"></div>
                 </div>
-                <span class="progress-description">
-                  5 Parking Lots Available
-                </span>
-              </div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-          </div>
-          <!-- /.col -->
-          <div class="col-md-3 col-sm-6 col-12">
-            <div class="info-box bg-success">
-              <span class="info-box-icon"><i class="far fa-thumbs-up"></i></span>
-
-              <div class="info-box-content">
-                <span class="info-box-text">Blok C</span>
-                <span class="info-box-number">10 Parking Lots</span>
-
-                <div class="progress">
-                  <div class="progress-bar" style="width: 70%"></div>
+                <span class="progress-description">{{$parking->area_total_availability}} Parking Lots Available</span>
                 </div>
-                <span class="progress-description">
-                    3 Parking Lots Available
-                </span>
-              </div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-          </div>
-          <!-- /.col -->
-          <div class="col-md-3 col-sm-6 col-12">
-            <div class="info-box bg-warning">
-              <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>
-
-              <div class="info-box-content">
-                <span class="info-box-text">Blok F</span>
-                <span class="info-box-number">15 Parking Lots</span>
-
-                <div class="progress">
-                  <div class="progress-bar" style="width: 70%"></div>
+                <!-- /.info-box-content -->
                 </div>
-                <span class="progress-description">
-                9 Parking Lots Available
-                </span>
-              </div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-          </div>
-          <!-- /.col -->
-          <div class="col-md-3 col-sm-6 col-12">
-            <div class="info-box bg-danger">
-              <span class="info-box-icon"><i class="fas fa-comments"></i></span>
-
-              <div class="info-box-content">
-                <span class="info-box-text">Dataran Dinamis</span>
-                <span class="info-box-number">25 Parking Lots</span>
-
-                <div class="progress">
-                  <div class="progress-bar" style="width: 70%"></div>
+                <!-- /.info-box -->
                 </div>
-                <span class="progress-description">
-                18 Parking Lots Available
-                </span>
-              </div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-          </div>
-          <!-- /.col -->
-        </div>
-                
+              @endforeach
               <!-- /.card-body -->
             </div>
             <!-- /.card -->

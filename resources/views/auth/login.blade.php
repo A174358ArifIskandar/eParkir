@@ -2,13 +2,15 @@
 
 @section('content')
 <style>
-    .background-img{
+    html,body{
+        height: 100vh!important;
+        width: 100vw!important;
+    }
+    body{
         background-image:url('/images/bg-kpz.jpg');
         background-position: center center;
         background-repeat: no-repeat;
-        background-size: cover;
-        height: 100vh;
-        width: 100%;
+        background-size: 100% 100%;
         
     }
     .card-login{
@@ -19,7 +21,7 @@
         color: white;
     }
 </style>
-<body class="background-img">
+<body>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">

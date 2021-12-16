@@ -21,6 +21,7 @@
         </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
+    <section class="content">
     <form action="" method="post" enctype="multipart/form-data">
         @csrf
         <fieldset>
@@ -86,7 +87,7 @@
                                             1/1/2022
                                         </td>
                                         <td class="project-state">
-                                            <span class="badge badge-success">Approved</span>
+                                            <span class="badge badge-warning">Pending</span>
                                         </td>
 
                                     </tr>

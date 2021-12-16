@@ -42,7 +42,7 @@
                 @foreach($parkings as $parking)
                 <div class="col-md-3 col-sm-6 col-12">
                 <a href="{{route('parkingArea.show', $parking->area_id)}}">
-                  <div class="info-box bg-danger">
+                  <div class="info-box bg-success">
                     <div class="info-box-content">
                       <span class="info-box-text">{{$parking->area_name}}</span>
                       <span class="info-box-number">{{$parking->area_total_availability}} Parking Lots</span>
