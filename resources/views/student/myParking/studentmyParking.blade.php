@@ -69,7 +69,7 @@
 
                                     <tr>
                                         <td style="width: 10%" class="text-center">
-                                            Blok A
+                                        {{ $MyParking->area_id }}
                                         </td>
                                         <td style="width: 10%" class="text-center">
                                             A01

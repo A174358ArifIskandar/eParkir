@@ -34,6 +34,7 @@ class BookParkingController extends Controller
     {
         $MyParking = BookParking::all();
         return view('student.myParking.studentmyParking', compact('MyParking'));
+
     }
 
     /**
