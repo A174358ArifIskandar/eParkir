@@ -1,3 +1,4 @@
+<?php $page = 'parkingArea'; ?>
 @extends('layouts.student')
 @section('title','View Parking')
 @section('content')
@@ -22,7 +23,7 @@
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="/home">Home</a></li>
                         <li class="breadcrumb-item"><a href="{{route('parkingArea.index')}}">Parking Area</a></li>
-                        <li class="breadcrumb-item active">@yield('title')</li>
+                        <li class="breadcrumb-item active">{{$parkings->area_name}}</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -63,7 +64,7 @@
                                 <td class="project-state">
                                     <span class="badge badge-success">Available</span>
                                 </td>
-                                <td class="project-actions text-right center">
+                                <td class="project-actions text-center">
                                     <a class="btn btn-primary btn-sm" href="{{ route('bookParking.edit', [$parkings->area_id, $i]) }}">
                                         <i class="fas fa-folder">
                                         </i>

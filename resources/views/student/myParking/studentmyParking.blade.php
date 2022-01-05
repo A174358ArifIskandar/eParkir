@@ -1,3 +1,4 @@
+<?php $page = 'bookParking'; ?>
 @extends('layouts.student')
 @section('title','My Parking')
 
@@ -69,7 +70,7 @@
 
                                     <tr>
                                         <td style="width: 10%" class="text-center">
-                                        {{ $MyParking->area_id }}
+                                            Blok A
                                         </td>
                                         <td style="width: 10%" class="text-center">
                                             A01

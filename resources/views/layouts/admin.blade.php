@@ -112,15 +112,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-            <li class="nav-item menu-open">
-              <a href="/home" class="nav-link active">
+            <li class="<?php if($page=='home'){echo 'nav-item menu-open';} else{echo 'nav-item';}?>">
+              <a href="/home" class="nav-link">
                 <i class="nav-icon fas fa-home"></i>
                 <p>
                   Dashboard
                 </p>
               </a>
             </li>
-            <li class="nav-item">
+            <li class="<?php if($page == 'parkingStatus'){echo 'nav-item menu-open';} else{echo 'nav-item';}?>">
               <a href="{{route('parkingStatus.index')}}" class="nav-link">
                 <i class="nav-icon fas fa-th"></i>
                 <p>
@@ -129,7 +129,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </p>
               </a>
             </li>
-            <li class="nav-item">
+            <li class="<?php if($page=='parkingArea'){echo 'nav-item menu-open';} else{echo 'nav-item';}?>">
               <a href="{{route('parkingArea.index')}}" class="nav-link">
                 <i class="nav-icon fas fa-clipboard"></i>
                 <p>
@@ -138,8 +138,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </p>
               </a>
             </li>
-            <li class="nav-item">
-              <a href="" class="nav-link">
+            <li class="<?php if($page=='history'){echo 'nav-item menu-open';} else{echo 'nav-item';}?>">
+              <a href="/history" class="nav-link">
                 <i class="nav-icon fas fa-book"></i>
                 <p>
                   Booking History

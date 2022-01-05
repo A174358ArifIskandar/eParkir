@@ -1,3 +1,4 @@
+<?php $page = 'home';?>
 @extends('layouts.admin')
 @section('title','Dashboard')
 @section('content')

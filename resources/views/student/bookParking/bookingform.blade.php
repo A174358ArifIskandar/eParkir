@@ -1,3 +1,4 @@
+<?php $page = 'parkingArea'; ?>
 @extends('layouts.student')
 @section('title','Book Parking')
 
@@ -15,6 +16,7 @@
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="/home">Home</a></li>
             <li class="breadcrumb-item"><a href="{{route('parkingArea.index')}}">Parking Area</a></li>
+            <li class="breadcrumb-item"><a href="{{route('parkingArea.show', $parkings->area_id)}}">{{$parkings->area_name}}</a></li>
             <li class="breadcrumb-item active">Book Parking</li>
           </ol>
         </div><!-- /.col -->
@@ -71,7 +73,7 @@
               <input type="" value="{{ $parkings->area_id }}{{ $lot }}" name="lot_id" id="lot_id" class="form-control" placeholder="" readonly>
             </div>
             <div class="form-group">
-              <input type="hidden" name="lot_status" value="pending" id="id" class="form-control">
+              <input type="hidden" name="lot_status" value="Pending" id="id" class="form-control">
             </div>
             <div>
               <label for="exampleInputFile">License Card</label>

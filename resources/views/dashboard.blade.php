@@ -1,3 +1,4 @@
+<?php $page = 'home'; ?>
 @extends('layouts.student')
 @section('title','Dashboard')
 @section('content')

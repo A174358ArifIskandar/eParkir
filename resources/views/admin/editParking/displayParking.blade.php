@@ -1,3 +1,4 @@
+<?php $page = 'parkingArea';?>
 @extends('layouts.admin')
 @section('title','View Parking')
 @section('content')

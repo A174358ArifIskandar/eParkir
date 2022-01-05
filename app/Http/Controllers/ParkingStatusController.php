@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BookParking;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ParkingStatusController extends Controller
 {
@@ -14,7 +17,13 @@ class ParkingStatusController extends Controller
     public function index()
     {
         //
-        return view('admin.ManageBooking.formRequest');
+        $role = Auth::user()->role;
+        if ($role == 'admin') {
+            $bookings = BookParking::all();
+            return view('admin.ManageBooking.bookingRequest', compact('bookings'));
+        } else {
+            return view('layouts.error');
+        }
     }
 
     /**
@@ -47,6 +56,13 @@ class ParkingStatusController extends Controller
     public function show($id)
     {
         //
+        $role = Auth::user()->role;
+        if ($role == 'admin') {
+        $bookings = BookParking::findOrFail($id);
+        return view('admin.ManageBooking.formRequest', compact('bookings'));
+        } else{
+            return view('layouts.error');
+        }
     }
 
     /**

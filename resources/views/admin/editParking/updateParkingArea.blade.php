@@ -1,5 +1,5 @@
+<?php $page = 'parkingArea';?>
 @extends('layouts.admin')
-
 @section('title','Edit Parking Area')
 @section('content')
 <!-- <body> -->

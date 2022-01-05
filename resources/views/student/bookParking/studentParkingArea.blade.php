@@ -1,3 +1,4 @@
+<?php $page = 'parkingArea'; ?>
 @extends('layouts.student')
 @section('title','Parking Area')
 
@@ -41,18 +42,18 @@
               <div class="row">
                 @foreach($parkings as $parking)
                 <div class="col-md-3 col-sm-6 col-12">
-                <a href="{{route('parkingArea.show', $parking->area_id)}}">
-                  <div class="info-box bg-success">
-                    <div class="info-box-content">
-                      <span class="info-box-text">{{$parking->area_name}}</span>
-                      <span class="info-box-number">{{$parking->area_total_availability}} Parking Lots</span>
-                      <div class="progress">
-                        <div class="progress-bar" style="width: 70%"></div>
-                      </div>
-                      <span class="progress-description">
-                        {{$parking->area_total_availability}} Parking Lots Available
-                      </span>
-                      <!-- <form action="{{route('parkingArea.destroy', $parking->area_id)}}" method="post">
+                  <a href="{{route('parkingArea.show', $parking->area_id)}}">
+                    <div class="info-box bg-success">
+                      <div class="info-box-content">
+                        <span class="info-box-text">{{$parking->area_name}}</span>
+                        <span class="info-box-number">{{$parking->area_total_availability}} Parking Lots</span>
+                        <div class="progress">
+                          <div class="progress-bar" style="width: 70%"></div>
+                        </div>
+                        <span class="progress-description">
+                          {{$parking->area_total_availability}} Parking Lots Available
+                        </span>
+                        <!-- <form action="{{route('parkingArea.destroy', $parking->area_id)}}" method="post">
                         @csrf
                         @method('delete')
                         <div class="btn-group">
@@ -68,10 +69,11 @@
                         </div>
 
                       </form> -->
+                      </div>
+                      <!-- /.info-box-content -->
                     </div>
-                    <!-- /.info-box-content -->
-                  </div>
-                  <!-- /.info-box -->
+                    <!-- /.info-box -->
+                  </a>
                 </div>
                 @endforeach
                 <!-- </div> -->
@@ -84,6 +86,7 @@
       </div>
       <!-- /.row -->
     </div><!-- /.container-fluid -->
+  </section>
 </div>
 <!-- /.content -->
 @endsection

@@ -1,3 +1,4 @@
+<?php $page = 'bookParking'; ?>
 @extends('layouts.student')
 @section('title','Invoice')
 

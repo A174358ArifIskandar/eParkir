@@ -36,12 +36,19 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //     return view('editParking.editParkingArea'); 
 // });
 
-Route::get('/invoice', function () {     
-     return view('student.myParking.invoice'); 
- });
+Route::get('/invoice', function () {
+    return view('student.myParking.invoice');
+});
+
+Route::get('/history', function () {
+    return view('admin.booking.bookingHistory');
+});
+Route::get('/error', function () {
+    return view('layouts.error');
+});
 
 Route::resource('parkingArea', ParkingAreaController::class);
-Route::get('/bookParking/{id}/edit/{lot}',[BookParkingController::class,'edit'])->name('bookParking.edit');
+Route::get('/bookParking/{id}/edit/{lot}', [BookParkingController::class, 'edit'])->name('bookParking.edit');
 Route::resource('bookParking', BookParkingController::class)->except(['edit']);
 
 Route::resource('parkingStatus', ParkingStatusController::class);
