@@ -46,6 +46,9 @@ Route::get('/history', function () {
 Route::get('/error', function () {
     return view('layouts.error');
 });
+Route::get('/decline', function () {
+    return view('admin.ManageBooking.declineDescription');
+});
 
 Route::resource('parkingArea', ParkingAreaController::class);
 Route::get('/bookParking/{id}/edit/{lot}', [BookParkingController::class, 'edit'])->name('bookParking.edit');

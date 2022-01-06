@@ -157,7 +157,10 @@
                       </div>
                       <div class="text-center">
                         <input type="submit" value="Approve" class="btn btn-success">
-                        <input type="submit" value="Decline" class="btn btn-danger">
+                        <a href="/decline" class="btn btn-danger" style="margin-right: 0px;">                                
+                                 Decline
+                            </a>
+                        <!-- <input type="submit" value="Decline" class="btn btn-danger"> -->
                       </div>
               </fieldset>
         </div>

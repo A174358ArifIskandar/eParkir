@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BookingHistory;
 use App\Models\BookParking;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -34,6 +35,8 @@ class ParkingStatusController extends Controller
     public function create()
     {
         //
+        $Request = BookingHistory::all();
+        return view('admin.ManageBooking.bookingRequest', compact('Request'));
     }
 
     /**
@@ -45,6 +48,13 @@ class ParkingStatusController extends Controller
     public function store(Request $request)
     {
         //
+        BookingHistory::create([
+            'book_details_id' => uniqid('D', true),
+            'matric_no' => $request->matric_no,
+            'book_status' => $request->book_status,
+            'description' => $request->description,
+        ]);
+        return redirect()->route('parkingStatus.index');
     }
 
     /**
