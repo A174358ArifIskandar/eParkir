@@ -18,4 +18,8 @@ class BookParking extends Model
     {
         return 'book_id';
     }
+    
+    public function user(){
+        return $this->belongsTo(User::class, 'matric_no');
+    }
 }

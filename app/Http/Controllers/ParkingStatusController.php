@@ -54,6 +54,12 @@ class ParkingStatusController extends Controller
             'book_status' => $request->book_status,
             'description' => $request->description,
         ]);
+        $lotStatus = BookParking::find($request->book_details_id);
+        if ($request->book_status=='approved'){
+            $lotStatus->update(['lot_status'=>'approved']);
+        } else if ($request->book_status=='declined'){
+            $lotStatus->delete();
+        }
         return redirect()->route('parkingStatus.index');
     }
 
@@ -84,6 +90,8 @@ class ParkingStatusController extends Controller
     public function edit($id)
     {
         //
+        $bookings = BookParking::findOrFail($id);
+        return view('admin.ManageBooking.declineDescription', compact('bookings'));
     }
 
     /**

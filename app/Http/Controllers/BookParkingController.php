@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BookingHistory;
 use App\Models\BookParking;
 use App\Models\ParkingArea;
 use App\Models\User;
@@ -32,8 +33,8 @@ class BookParkingController extends Controller
      */
     public function create()
     {
-        $MyParking = BookParking::all();
-        return view('student.myParking.studentmyParking', compact('MyParking'));
+        $myParking = BookParking::where('matric_no',auth()->user()->matric_no)->first();
+        return view('student.myParking.studentmyParking', compact('myParking'));
 
     }
 
@@ -105,6 +106,14 @@ class BookParkingController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $booking_id = BookingHistory::find($id);
+        $booking_id->book_details_id = $request->input('area_id');
+        $booking_id->area_name = $request->input('area_name');
+        
+        $booking_id->area_total_availability = $request->input('quantity');
+        $booking_id->update();
+       
+        return redirect()->route('parkingArea.index')->with('status', 'File Has been updated successfully');
     }
 
     /**

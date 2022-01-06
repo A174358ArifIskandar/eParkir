@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BookParking;
 use App\Models\ParkingArea;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -75,12 +76,17 @@ class ParkingAreaController extends Controller
     {
         //
         $role = Auth::user()->role;
+        $parkings = ParkingArea::findOrFail($id);
+        $booked = BookParking::where('area_id',$parkings->area_id)->get(['lot_status','book_id','lot_id'])->mapWithKeys(function($item){
+            return [$item->lot_id=>['lot_status'=>$item->lot_status,'book_id'=>$item->book_id]];
+        });
+        $lots = collect(range(1,$parkings->area_total_availability))->mapWithKeys(function($item)use($parkings){
+            return [$parkings->area_id.$item=>null];
+        })->merge($booked);
         if ($role == 'admin') {
-            $parkings = ParkingArea::findOrFail($id);
-            return view('admin.editParking.displayParking', compact('parkings'));
+            return view('admin.editParking.displayParking', compact('parkings','lots'));
         } else {
-            $parkings = ParkingArea::findOrFail($id);
-            return view('student.bookParking.studentDisplay', compact('parkings'));
+            return view('student.bookParking.studentDisplay', compact('parkings','lots'));
         }
     }
 

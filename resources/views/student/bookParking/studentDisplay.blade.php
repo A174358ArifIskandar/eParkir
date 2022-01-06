@@ -56,7 +56,41 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @for($i=1; $i<=$parkings->area_total_availability; $i++)
+                        @foreach($lots as $area_id=>$lot)
+                        <tr>
+                            <td>
+                                {{$area_id}}
+                            </td>
+                            <td class="project-state">
+                                @if(isset($lot))
+                                @if($lot['lot_status']=='approved')
+                                <span class="badge badge-danger">Occupied</span>
+                                @else
+                                <span class="badge badge-warning">Pending</span>
+                                @endif
+                                @else
+                                <span class="badge badge-success">Available</span>
+                                @endif
+                            </td>
+                            <td class="project-actions text-center">
+                                @if(isset($lot))
+                                <button class="btn btn-primary btn-sm disabled">
+                                    <i class="fas fa-folder">
+                                    </i>
+                                    Book
+                                </button>
+                                @else
+                                <a class="btn btn-primary btn-sm" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'',$area_id)]) }}">
+                                    <i class="fas fa-folder">
+                                    </i>
+                                    Book
+                                </a>
+                                @endif
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                    <!-- @for($i=1; $i<=$parkings->area_total_availability; $i++)
                             <tr>
                                 <td>
                                     {{$parkings->area_id}}{{$i}}
@@ -70,20 +104,10 @@
                                         </i>
                                         Book
                                     </a>
-                                    <!-- <a class="btn btn-info btn-sm" href="#">
-                                <i class="fas fa-pencil-alt">
-                                </i>
-                                Edit
-                            </a>
-                            <a class="btn btn-danger btn-sm" href="#">
-                                <i class="fas fa-trash">
-                                </i>
-                                Delete
-                            </a> -->
+                                    
                                 </td>
                             </tr>
-                    </tbody>
-                    @endfor
+                    @endfor -->
                 </table>
 
             </div>
@@ -91,5 +115,6 @@
             <!-- /.card-body -->
         </div>
         <!-- /.card -->
+    </section>
 </div>
 @endsection

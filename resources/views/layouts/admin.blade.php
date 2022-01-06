@@ -120,8 +120,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </p>
               </a>
             </li>
-            <li class="<?php if($page == 'parkingStatus'){echo 'nav-item menu-open';} else{echo 'nav-item';}?>">
-              <a href="{{route('parkingStatus.index')}}" class="nav-link">
+            <li class="nav-item">
+              <a href="{{route('parkingStatus.index')}}" class="<?php if($page == 'parkingStatus'){echo 'nav-link active';} else{echo 'nav-link';}?>">
                 <i class="nav-icon fas fa-th"></i>
                 <p>
                   Parking Status

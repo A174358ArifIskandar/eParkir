@@ -73,7 +73,7 @@
               <input type="" value="{{ $parkings->area_id }}{{ $lot }}" name="lot_id" id="lot_id" class="form-control" placeholder="" readonly>
             </div>
             <div class="form-group">
-              <input type="hidden" name="lot_status" value="Pending" id="id" class="form-control">
+              <input type="hidden" name="lot_status" value="pending" id="id" class="form-control">
             </div>
             <div>
               <label for="exampleInputFile">License Card</label>
