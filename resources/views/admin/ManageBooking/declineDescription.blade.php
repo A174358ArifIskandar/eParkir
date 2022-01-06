@@ -47,21 +47,29 @@
                 <!-- <label for="id">Book ID:</label> -->
                 <input type="hidden" name="book_details_id" id="id" class="form-control">
               </div>
+              <div class="form-group">
+                        <label for="matric">Matric No:</label>
+                        <input type="" value="" name="matric_no" id="matric" class="form-control" placeholder="" readonly>
+                      </div>
+                      <div class="form-group">
+                        <label for="name">Booking Status:</label>
+                        <input type="" value="" name="book_status" id="name" class="form-control" placeholder="" readonly>
+                      </div>
                 <label for="matric">Reason to decline request:</label>
                         <div class="custom-control custom-radio">
-                          <input class="custom-control-input" type="radio" id="customRadio1" name="customRadio">
+                          <input class="custom-control-input" type="radio" id="customRadio1" name="customRadio" required>
                           <label for="customRadio1" class="custom-control-label">Invalid license</label>
                         </div>
                         <div class="custom-control custom-radio">
-                          <input class="custom-control-input" type="radio" id="customRadio2" name="customRadio" checked="">
+                          <input class="custom-control-input" type="radio" id="customRadio2" name="customRadio" required>
                           <label for="customRadio2" class="custom-control-label">Year 1 Student</label>
                         </div>
                         <div class="custom-control custom-radio">
-                          <input class="custom-control-input" type="radio" id="customRadio3" name="customRadio" checked="">
+                          <input class="custom-control-input" type="radio" id="customRadio3" name="customRadio" required>
                           <label for="customRadio3" class="custom-control-label">Invalid student card</label>
                         </div>
                         <div class="custom-control custom-radio">
-                          <input class="custom-control-input" type="radio" id="customRadio4" name="customRadio" checked="">
+                          <input class="custom-control-input" type="radio" id="customRadio4" name="customRadio" required>
                           <label for="customRadio4" class="custom-control-label">Others</label>
                         </div>
                     </div>
