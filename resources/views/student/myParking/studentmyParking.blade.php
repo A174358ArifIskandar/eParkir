@@ -88,7 +88,11 @@
                                                 {{$myParking->updated_at}}
                                             </td>
                                             <td class="project-state">
-                                                {{$myParking->lot_status}}
+                                                @if($myParking['lot_status']=='approved')
+                                                <span class="badge badge-success">Approved</span>
+                                                @else
+                                                <span class="badge badge-warning">Pending</span>
+                                                @endif
                                             </td>
 
                                         </tr>

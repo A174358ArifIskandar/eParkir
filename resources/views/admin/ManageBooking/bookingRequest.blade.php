@@ -23,10 +23,16 @@
 
     <!-- Default box -->
     <section class="content">
-    <div class="card card-info">
-      <div class="card-header">
-        <h3 class="card-title">List of Booking</h3>
-      </div>
+        @if ($message = Session::get('success'))
+        <div class="alert alert-success">
+            <h5><i class="icon fas fa-check"></i> Success!</h5>
+            <p>{{ $message }}</p>
+        </div>
+        @endif
+        <div class="card card-info">
+            <div class="card-header">
+                <h3 class="card-title">List of Booking</h3>
+            </div>
 
             <div class="card-body p-0">
                 <table class="table table-striped projects">
@@ -74,7 +80,11 @@
                                 {{$booking->lot_id}}
                             </td>
                             <td class="project-state">
-                                <span class="badge badge-warning">{{$booking->lot_status}}</span>
+                                @if($booking['lot_status']=='approved')
+                                <span class="badge badge-success">Approved</span>
+                                @else
+                                <span class="badge badge-warning">Pending</span>
+                                @endif
                             </td>
                             <td style="width: 10%" class="text-center">
                                 <a class="btn btn-primary btn-sm" href="{{route('parkingStatus.show', $booking->book_id)}}">

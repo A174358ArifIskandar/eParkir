@@ -18,4 +18,7 @@ class BookingHistory extends Model
     {
         return 'book_details_id';
     }
+    public function user(){
+        return $this->belongsTo(User::class, 'matric_no');
+    }
 }

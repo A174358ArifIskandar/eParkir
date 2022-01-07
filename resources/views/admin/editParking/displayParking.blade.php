@@ -73,11 +73,19 @@
                                 @endif
                             </td>
                             <td class="project-actions text-center">
-                                <a class="btn btn-primary btn-sm" href="#">
+                                @if(isset($lot))
+                                <a class="btn btn-primary btn-sm" href="{{ route('parkingStatus.show', $lot['book_id'])}}">
                                     <i class="fas fa-folder">
                                     </i>
                                     View
                                 </a>
+                                @else
+                                <a class="btn btn-primary btn-sm disabled">
+                                    <i class="fas fa-folder">
+                                    </i>
+                                    View
+                                </a>
+                                @endif
                             </td>
                         </tr>
                         @endforeach

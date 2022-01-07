@@ -16,14 +16,14 @@ class ParkingAreaController extends Controller
      */
     public function index()
     {
-        $role=Auth::user()->role;
+        $role = Auth::user()->role;
         //
         if ($role == 'admin') {
             $parkings = ParkingArea::all();
             return view('admin.editParking.editParkingArea', compact('parkings'));
         } else {
             $parkings = ParkingArea::all();
-            return view('student.bookParking.studentParkingArea' , compact('parkings'));
+            return view('student.bookParking.studentParkingArea', compact('parkings'));
         }
     }
 
@@ -63,7 +63,7 @@ class ParkingAreaController extends Controller
             'area_image' => $path,
             'area_total_availability' => $request->quantity
         ]);
-        return redirect()->route('parkingArea.index')->with('status', 'File Has been uploaded successfully');
+        return redirect()->route('parkingArea.index')->with('success', 'Parking Area has been added successfully');
     }
 
     /**
@@ -77,16 +77,16 @@ class ParkingAreaController extends Controller
         //
         $role = Auth::user()->role;
         $parkings = ParkingArea::findOrFail($id);
-        $booked = BookParking::where('area_id',$parkings->area_id)->get(['lot_status','book_id','lot_id'])->mapWithKeys(function($item){
-            return [$item->lot_id=>['lot_status'=>$item->lot_status,'book_id'=>$item->book_id]];
+        $booked = BookParking::where('area_id', $parkings->area_id)->get(['lot_status', 'book_id', 'lot_id'])->mapWithKeys(function ($item) {
+            return [$item->lot_id => ['lot_status' => $item->lot_status, 'book_id' => $item->book_id]];
         });
-        $lots = collect(range(1,$parkings->area_total_availability))->mapWithKeys(function($item)use($parkings){
-            return [$parkings->area_id.$item=>null];
+        $lots = collect(range(1, $parkings->area_total_availability))->mapWithKeys(function ($item) use ($parkings) {
+            return [$parkings->area_id . $item => null];
         })->merge($booked);
         if ($role == 'admin') {
-            return view('admin.editParking.displayParking', compact('parkings','lots'));
+            return view('admin.editParking.displayParking', compact('parkings', 'lots'));
         } else {
-            return view('student.bookParking.studentDisplay', compact('parkings','lots'));
+            return view('student.bookParking.studentDisplay', compact('parkings', 'lots'));
         }
     }
 
@@ -96,7 +96,7 @@ class ParkingAreaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    
+
     public function edit($id)
     {
         $parkings = ParkingArea::find($id);
@@ -114,21 +114,21 @@ class ParkingAreaController extends Controller
     {
         $request->validate([
             'fileToUpload' => 'image|mimes:jpeg,png,jpg|max:2048',
-            
+
         ]);
         $parking_id = ParkingArea::find($id);
-        if ($request->hasFile('fileToUpload')){
-        $path = $request->file('fileToUpload')->store('public/files');
-        $parking_id->area_image = $path;
+        if ($request->hasFile('fileToUpload')) {
+            $path = $request->file('fileToUpload')->store('public/files');
+            $parking_id->area_image = $path;
         }
-        
+
         $parking_id->area_id = $request->input('area_id');
         $parking_id->area_name = $request->input('area_name');
-        
+
         $parking_id->area_total_availability = $request->input('quantity');
         $parking_id->update();
-       
-        return redirect()->route('parkingArea.index')->with('status', 'File Has been updated successfully');
+
+        return redirect()->route('parkingArea.index')->with('success', 'Parking Area has been updated successfully');
     }
     /**
      * Remove the specified resource from storage.
@@ -141,6 +141,6 @@ class ParkingAreaController extends Controller
         $color = ParkingArea::find($parking_id);
         $color->delete();
         return redirect()->route('parkingArea.index')
-            ->with('success', 'Parking Area deleted successfully');
+            ->with('success', 'Parking Area has been deleted successfully');
     }
 }

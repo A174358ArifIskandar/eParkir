@@ -40,9 +40,6 @@ Route::get('/invoice', function () {
     return view('student.myParking.invoice');
 });
 
-Route::get('/history', function () {
-    return view('admin.booking.bookingHistory');
-});
 Route::get('/error', function () {
     return view('layouts.error');
 });

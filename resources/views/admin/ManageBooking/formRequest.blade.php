@@ -1,10 +1,7 @@
 <?php $page = 'parkingStatus'; ?>
 @extends('layouts.admin')
 @section('title','Booking Status')
-
 @section('content')
-
-
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
   <div class="content-header">
@@ -88,7 +85,11 @@
                     {{$bookings->updated_at}}
                   </td>
                   <td class="project-state">
-                    <span class="badge badge-warning">{{$bookings->lot_status}}</span>
+                    @if($bookings['lot_status']=='approved')
+                    <span class="badge badge-success">Approved</span>
+                    @else
+                    <span class="badge badge-warning">Pending</span>
+                    @endif
                   </td>
 
                 </tr>
@@ -156,7 +157,7 @@
                     <input type="hidden" value="approved" name="book_status" id="name" class="form-control" placeholder="" readonly>
                   </div>
                   <div class="form-group">
-                    <input type="hidden" value="NaN" name="description" id="name" class="form-control" placeholder="" readonly>
+                    <input type="hidden" value="-" name="description" id="name" class="form-control" placeholder="" readonly>
                   </div>
                   <div class="text-center">
                     <input type="submit" value="Approve" class="btn btn-success">

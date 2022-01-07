@@ -35,8 +35,8 @@ class ParkingStatusController extends Controller
     public function create()
     {
         //
-        $Request = BookingHistory::all();
-        return view('admin.ManageBooking.bookingRequest', compact('Request'));
+        $histories = BookingHistory::all();
+        return view('admin.ManageBooking.bookingHistory', compact('histories'));
     }
 
     /**
@@ -60,7 +60,7 @@ class ParkingStatusController extends Controller
         } else if ($request->book_status=='declined'){
             $lotStatus->delete();
         }
-        return redirect()->route('parkingStatus.index');
+        return redirect()->route('parkingStatus.index')->with('success', 'Booking Request has been updated successfully');
     }
 
     /**
@@ -115,5 +115,7 @@ class ParkingStatusController extends Controller
     public function destroy($id)
     {
         //
+        // $bookings = BookParking::findOrFail($id);
+        // return view('admin.ManageBooking.viewDetails', compact('bookings'));
     }
 }

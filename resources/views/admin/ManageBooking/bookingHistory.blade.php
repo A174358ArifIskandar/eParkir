@@ -37,7 +37,7 @@
           <thead>
             <tr>
               <th style="width: 10%" class="">
-                Book ID
+                Book Details ID
               </th>
               <th style="width: 10%" class="text-center">
                 Name
@@ -54,52 +54,34 @@
             </tr>
           </thead>
           <tbody>
-
+            @foreach($histories as $history)
             <tr>
               <td style="width: 10%" class="">
-                P77afSAg2sgae67rsg5
+                {{$history->book_details_id}}
               </td>
               <td style="width: 10%" class="text-center">
-                Pejol
+                {{$history->user->user_name}}
               </td>
               <td class="project-state">
-                <span class="badge badge-danger">Rejected</span>
-              </td>
-              <td style="width: 10%" class="text-center">
-                Tak cukup umur
-              </td>
-              <td style="width: 10%" class="text-center">
-                21/5/2021
-              </td>
-            </tr>
-
-            <tr>
-              <td style="width: 10%" class="">
-                PkhjFVj23hgiu8yKJf6
-              </td>
-              <td style="width: 10%" class="text-center">
-                Iskandar
-              </td>
-              <td class="project-state">
+                @if($history['book_status']=='approved')
                 <span class="badge badge-success">Approved</span>
+                @else
+                <span class="badge badge-danger">Declined</span>
+                @endif
               </td>
               <td style="width: 10%" class="text-center">
-                Tahniah
+                {{$history->description}}
               </td>
               <td style="width: 10%" class="text-center">
-                13/1/2022
+                {{$history->updated_at}}
               </td>
             </tr>
+            @endforeach
           </tbody>
-
         </table>
-
       </div>
     </div>
     <!-- <body> -->
-
-
-
     <!-- /.content -->
   </section>
 </div>

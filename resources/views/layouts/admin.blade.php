@@ -139,7 +139,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </a>
             </li>
             <li class="<?php if($page=='history'){echo 'nav-item menu-open';} else{echo 'nav-item';}?>">
-              <a href="/history" class="nav-link">
+              <a href="{{route('parkingStatus.create')}}" class="nav-link">
                 <i class="nav-icon fas fa-book"></i>
                 <p>
                   Booking History

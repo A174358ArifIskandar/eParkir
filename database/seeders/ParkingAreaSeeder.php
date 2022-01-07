@@ -23,8 +23,8 @@ class ParkingAreaSeeder extends Seeder
         ]);
 
         DB::table('parking_area')->insert([
-            'area_id' => 'D',
-            'area_name' => 'Blok D',
+            'area_id' => 'F',
+            'area_name' => 'Blok F',
             'area_image' => 'public/files/aat86E17T7HjOmfWEcprOP374GauGOfrz8yJiK0g.jpg',
             'area_total_availability' => '15',
         ]);
