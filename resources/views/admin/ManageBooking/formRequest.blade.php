@@ -112,6 +112,7 @@
         <form action="{{ route('parkingStatus.store') }}" method="post" enctype="multipart/form-data">
           @csrf
           <fieldset>
+          <div class="col-md-6 offset-md-3">
             <div class="card card-info">
               <div class="card-header">
                 <h3 class="card-title">Student Details</h3>
@@ -169,6 +170,7 @@
                 </div>
               </form>
             </div>
+          </div>
           </fieldset>
         </form>
       </section>
