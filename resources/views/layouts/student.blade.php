@@ -28,14 +28,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
       var data = google.visualization.arrayToDataTable([
         ['Parking', 'Occupied', 'Available', { role: 'annotation' } ],
-        ['Blok A', 10, 11, ''],
-        ['Blok C', 5, 9, ''],
-        ['Dataran Dinamis', 2, 13, '']
+        ['Blok A', 16, 24, ''],
+        ['Blok C', 15, 19, ''],
+        ['Blok F', 12, 13, '']
       ]);
 
       var options = {
         title: 'Parking Area',
-        width: 600,
+        width: 500,
         height: 400,
         legend: {
         position: 'top',
@@ -124,7 +124,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
           <div class="image">
-            <img src="{{ asset('images/pejol.jpg') }}" class="img-circle elevation-2" alt="User Image">
+            <img src="{{ asset('dist/img/boxed-bg.jpg') }}" class="img-circle elevation-2" alt="User Image">
           </div>
           <div class="info">
             <a href="#" class="d-block">{{ \Illuminate\Support\Facades\Auth::user()->user_name }} | {{ ucfirst(\Illuminate\Support\Facades\Auth::user()->role) }}</a>
@@ -165,7 +165,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         } else {
                           echo 'nav-item';
                         } ?>">
-              <a href="/profile" class="nav-link">
+              <a href="{{route('profile.index')}}" class="nav-link">
                 <i class="nav-icon fas fa-user"></i>
                 <p>
                   Profile
@@ -234,6 +234,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   <!-- jQuery -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  @stack('scripts')
 </body>
 
 </html>

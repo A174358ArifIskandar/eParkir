@@ -28,9 +28,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
       var data = google.visualization.arrayToDataTable([
         ['Parking', 'Occupied', 'Available', { role: 'annotation' } ],
-        ['Blok A', 10, 11, ''],
-        ['Blok C', 5, 9, ''],
-        ['Dataran Dinamis', 2, 13, '']
+        ['Blok A', 16, 24, ''],
+        ['Blok C', 25, 5, ''],
+        ['Blok F', 12, 18, '']
       ]);
 
       var options = {

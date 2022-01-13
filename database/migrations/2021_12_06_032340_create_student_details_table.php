@@ -17,8 +17,9 @@ class CreateStudentDetailsTable extends Migration
             $table->string('matric_no');
             $table->string("student_faculty");
             $table->string("student_session");
-            $table->string('room_no');
+            $table->string('alt_email');
             $table->string('college_name');
+            $table->string('room_no');
             $table->string('student_image');
             $table->foreign('matric_no')->references('matric_no')->on('users')->onDelete('cascade');
             $table->timestamps();

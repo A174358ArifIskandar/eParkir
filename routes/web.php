@@ -4,6 +4,7 @@ use App\Http\Controllers\ParkingController;
 use App\Http\Controllers\ParkingAreaController;
 use App\Http\Controllers\BookParkingController;
 use App\Http\Controllers\ParkingStatusController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -51,6 +52,6 @@ Route::get('/profile', function () {
 Route::resource('parkingArea', ParkingAreaController::class);
 Route::get('/bookParking/{id}/edit/{lot}', [BookParkingController::class, 'edit'])->name('bookParking.edit');
 Route::resource('bookParking', BookParkingController::class)->except(['edit']);
-
+Route::resource('profile', ProfileController::class);
 Route::resource('parkingStatus', ParkingStatusController::class);
 // Route::get('/displayParking', [App\Http\Controllers\ParkingController::class, 'index'])->name('displayParking');

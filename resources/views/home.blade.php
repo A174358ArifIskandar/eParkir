@@ -27,11 +27,11 @@
     <div class="container-fluid">
       <div class="row">
         <!-- ./col -->
-        <div class="col-lg-3 col-6">
+        <div class="col-lg-4 col-6">
           <!-- small box -->
           <div class="small-box bg-success">
             <div class="inner">
-              <h3>53<sup style="font-size: 20px"></sup></h3>
+              <h3>1<sup style="font-size: 20px"></sup></h3>
 
               <p>Approved Request</p>
             </div>
@@ -42,11 +42,11 @@
           </div>
         </div>
         <!-- ./col -->
-        <div class="col-lg-3 col-6">
+        <div class="col-lg-4 col-6">
           <!-- small box -->
           <div class="small-box bg-warning">
             <div class="inner">
-              <h3>44</h3>
+              <h3>2</h3>
 
               <p>Pending Requests</p>
             </div>
@@ -57,11 +57,11 @@
           </div>
         </div>
         <!-- ./col -->
-        <div class="col-lg-3 col-6">
+        <div class="col-lg-4 col-6">
           <!-- small box -->
           <div class="small-box bg-danger">
             <div class="inner">
-              <h3>65</h3>
+              <h3>1</h3>
 
               <p>Declined Requests</p>
             </div>
@@ -75,7 +75,7 @@
 
       <div class="row">
         <div class="col-md-12">
-          <div class="card">
+          <div class="card card-info">
             <div class="card-header">
               <h5 class="card-title">Preferred Area Comparison</h5>
 
@@ -111,7 +111,7 @@
                   <div class="card-body">
                     <div class="chart">
 
-                      <div id="piechart" style="width: 900px; height: 500px;"></div>
+                      <div id="piechart" style="width: 900px; height: 350px;"></div>
 
                     </div>
                   </div>
@@ -120,41 +120,31 @@
                 <!-- /.col -->
                 <div class="col-md-4">
                   <p class="text-center">
-                    <strong>Parking Availability</strong>
+                    <strong>Occupied Parking</strong>
                   </p>
 
                   <div class="progress-group">
                     Blok A
-                    <span class="float-right"><b>160</b>/200</span>
+                    <span class="float-right"><b>16</b>/40</span>
                     <div class="progress progress-sm">
-                      <div class="progress-bar bg-primary" style="width: 80%"></div>
+                      <div class="progress-bar bg-primary" style="width: 40%"></div>
                     </div>
                   </div>
                   <!-- /.progress-group -->
-
-                  <div class="progress-group">
-                    Blok F
-                    <span class="float-right"><b>310</b>/400</span>
-                    <div class="progress progress-sm">
-                      <div class="progress-bar bg-danger" style="width: 75%"></div>
-                    </div>
-                  </div>
-
-                  <!-- /.progress-group -->
-                  <div class="progress-group">
-                    <span class="progress-text">Dataran Dinamis</span>
-                    <span class="float-right"><b>480</b>/800</span>
-                    <div class="progress progress-sm">
-                      <div class="progress-bar bg-success" style="width: 60%"></div>
-                    </div>
-                  </div>
 
                   <!-- /.progress-group -->
                   <div class="progress-group">
                     Blok C
-                    <span class="float-right"><b>250</b>/500</span>
+                    <span class="float-right"><b>25</b>/30</span>
                     <div class="progress progress-sm">
-                      <div class="progress-bar bg-warning" style="width: 50%"></div>
+                      <div class="progress-bar bg-warning" style="width: 80%"></div>
+                    </div>
+                  </div>
+                  <div class="progress-group">
+                    Blok F
+                    <span class="float-right"><b>12</b>/30</span>
+                    <div class="progress progress-sm">
+                      <div class="progress-bar bg-danger" style="width: 40%"></div>
                     </div>
                   </div>
                   <!-- /.progress-group -->
