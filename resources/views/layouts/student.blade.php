@@ -123,8 +123,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </p>
               </a>
             </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">
+            <li class="<?php if ($page == 'profile') {
+                          echo 'nav-item menu-open';
+                        } else {
+                          echo 'nav-item';
+                        } ?>">
+              <a href="/profile" class="nav-link">
                 <i class="nav-icon fas fa-user"></i>
                 <p>
                   Profile

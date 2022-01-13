@@ -112,7 +112,7 @@
         <form action="{{ route('parkingStatus.store') }}" method="post" enctype="multipart/form-data">
           @csrf
           <fieldset>
-          <div class="col-md-6 offset-md-3">
+
             <div class="card card-info">
               <div class="card-header">
                 <h3 class="card-title">Student Details</h3>
@@ -120,57 +120,63 @@
               <!-- /.card-header -->
               <!-- form start -->
               <form>
-                <div class="card-body">
-                  <div class="form-group">
-                    <!-- <label for="id">Book ID:</label> -->
-                    <input type="hidden" name="book_details_id" value="{{$bookings->book_id}}" id="id" class="form-control">
-                  </div>
-                  <div class="form-group">
-                    <label for="matric">Matric No:</label>
-                    <input type="" value="{{$bookings->matric_no}}" name="matric_no" id="matric" class="form-control" placeholder="" readonly>
-                  </div>
-                  <div class="form-group">
-                    <label for="name">Student Name:</label>
-                    <input type="" value="{{$bookings->user->user_name}}" name="student_name" id="name" class="form-control" placeholder="" readonly>
-                  </div>
-                  <div class="form-group">
-                    <label for="plate">Plate No:</label>
-                    <input type="text" value="{{$bookings->plate_no}}" name="plate_no" id="name" class="form-control" placeholder="Enter plate no" readonly>
-                  </div>
-                  <div class="form-group">
-                    <label for="area_name">Blok:</label>
-                    <input type="" value="{{$bookings->area_id}}" name="area_id" id="area_id" class="form-control" placeholder="" readonly>
-                  </div>
-                  <div class="form-group">
-                    <label for="lot_id">Lot ID:</label>
-                    <input type="" value="{{$bookings->lot_id}}" name="lot_id" id="lot_id" class="form-control" placeholder="" readonly>
-                  </div>
-                  <!-- <div class="form-group">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="card-body">
+                      <div class="form-group">
+                        <!-- <label for="id">Book ID:</label> -->
+                        <input type="hidden" name="book_details_id" value="{{$bookings->book_id}}" id="id" class="form-control">
+                      </div>
+                      <div class="form-group">
+                        <label for="matric">Matric No:</label>
+                        <input type="" value="{{$bookings->matric_no}}" name="matric_no" id="matric" class="form-control" placeholder="" readonly>
+                      </div>
+                      <div class="form-group">
+                        <label for="name">Student Name:</label>
+                        <input type="" value="{{$bookings->user->user_name}}" name="student_name" id="name" class="form-control" placeholder="" readonly>
+                      </div>
+                      <div class="form-group">
+                        <label for="plate">Plate No:</label>
+                        <input type="text" value="{{$bookings->plate_no}}" name="plate_no" id="name" class="form-control" placeholder="Enter plate no" readonly>
+                      </div>
+                      <div class="form-group">
+                        <label for="area_name">Blok:</label>
+                        <input type="" value="{{$bookings->area_id}}" name="area_id" id="area_id" class="form-control" placeholder="" readonly>
+                      </div>
+                      <div class="form-group">
+                        <label for="lot_id">Lot ID:</label>
+                        <input type="" value="{{$bookings->lot_id}}" name="lot_id" id="lot_id" class="form-control" placeholder="" readonly>
+                      </div>
+                      <!-- <div class="form-group">
                         <input type="hidden" name="lot_status" value="pending" id="id" class="form-control">
                       </div> -->
-                  <div>
-                    <label for="exampleInputFile">License Card</label>
-                    <div class="card-body">
-                      <img src="{{Storage::url($bookings->license_image)}}" id='image_preview' class="img-fluid">
                     </div>
                   </div>
-                  <div class="form-group">
-                    <input type="hidden" value="approved" name="book_status" id="name" class="form-control" placeholder="" readonly>
-                  </div>
-                  <div class="form-group">
-                    <input type="hidden" value="-" name="description" id="name" class="form-control" placeholder="" readonly>
-                  </div>
-                  <div class="text-center">
-                    <input type="submit" value="Approve" class="btn btn-success">
-                    <a href="{{route('parkingStatus.edit', $bookings->book_id)}}" class="btn btn-danger" style="margin-right: 0px;">
-                      Decline
-                    </a>
-                    <!-- <input type="submit" value="Decline" class="btn btn-danger"> -->
+                  <div class="col-md-6">
+                    <div class="card-body">
+                      <label for="exampleInputFile">License Card</label>
+                      <div class="card-body">
+                        <img src="{{Storage::url($bookings->license_image)}}" id='image_preview' class="img-fluid">
+                      </div>
+
+                      <div class="form-group">
+                        <input type="hidden" value="approved" name="book_status" id="name" class="form-control" placeholder="" readonly>
+                      </div>
+                      <div class="form-group">
+                        <input type="hidden" value="-" name="description" id="name" class="form-control" placeholder="" readonly>
+                      </div>
+                      <div class="text-center">
+                        <input type="submit" value="Approve" class="btn btn-success">
+                        <a href="{{route('parkingStatus.edit', $bookings->book_id)}}" class="btn btn-danger" style="margin-right: 0px;">
+                          Decline
+                        </a>
+                        <!-- <input type="submit" value="Decline" class="btn btn-danger"> -->
+                      </div>
+                    </div>
                   </div>
                 </div>
               </form>
             </div>
-          </div>
           </fieldset>
         </form>
       </section>

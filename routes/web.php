@@ -43,8 +43,9 @@ Route::get('/invoice', function () {
 Route::get('/error', function () {
     return view('layouts.error');
 });
-Route::get('/decline', function () {
-    return view('admin.ManageBooking.declineDescription');
+
+Route::get('/profile', function () {
+    return view('student.profile');
 });
 
 Route::resource('parkingArea', ParkingAreaController::class);
