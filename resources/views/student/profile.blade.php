@@ -4,26 +4,54 @@
 @section('content')
 <!-- <body> -->
 <div class="content-wrapper">
-    <div class="col-md-3 offset-md-1">
+    <div class="col-md-6 offset-md-3">
         <div class="card card-primary card-outline">
             <div class="card-body box-profile">
                 <div class="text-center">
-                    <img class="profile-user-img img-fluid img-circle" src="../../dist/img/user4-128x128.jpg" alt="User profile picture">
+                    <img class="profile-user-img img-fluid img-circle" src="https://lh3.googleusercontent.com/ogw/ADea4I7C7F9mSg-v9Ior-s25WHMHkrJv6drbPMmSdrwK9Q=s83-c-mo" alt="User profile picture">
                 </div>
-                <h3 class="profile-username text-center">Hanis Batrisyia</h3>
-                <p class="text-muted text-center">A175218</p>
-                <strong><i class="fas fa-book mr-1"></i> Fakulti</strong>
-                <p class="text-muted">
-                    Teknologi &amp; Sains Maklumat</p>
-                <hr>
-                <strong><i class="far fa-envelope-open"></i> Email</strong>
-                <p class="text-muted">A175218@siswa.ukm.edu.my</p>
-                <hr>
-                <strong><i class="fas fa-phone-alt mr-1"></i> No Tel</strong>
-                <p class="text-muted">
-                    019-3883177
-                </p>
-                <hr>
+                <br>
+                <form class="form-horizontal">
+                      <div class="form-group row">
+                        <label for="inputName" class="col-sm-2 col-form-label">Matric No</label>
+                        <div class="col-sm-10">
+                          <input type="email" class="form-control" id="inputMatricNo" placeholder="Matric Number">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="inputEmail" class="col-sm-2 col-form-label">Name</label>
+                        <div class="col-sm-10">
+                          <input type="email" class="form-control" id="inputName" placeholder="Name">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="inputName2" class="col-sm-2 col-form-label">E-Mail</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="inputemail" placeholder="E-mail">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="inputName2" class="col-sm-2 col-form-label">Password</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="inputemail" placeholder="Password">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="inputName2" class="col-sm-2 col-form-label">Bilik Kediaman</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="inputemail" placeholder="Example: G012">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="inputSkills" class="col-sm-2 col-form-label">Phone Number</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="inputSkills" placeholder="+601-####-####">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                      <a href="#" class="btn btn-primary btn-block"><b>Edit</b></a>
+                      </div>
+                    </form>
             </div>
         </div>
     </div>
