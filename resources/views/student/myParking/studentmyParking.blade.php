@@ -106,7 +106,7 @@
             <br>
             <fieldset>
                 <div class="card card-info">
-                    <div class="card-body p-2">
+                    <div class="card-body p-3">
                         <div class="row justify-content-center">
                             <div class="col-5 table-responsive">
                                 <table class="table table-bordered table-striped projects">
@@ -115,15 +115,17 @@
                                     <thead>
                                         <tr>
                                             <th>Date</th>
-                                            <th>Invoice No</th>
+                                            <th>Booking ID</th>
                                             <th>Amount (RM)</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>13/1/2022</td>
-                                            <td>INP 19178</td>
-                                            <td>100.00</td>
+                                            <td style="width: 40%" class="text-center">
+                                                {{$myParking->updated_at}}
+                                            <td style="width: 10%" class="text-center">
+                                                {{$myParking->book_id}}
+                                            <td>120.00</td>
                                         </tr>
 
                                     </tbody>

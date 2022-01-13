@@ -23,6 +23,8 @@
     </section>
 
     <section class="content">
+    <form action="" method="post" enctype="multipart/form-data">
+            @csrf
       <div class="container-fluid">
         <div class="row">
           <div class="col-12">
@@ -70,8 +72,7 @@
                 </div>
                 <!-- /.col -->
                 <div class="col-sm-4 invoice-col">
-                  <b>Invoice: INP 19178</b><br>
-                  <br>
+                  <b>Invoice:</b>
                   <b>Order ID:</b> 4F3S8J<br>
                   <b>Payment Due:</b> 17/12/2021<br>
                   <b>Account:</b> 968-34567
@@ -87,15 +88,13 @@
                     <thead>
                     <tr>
                       <th>Title</th>
-                      <th>Serial #</th>
-                      <th>Description</th>
+                      <th>Booking Id</th>
                       <th>Subtotal</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
                       <td>Parking KPZ</td>
-                      <td>455-981-221</td>
                       <td></td>
                       <td>RM120.00</td>
                     </tr>
@@ -110,34 +109,14 @@
                 <!-- accepted payments column -->
                 <div class="col-6">
                   <p class="lead">Payment Methods:</p>
-                  <img src="../../dist/img/credit/visa.png" alt="Visa">
-                  <img src="../../dist/img/credit/mastercard.png" alt="Mastercard">
-                  <img src="../../dist/img/credit/american-express.png" alt="American Express">
-                  <img src="../../dist/img/credit/paypal2.png" alt="Paypal">
-
-                  <p class="text-muted well well-sm shadow-none" style="margin-top: 10px;">
-                    Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles, weebly ning heekya handango imeem
-                    plugg
-                    dopplr jibjab, movity jajah plickers sifteo edmodo ifttt zimbra.
-                  </p>
+                  <p class="text">Please Pay at the KPZ Office</p>
                 </div>
                 <!-- /.col -->
-                <div class="col-6">
-                  <p class="lead">Amount Due 17/12/2021</p>
-
                   <div class="table-responsive">
                     <table class="table">
                       <tbody><tr>
-                        <th style="width:50%">Subtotal:</th>
-                        <td>RM120.00</td>
-                      </tr>
-                      <tr>
-                        <th>Tax (5%)</th>
-                        <td>RM6.00</td>
-                      </tr>
-                      <tr>
                         <th>Total:</th>
-                        <td>RM126.00</td>
+                        <td>RM120.00</td>
                       </tr>
                     </tbody></table>
                   </div>
@@ -160,6 +139,7 @@
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
+    </form>
     </section>
     <!-- /.content -->
   </div>
