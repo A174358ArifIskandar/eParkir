@@ -16,6 +16,43 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- Theme style -->
   <link href="{{ asset('dist/css/adminlte.min.css') }}" rel="stylesheet">
+
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', {
+      'packages': ['corechart']
+    });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+      var data = google.visualization.arrayToDataTable([
+        ['Parking', 'Occupied', 'Available', { role: 'annotation' } ],
+        ['Blok A', 10, 11, ''],
+        ['Blok C', 5, 9, ''],
+        ['Dataran Dinamis', 2, 13, '']
+      ]);
+
+      var options = {
+        title: 'Parking Area',
+        width: 600,
+        height: 400,
+        legend: {
+        position: 'top',
+        maxLines: 3
+        },
+        bar: {
+          groupWidth: '75%'
+        },
+        isStacked: true
+      };
+
+      var chart = new google.visualization.BarChart(document.getElementById('piechart'));
+
+      chart.draw(data, options);
+    }
+  </script>
+
 </head>
 
 <body class="hold-transition sidebar-mini">
