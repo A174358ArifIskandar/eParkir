@@ -77,7 +77,7 @@
         <div class="col-md-12">
           <div class="card">
             <div class="card-header">
-              <h5 class="card-title">Preferred Area Comparison per Semester</h5>
+              <h5 class="card-title">Preferred Area Comparison</h5>
 
               <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -104,21 +104,15 @@
             <div class="card-body">
               <div class="row">
                 <div class="col-md-8">
-                  <p class="text-center">
+                  <!-- <p class="text-center">
                     <strong>Booking Area Comparison</strong>
-                  </p>
+                  </p> -->
 
                   <div class="card-body">
                     <div class="chart">
-                      <div class="chartjs-size-monitor">
-                        <div class="chartjs-size-monitor-expand">
-                          <div class=""></div>
-                        </div>
-                        <div class="chartjs-size-monitor-shrink">
-                          <div class=""></div>
-                        </div>
-                      </div>
-                      <canvas id="barChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 330px;" width="412" height="312" class="chartjs-render-monitor"></canvas>
+
+                      <div id="piechart" style="width: 900px; height: 500px;"></div>
+
                     </div>
                   </div>
                   <!-- /.chart-responsive -->
@@ -169,59 +163,19 @@
               </div>
               <!-- /.row -->
             </div>
-            <!-- ./card-body -->
-            <div class="card-footer">
-              <div class="row">
-                <div class="col-sm-3 col-6">
-                  <div class="description-block border-right">
-                    <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> 17%</span>
-                    <h5 class="description-header">$35,210.43</h5>
-                    <span class="description-text">TOTAL REVENUE</span>
-                  </div>
-                  <!-- /.description-block -->
-                </div>
-                <!-- /.col -->
-                <div class="col-sm-3 col-6">
-                  <div class="description-block border-right">
-                    <span class="description-percentage text-warning"><i class="fas fa-caret-left"></i> 0%</span>
-                    <h5 class="description-header">$10,390.90</h5>
-                    <span class="description-text">TOTAL COST</span>
-                  </div>
-                  <!-- /.description-block -->
-                </div>
-                <!-- /.col -->
-                <div class="col-sm-3 col-6">
-                  <div class="description-block border-right">
-                    <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> 20%</span>
-                    <h5 class="description-header">$24,813.53</h5>
-                    <span class="description-text">TOTAL PROFIT</span>
-                  </div>
-                  <!-- /.description-block -->
-                </div>
-                <!-- /.col -->
-                <div class="col-sm-3 col-6">
-                  <div class="description-block">
-                    <span class="description-percentage text-danger"><i class="fas fa-caret-down"></i> 18%</span>
-                    <h5 class="description-header">1200</h5>
-                    <span class="description-text">GOAL COMPLETIONS</span>
-                  </div>
-                  <!-- /.description-block -->
-                </div>
-              </div>
-              <!-- /.row -->
-            </div>
-            <!-- /.card-footer -->
+
+            <!-- /.card -->
           </div>
-          <!-- /.card -->
+          <!-- /.col -->
+          
         </div>
-        <!-- /.col -->
+
       </div>
     </div>
   </section>
   <!-- ./col -->
 
-</div>
-</section>
+
 </div>
 <!-- /.content-wrapper -->
 @endsection

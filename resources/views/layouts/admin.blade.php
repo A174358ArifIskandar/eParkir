@@ -16,6 +16,43 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- Theme style -->
   <link href="{{ asset('dist/css/adminlte.min.css') }}" rel="stylesheet">
+
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', {
+      'packages': ['corechart']
+    });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+      var data = google.visualization.arrayToDataTable([
+        ['Parking', 'Occupied', 'Available', { role: 'annotation' } ],
+        ['Blok A', 10, 11, ''],
+        ['Blok C', 5, 9, ''],
+        ['Dataran Dinamis', 2, 13, '']
+      ]);
+
+      var options = {
+        title: 'Parking Area',
+        width: 600,
+        height: 400,
+        legend: {
+        position: 'top',
+        maxLines: 3
+        },
+        bar: {
+          groupWidth: '75%'
+        },
+        isStacked: true
+      };
+
+      var chart = new google.visualization.BarChart(document.getElementById('piechart'));
+
+      chart.draw(data, options);
+    }
+  </script>
+
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -112,7 +149,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-            <li class="<?php if($page=='home'){echo 'nav-item menu-open';} else{echo 'nav-item';}?>">
+            <li class="<?php if ($page == 'home') {
+                          echo 'nav-item menu-open';
+                        } else {
+                          echo 'nav-item';
+                        } ?>">
               <a href="/home" class="nav-link">
                 <i class="nav-icon fas fa-home"></i>
                 <p>
@@ -121,7 +162,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </a>
             </li>
             <li class="nav-item">
-              <a href="{{route('parkingStatus.index')}}" class="<?php if($page == 'parkingStatus'){echo 'nav-link active';} else{echo 'nav-link';}?>">
+              <a href="{{route('parkingStatus.index')}}" class="<?php if ($page == 'parkingStatus') {
+                                                                  echo 'nav-link active';
+                                                                } else {
+                                                                  echo 'nav-link';
+                                                                } ?>">
                 <i class="nav-icon fas fa-th"></i>
                 <p>
                   Parking Status
@@ -129,7 +174,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </p>
               </a>
             </li>
-            <li class="<?php if($page=='parkingArea'){echo 'nav-item menu-open';} else{echo 'nav-item';}?>">
+            <li class="<?php if ($page == 'parkingArea') {
+                          echo 'nav-item menu-open';
+                        } else {
+                          echo 'nav-item';
+                        } ?>">
               <a href="{{route('parkingArea.index')}}" class="nav-link">
                 <i class="nav-icon fas fa-clipboard"></i>
                 <p>
@@ -138,7 +187,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </p>
               </a>
             </li>
-            <li class="<?php if($page=='history'){echo 'nav-item menu-open';} else{echo 'nav-item';}?>">
+            <li class="<?php if ($page == 'history') {
+                          echo 'nav-item menu-open';
+                        } else {
+                          echo 'nav-item';
+                        } ?>">
               <a href="{{route('parkingStatus.create')}}" class="nav-link">
                 <i class="nav-icon fas fa-book"></i>
                 <p>
@@ -182,7 +235,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   <!-- jQuery -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-@stack('scripts')
+  @stack('scripts')
 </body>
 
 </html>
