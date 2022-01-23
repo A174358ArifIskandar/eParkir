@@ -13,14 +13,7 @@ class CreatePaymentTable extends Migration
      */
     public function up()
     {
-        Schema::create('payment', function (Blueprint $table) {
-            $table->string('payment_id')->primary();
-            $table->string('book_id');
-            $table->string('book_price');
-
-            $table->foreign('book_id')->references('book_id')->on('book_parking')->onDelete('cascade');
-            $table->timestamps();
-        });
+       
     }
 
     /**
@@ -30,6 +23,6 @@ class CreatePaymentTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('payment');
+      
     }
 }

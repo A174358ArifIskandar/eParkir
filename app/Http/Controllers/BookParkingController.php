@@ -54,11 +54,23 @@ class BookParkingController extends Controller
         ]);
 
         $name = $request->file('fileToUpload')->getClientOriginalName();
-
+        $myParking = BookParking::all()->last();
+        $numeric_id = intval(substr($myParking->book_id, 1)); //retrieve numeric value of 'V001' (1)
+        $numeric_id++; //increment
+        if(mb_strlen($numeric_id) == 1)
+        {
+           $zero_string = '00';
+        }elseif(mb_strlen($numeric_id) == 2)
+        {
+           $zero_string = '0';
+        }else{
+           $zero_string = '';
+        }
+        $new_id = 'B'.$zero_string.$numeric_id;
         $path = $request->file('fileToUpload')->store('public/files');
 
         BookParking::create([
-            'book_id' => uniqid('B', true),
+            'book_id' => $new_id,
             'matric_no' => $request->matric_no,
             'plate_no' => $request->plate_no,
             'area_id' => $request->area_id,

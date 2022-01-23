@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 class CreateBookParkingTable extends Migration
@@ -14,7 +15,7 @@ class CreateBookParkingTable extends Migration
     public function up()
     {
         Schema::create('book_parking', function (Blueprint $table) {
-            $table->string('book_id')->primary();
+            $table->string('book_id');
             $table->string('matric_no');
             $table->string('plate_no');
             $table->string('area_id');
@@ -26,6 +27,7 @@ class CreateBookParkingTable extends Migration
             $table->foreign('area_id')->references('area_id')->on('parking_area')->onDelete('cascade');
             $table->timestamps();
         });
+        
     }
 
     /**
