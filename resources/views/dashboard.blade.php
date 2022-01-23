@@ -126,10 +126,7 @@
           </div>
           <!-- /.col -->
 
-
-
-
-
+          @if(isset($myParking->area_id))
           <div class="card card-info">
             <div class="card-header">
               <h3 class="card-title">My Parking</h3>
@@ -140,34 +137,28 @@
                 </button>
               </div>
             </div>
+
             <div class="card-body p-0">
               <table class="table">
                 <tbody>
-
                   <tr>
                     <td>Parking Area</td>
                     <td>Blok {{$myParking->area_id}}</td>
                     <td class="text-right py-0 align-middle">
-
                     </td>
                   </tr>
                   <tr>
                     <td>Lot ID</td>
                     <td>{{$myParking->lot_id}}</td>
                     <td class="text-right py-0 align-middle">
-
                     </td>
                   </tr>
-
                   <tr>
                     <td>Plate No</td>
                     <td>{{$myParking->plate_no}}</td>
                     <td class="text-right py-0 align-middle">
-
                     </td>
-
                   </tr>
-
                   <tr>
                     <td>Status</td>
                     <td>@if($myParking['lot_status']=='approved')
@@ -177,15 +168,16 @@
                       @endif
                     </td>
                     <td class="text-right py-0 align-middle">
-
                     </td>
-
                   </tr>
                 </tbody>
               </table>
             </div>
+
             <!-- /.card-body -->
           </div>
+          @else
+          @endif
         </div>
       </div>
 

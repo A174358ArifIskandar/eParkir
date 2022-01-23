@@ -1,52 +1,51 @@
-<?php $page = 'bookParking'; ?>
-@extends('layouts.student')
-@section('title','Invoice')
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html lang="en">
 
-@section('content')
-<!-- <body> -->
-    <div class="content-wrapper" style="min-height: 2646.8px;">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>Invoice</h1>
-          </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Invoice</li>
-            </ol>
-          </div>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Invoice</title>
+  <script src="{{ asset('js/app.js') }}" defer></script>
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Theme style -->
+  <link href="{{ asset('dist/css/adminlte.min.css') }}" rel="stylesheet">
+
+</head>
+
+<body class="hold-transition sidebar-mini">
+  <!-- <div class="content-wrapper" style="min-height: 2646.8px;"> -->
+  <section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1>Invoice</h1>
         </div>
-      </div><!-- /.container-fluid -->
-    </section>
-
-    <section class="content">
+      </div>
+    </div>
+  </section>
+  <section class="content">
     <form action="" method="post" enctype="multipart/form-data">
-            @csrf
+      @csrf
       <div class="container-fluid">
         <div class="row">
           <div class="col-12">
-            <div class="callout callout-info">
-              <h5><i class="fas fa-info"></i> Note:</h5>
-              This page has been enhanced for printing. Click the print button at the bottom of the invoice to test.
-            </div>
 
-
-            <!-- Main content -->
             <div class="invoice p-3 mb-3">
-              <!-- title row -->
               <div class="row">
                 <div class="col-12">
                   <h4>
-                  <i class="fas fa-car"></i></i>  E-Parkir
-                    <small class="float-right">Date: 17/12/2021</small>
+                    <i class="fas fa-car"></i></i> E-Parkir
+                    <small class="float-right">Date: {{$current_date_time}}</small>
                   </h4>
                 </div>
-                <!-- /.col -->
               </div>
-              <!-- info row -->
               <div class="row invoice-info">
                 <div class="col-sm-4 invoice-col">
                   From
@@ -59,88 +58,69 @@
                     e-Mel: kpz@ukm.edu.my; cc: aslong@ukm.edu.my
                   </address>
                 </div>
-                <!-- /.col -->
                 <div class="col-sm-4 invoice-col">
                   To
                   <address>
-                    <strong>Abu Bakar</strong><br>
-                    Rumah Banglo Besar Tepi Jalan<br>
-                    Jalan Orang-Orang Kaya<br>
-                    Phone: (601)-1234-1234<br>
-                    Email: orangTampan@gmail.com
+                    <strong>{{$student->user->user_name}}</strong><br>
+                    {{$student->matric_no}}<br>
+                    Phone: {{$student->user->user_phone}}<br>
+                    Email: {{$student->user->user_email}}
                   </address>
                 </div>
-                <!-- /.col -->
                 <div class="col-sm-4 invoice-col">
-                  <b>Invoice:</b>
-                  <b>Order ID:</b> 4F3S8J<br>
-                  <b>Payment Due:</b> 17/12/2021<br>
-                  <b>Account:</b> 968-34567
+                  <b>Parking Area:</b> Blok {{$myParking->area_id}}<br>
+                  <b>Parking Lot:</b> {{$myParking->lot_id}}<br>
                 </div>
-                <!-- /.col -->
               </div>
-              <!-- /.row -->
-
-              <!-- Table row -->
               <div class="row">
                 <div class="col-12 table-responsive">
                   <table class="table table-striped">
                     <thead>
-                    <tr>
-                      <th>Title</th>
-                      <th>Booking Id</th>
-                      <th>Subtotal</th>
-                    </tr>
+                      <tr>
+                        <th>Title</th>
+                        <th>Booking Id</th>
+                        <th>Subtotal</th>
+                      </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                      <td>Parking KPZ</td>
-                      <td></td>
-                      <td>RM120.00</td>
-                    </tr>
+                      <tr>
+                        <td>Parking KPZ</td>
+                        <td>{{$myParking->book_id}}</td>
+                        <td>RM120.00</td>
+                      </tr>
                     </tbody>
                   </table>
                 </div>
-                <!-- /.col -->
               </div>
-              <!-- /.row -->
-
               <div class="row">
-                <!-- accepted payments column -->
                 <div class="col-6">
                   <p class="lead">Payment Methods:</p>
                   <p class="text">Please Pay at the KPZ Office</p>
                 </div>
-                <!-- /.col -->
-                  <div class="table-responsive">
-                    <table class="table">
-                      <tbody><tr>
+                <div class="table-responsive">
+                  <table class="table">
+                    <tbody>
+                      <tr>
                         <th>Total:</th>
                         <td>RM120.00</td>
                       </tr>
-                    </tbody></table>
-                  </div>
+                    </tbody>
+                  </table>
                 </div>
-                <!-- /.col -->
               </div>
-              <!-- /.row -->
-
-              <!-- this row will not appear when printing -->
-              <div class="row no-print">
-                <div class="col-12">
-                  <a href="invoice-print.html" rel="noopener" target="_blank" class="btn btn-default"><i class="fas fa-print"></i> Print</a>
-                  <button type="button" class="btn btn-primary float-right" style="margin-right: 5px;">
-                    <i class="fas fa-download"></i> Generate PDF
-                  </button>
-                </div>
+              <div class="text-center">
+                This page is auto-generated and no signature required.
               </div>
             </div>
-            <!-- /.invoice -->
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
+            <div class="row no-print">
+              <div class="col-12 text-center">
+                <a href="javascript:window.print();" rel="noopener" class="btn btn-default"><i class="fas fa-print text-center"></i> Print</a>
+              </div>
+            </div>
+          </div>
+        </div><!-- /.col -->
+      </div><!-- /.row -->
     </form>
-    </section>
-    <!-- /.content -->
-  </div>
-  @endsection
+  </section>
+  <!-- </div> -->
+</body>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BookParking;
 use App\Models\Student;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -27,7 +28,11 @@ class ProfileController extends Controller
      */
     public function create()
     {
-        //
+        $current_date_time = \Carbon\Carbon::now()->toDateTimeString();
+        $student = Student::where('matric_no',auth()->user()->matric_no)->first();
+        $myParking = BookParking::where('matric_no',auth()->user()->matric_no)->first();
+        return view('student.myParking.invoice', compact('student','current_date_time','myParking'));
+
     }
 
     /**
