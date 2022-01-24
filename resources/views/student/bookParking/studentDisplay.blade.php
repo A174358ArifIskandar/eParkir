@@ -43,7 +43,7 @@
                 <h3 class="card-title">{{$parkings->area_name}}</h3>
             </div>
             <div class="container-fluid">
-                <svg width="210mm" height="297mm" viewBox="0 0 210 297" version="1.1" id="svg5" inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)" sodipodi:docname="MapBlokA.svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+                <svg height="210mm" width="297mm" viewBox="0 0 210 297" version="1.1" id="svg5" inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)" sodipodi:docname="MapBlokA.svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
                     <sodipodi:namedview id="namedview7" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:document-units="mm" showgrid="false" inkscape:zoom="1.4289282" inkscape:rotation="90" inkscape:cx="99.725097" inkscape:cy="651.88721" inkscape:window-width="1920" inkscape:window-height="991" inkscape:window-x="-9" inkscape:window-y="-9" inkscape:window-maximized="1" inkscape:current-layer="layer1">
                         <inkscape:grid type="xygrid" id="grid9" />
                     </sodipodi:namedview>
@@ -53,50 +53,50 @@
                         </marker>
                     </defs>
                     <g stroke="#000000" stroke-width="0.23665" fill="#e6e6e6" fill-rule="evenodd">
-                        <rect class="lot" id="rect33" width="42.333332" height="21.166676" x="5.2916665" y="269.875" >
+                        <rect class="lot" id="rect33" height="42.333332" width="21.166676" y="5.2916665" x="269.875" >
                             <title>A1</title>
                         </rect>
-                        <rect class="lot" id="rect33-3" width="42.333332" height="21.166666" x="5.2916665" y="248.70833" />
-                        <rect class="lot" id="rect33-8" width="42.333332" height="21.166666" x="5.291667" y="227.54167" />
-                        <rect class="lot" id="rect33-8-7" width="42.333332" height="21.16666" x="5.291667" y="206.375" />
-                        <rect class="lot" id="rect33-8-2" width="42.333332" height="21.166666" x="5.2916679" y="185.20834" />
-                        <rect class="lot" id="rect33-8-8" width="42.333332" height="21.166666" x="5.2916679" y="164.04167" />
-                        <rect class="lot" id="rect33-8-20" width="42.333332" height="21.166676" x="5.2916679" y="142.875" />
-                        <rect class="lot" id="rect33-8-83" width="42.333332" height="21.166662" x="5.2916679" y="121.70833" />
-                        <rect class="lot" id="rect33-8-1" width="42.333332" height="21.166674" x="5.2916679" y="100.54166" />
-                        <rect class="lot" id="rect33-8-28" width="42.333332" height="21.166668" x="5.2916679" y="79.374985" />
-                        <rect class="lot" id="rect33-8-28-9" width="42.333332" height="21.166668" x="63.500011" y="100.54167" />
-                        <rect class="lot" id="rect33-8-28-9-0" width="42.333332" height="21.166668" x="63.500011" y="121.70834" />
-                        <rect class="lot" id="rect33-8-28-9-4" width="42.333332" height="21.166668" x="63.500008" y="142.875" />
-                        <rect class="lot" id="rect33-8-28-9-7" width="42.333332" height="21.166668" x="63.499989" y="164.04167" />
-                        <rect class="lot" id="rect33-8-28-9-3" width="42.333332" height="21.166668" x="63.499992" y="185.20834" />
-                        <rect class="lot" id="rect33-8-28-9-36" width="42.333332" height="21.166668" x="63.499996" y="206.37502" />
-                        <rect class="lot" id="rect33-8-28-9-37" width="42.333332" height="21.166668" x="63.499996" y="227.54166" />
-                        <rect class="lot" id="rect33-8-28-9-00" width="42.333332" height="21.166668" x="63.500004" y="248.70833" />
-                        <rect class="lot" id="rect33-8-28-9-9" width="42.333332" height="21.166668" x="63.500004" y="269.875" />
-                        <rect class="lot" id="rect33-8-28-9-9-3" width="42.333332" height="21.166668" x="105.83334" y="269.875" />
-                        <rect class="lot" id="rect33-8-28-9-9-1" width="42.333332" height="21.166668" x="105.83334" y="248.70833" />
-                        <rect class="lot" id="rect33-8-28-9-9-6" width="42.333332" height="21.166668" x="105.83334" y="227.54167" />
-                        <rect class="lot" id="rect33-8-28-9-9-63" width="42.333332" height="21.166668" x="105.83333" y="206.37502" />
-                        <rect class="lot" id="rect33-8-28-9-9-632" width="42.333332" height="21.166668" x="105.83333" y="185.20834" />
-                        <rect class="lot" id="rect33-8-28-9-9-38" width="42.333332" height="21.166668" x="105.83334" y="164.04167" />
-                        <rect class="lot" id="rect33-8-28-9-9-60" width="42.333332" height="21.166668" x="105.83334" y="142.875" />
-                        <rect class="lot" id="rect33-8-28-9-9-2" width="42.333332" height="21.166668" x="105.83334" y="121.70833" />
-                        <rect class="lot" id="rect33-8-28-9-9-7" width="42.333332" height="21.166668" x="105.83334" y="100.54166" />
-                        <rect class="lot" id="rect33-8-28-9-9-5" width="42.333332" height="21.166668" x="164.04167" y="79.375" />
-                        <rect class="lot" id="rect33-8-28-9-9-5-2" width="42.333332" height="21.166668" x="164.04167" y="100.54167" />
-                        <rect class="lot" id="rect33-8-28-9-9-5-3" width="42.333332" height="21.166668" x="164.04167" y="121.70834" />
-                        <rect class="lot" id="rect33-8-28-9-9-5-6" width="42.333332" height="21.166668" x="164.04167" y="142.875" />
-                        <rect class="lot" id="rect33-8-28-9-9-5-0" width="42.333332" height="21.166668" x="164.04167" y="164.04167" />
-                        <rect class="lot" id="rect33-8-28-9-9-5-5" width="42.333332" height="21.166668" x="164.04167" y="185.20833" />
-                        <rect class="lot" id="rect33-8-28-9-9-5-24" width="42.333332" height="21.166668" x="164.04167" y="206.375" />
-                        <rect class="lot" id="rect33-8-28-9-9-5-1" width="42.333332" height="21.166668" x="164.04167" y="227.54167" />
-                        <rect class="lot" id="rect33-8-28-9-9-5-01" width="42.333332" height="21.166668" x="164.04167" y="248.70833" />
-                        <rect class="lot" id="rect33-8-28-9-9-5-242" width="42.333332" height="21.166668" x="164.04167" y="269.875" />
-                        <rect class="lot" id="rect33-8-28-9-9-5-57" width="42.333332" height="21.166668" x="5.2916665" y="-148.16667" transform="rotate(90)" />
-                        <rect class="lot" id="rect33-8-28-9-9-5-57-6" width="42.333332" height="21.166668" x="5.2916665" y="-127.00001" transform="rotate(90)" />
-                        <rect class="lot" id="rect33-8-28-9-9-5-57-9" width="42.333332" height="21.166668" x="5.2916665" y="-105.83334" transform="rotate(90)" />
-                        <rect class="lot" id="rect33-8-28-9-9-5-57-1" width="42.333332" height="21.166668" x="5.2916665" y="-84.666664" transform="rotate(90)" />
+                        <rect class="lot" id="rect33-3" height="42.333332" width="21.166666" y="5.2916665" x="248.70833" />
+                        <rect class="lot" id="rect33-8" height="42.333332" width="21.166666" y="5.291667" x="227.54167" />
+                        <rect class="lot" id="rect33-8-7" height="42.333332" width="21.16666" y="5.291667" x="206.375" />
+                        <rect class="lot" id="rect33-8-2" height="42.333332" width="21.166666" y="5.2916679" x="185.20834" />
+                        <rect class="lot" id="rect33-8-8" height="42.333332" width="21.166666" y="5.2916679" x="164.04167" />
+                        <rect class="lot" id="rect33-8-20" height="42.333332" width="21.166676" y="5.2916679" x="142.875" />
+                        <rect class="lot" id="rect33-8-83" height="42.333332" width="21.166662" y="5.2916679" x="121.70833" />
+                        <rect class="lot" id="rect33-8-1" height="42.333332" width="21.166674" y="5.2916679" x="100.54166" />
+                        <rect class="lot" id="rect33-8-28" height="42.333332" width="21.166668" y="5.2916679" x="79.374985" />
+                        <rect class="lot" id="rect33-8-28-9" height="42.333332" width="21.166668" y="63.500011" x="100.54167" />
+                        <rect class="lot" id="rect33-8-28-9-0" height="42.333332" width="21.166668" y="63.500011" x="121.70834" />
+                        <rect class="lot" id="rect33-8-28-9-4" height="42.333332" width="21.166668" y="63.500008" x="142.875" />
+                        <rect class="lot" id="rect33-8-28-9-7" height="42.333332" width="21.166668" y="63.499989" x="164.04167" />
+                        <rect class="lot" id="rect33-8-28-9-3" height="42.333332" width="21.166668" y="63.499992" x="185.20834" />
+                        <rect class="lot" id="rect33-8-28-9-36" height="42.333332" width="21.166668" y="63.499996" x="206.37502" />
+                        <rect class="lot" id="rect33-8-28-9-37" height="42.333332" width="21.166668" y="63.499996" x="227.54166" />
+                        <rect class="lot" id="rect33-8-28-9-00" height="42.333332" width="21.166668" y="63.500004" x="248.70833" />
+                        <rect class="lot" id="rect33-8-28-9-9" height="42.333332" width="21.166668" y="63.500004" x="269.875" />
+                        <rect class="lot" id="rect33-8-28-9-9-3" height="42.333332" width="21.166668" y="105.83334" x="269.875" />
+                        <rect class="lot" id="rect33-8-28-9-9-1" height="42.333332" width="21.166668" y="105.83334" x="248.70833" />
+                        <rect class="lot" id="rect33-8-28-9-9-6" height="42.333332" width="21.166668" y="105.83334" x="227.54167" />
+                        <rect class="lot" id="rect33-8-28-9-9-63" height="42.333332" width="21.166668" y="105.83333" x="206.37502" />
+                        <rect class="lot" id="rect33-8-28-9-9-632" height="42.333332" width="21.166668" y="105.83333" x="185.20834" />
+                        <rect class="lot" id="rect33-8-28-9-9-38" height="42.333332" width="21.166668" y="105.83334" x="164.04167" />
+                        <rect class="lot" id="rect33-8-28-9-9-60" height="42.333332" width="21.166668" y="105.83334" x="142.875" />
+                        <rect class="lot" id="rect33-8-28-9-9-2" height="42.333332" width="21.166668" y="105.83334" x="121.70833" />
+                        <rect class="lot" id="rect33-8-28-9-9-7" height="42.333332" width="21.166668" y="105.83334" x="100.54166" />
+                        <rect class="lot" id="rect33-8-28-9-9-5" height="42.333332" width="21.166668" y="164.04167" x="79.375" />
+                        <rect class="lot" id="rect33-8-28-9-9-5-2" height="42.333332" width="21.166668" y="164.04167" x="100.54167" />
+                        <rect class="lot" id="rect33-8-28-9-9-5-3" height="42.333332" width="21.166668" y="164.04167" x="121.70834" />
+                        <rect class="lot" id="rect33-8-28-9-9-5-6" height="42.333332" width="21.166668" y="164.04167" x="142.875" />
+                        <rect class="lot" id="rect33-8-28-9-9-5-0" height="42.333332" width="21.166668" y="164.04167" x="164.04167" />
+                        <rect class="lot" id="rect33-8-28-9-9-5-5" height="42.333332" width="21.166668" y="164.04167" x="185.20833" />
+                        <rect class="lot" id="rect33-8-28-9-9-5-24" height="42.333332" width="21.166668" y="164.04167" x="206.375" />
+                        <rect class="lot" id="rect33-8-28-9-9-5-1" height="42.333332" width="21.166668" y="164.04167" x="227.54167" />
+                        <rect class="lot" id="rect33-8-28-9-9-5-01" height="42.333332" width="21.166668" y="164.04167" x="248.70833" />
+                        <rect class="lot" id="rect33-8-28-9-9-5-242" height="42.333332" width="21.166668" y="164.04167" x="269.875" />
+                        <rect class="lot" id="rect33-8-28-9-9-5-57" height="42.333332" width="21.166668" y="5.2916665" x="-148.16667" transform="rotate(270)" />
+                        <rect class="lot" id="rect33-8-28-9-9-5-57-6" height="42.333332" width="21.166668" y="5.2916665" x="-127.00001" transform="rotate(270)" />
+                        <rect class="lot" id="rect33-8-28-9-9-5-57-9" height="42.333332" width="21.166668" y="5.2916665" x="-105.83334" transform="rotate(270)" />
+                        <rect class="lot" id="rect33-8-28-9-9-5-57-1" height="42.333332" width="21.166668" y="5.2916665" x="-84.666664" transform="rotate(270)" />
                         <path style="fill:none;stroke:#000000;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Lend)" d="m 10.583334,60.854167 c 37.041666,0 37.041666,0 37.041666,0" id="path1895" />
                         <text xml:space="preserve" style="font-style:normal;font-weight:normal;font-size:8.1754px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.204385" x="14.676329" y="45.800671" id="text5833" transform="scale(0.87569592,1.1419489)">
                             <tspan sodipodi:role="line" id="tspan5831" style="stroke-width:0.204385" x="14.676329" y="45.800671">Entrance</tspan>
