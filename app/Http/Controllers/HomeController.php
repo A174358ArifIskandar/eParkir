@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BookingHistory;
 use App\Models\BookParking;
 use App\Models\ParkingArea;
 use App\Models\Student;
@@ -33,14 +34,19 @@ class HomeController extends Controller
         if($role=='admin')
         {
             $parkings = ParkingArea::all();
-            return view('home', compact('parkings'));
+            $histories = BookingHistory::all();
+            $bookings = BookParking::all();
+            $count = 0;
+            return view('home', compact('parkings','histories','count','bookings'));
         }
         else
         {
             $parkings = ParkingArea::all();
             $student = Student::where('matric_no',auth()->user()->matric_no)->first();
+            $bookings = BookParking::all();
+            $count = 0;
             $myParking = BookParking::where('matric_no',auth()->user()->matric_no)->first();
-            return view('dashboard', compact('parkings', 'myParking', 'student'));
+            return view('dashboard', compact('parkings', 'myParking', 'student', 'bookings', 'count'));
         }
         
     }

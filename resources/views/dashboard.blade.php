@@ -58,43 +58,41 @@
             <!-- /.card-header -->
             <div class="card-body">
               <div class="row">
-                <div class="col-md-2">  
+                <div class="col-md-2">
                 </div>
                 <!-- /.col -->
                 <div class="col-md-8">
                   <p class="text-center">
                     <strong>Parking Availabilities</strong>
                   </p>
-
+                  @foreach($parkings as $parking)
+                  @foreach($bookings as $booking)
+                  @if($booking['lot_status']=='approved'||'pending'||'notpaid')
+                  @if($booking['area_id']==$parking['area_id'])
+                  <input type="hidden" id="id" value="{{++$count}}" class="form-control">
+                  @else
+                  @endif
+                  @else
+                  @endif
+                  @endforeach
                   <div class="progress-group">
-                    Blok A
-                    <span class="float-right"><b>16</b>/40</span>
+                    {{$parking->area_name}}
+                    <span class="float-right"><b>{{$count}}</b>/{{$parking->area_total_availability}}</span>
+                    <input type="hidden" id="id" value="{{$count=$count/$parking->area_total_availability*100}}" class="form-control">
                     <div class="progress">
-                      <div class="progress-bar bg-primary" style="width: 40%"></div>
+                      <div class="progress-bar bg-danger" style="width:40%"></div>
                     </div>
                   </div>
-                  <!-- /.progress-group -->
-                  <!-- /.progress-group -->
-                  <div class="progress-group">
-                    Blok C
-                    <span class="float-right"><b>25</b>/30</span>
-                    <div class="progress">
-                      <div class="progress-bar bg-warning" style="width: 80%"></div>
-                    </div>
-                  </div>
-                  <div class="progress-group">
-                    Blok F
-                    <span class="float-right"><b>12</b>/30</span>
-                    <div class="progress">
-                      <div class="progress-bar bg-danger" style="width: 40%"></div>
-                    </div>
-                  </div>
-                  <!-- /.progress-group -->
+                  <input type="hidden" id="id" value="{{$count=0}}" class="form-control">
+                  @endforeach
                 </div>
+
                 <!-- /.col -->
               </div>
               <!-- /.row -->
             </div>
+
+
             <!-- /.card -->
           </div>
           <!-- /.col -->
@@ -136,8 +134,10 @@
                     <td>Status</td>
                     <td>@if($myParking['lot_status']=='approved')
                       <span class="badge badge-success">Approved</span>
-                      @else
+                      @elseif($myParking['lot_status']=='pending')
                       <span class="badge badge-warning">Pending</span>
+                      @else
+                      <span class="badge bg-orange color-palette">Not Paid</span>
                       @endif
                     </td>
                     <td class="text-right py-0 align-middle">

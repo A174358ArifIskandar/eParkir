@@ -91,8 +91,10 @@
                                             <td class="project-state">
                                                 @if($myParking['lot_status']=='approved')
                                                 <span class="badge badge-success">Approved</span>
-                                                @else
+                                                @elseif($myParking['lot_status']=='pending')
                                                 <span class="badge badge-warning">Pending</span>
+                                                @else
+                                                <span class="badge bg-orange color-palette">Not Paid</span>
                                                 @endif
                                             </td>
                                             @else
@@ -112,6 +114,8 @@
 
                             </div>
                         </div>
+                    </section>
+                </div>
             </fieldset>
             <br>
             <fieldset>
@@ -139,9 +143,9 @@
                                             <td style="width: 40%">120.00</td>
                                             @else
                                             <td style="width: 40%" class="text-center">
-                                                
+
                                             <td style="width: 30%" class="text-center">
-                                                
+
                                             <td style="width: 40%"></td>
                                             @endif
                                         </tr>
@@ -166,6 +170,8 @@
                     </div><br>
                 </div>
             </fieldset>
+        </form>
+    </section>
 
 </div>
 

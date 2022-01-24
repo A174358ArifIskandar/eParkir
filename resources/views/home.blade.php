@@ -31,8 +31,14 @@
           <!-- small box -->
           <div class="small-box bg-success">
             <div class="inner">
-              <h3>1<sup style="font-size: 20px"></sup></h3>
-
+              @foreach($histories as $history)
+              @if($history['book_status']=='approved')
+              <input type="hidden" id="id" value="{{++$count}}" class="form-control">
+              @else
+              @endif
+              @endforeach
+              <h3>{{$count}}<sup style="font-size: 20px"></sup></h3>
+              <input type="hidden" id="id" value="{{$count=0}}" class="form-control">
               <p>Approved Request</p>
             </div>
             <div class="icon">
@@ -46,8 +52,15 @@
           <!-- small box -->
           <div class="small-box bg-warning">
             <div class="inner">
-              <h3>2</h3>
-
+              @foreach($bookings as $booking)
+              @if($booking['lot_status']=='pending')
+              <input type="hidden" id="id" value="{{++$count}}" class="form-control">
+              @elseif($booking['lot_status']=='notpaid')
+              <input type="hidden" id="id" value="{{++$count}}" class="form-control">
+              @endif
+              @endforeach
+              <h3>{{$count}}<sup style="font-size: 20px"></sup></h3>
+              <input type="hidden" id="id" value="{{$count=0}}" class="form-control">
               <p>Pending Requests</p>
             </div>
             <div class="icon">
@@ -61,8 +74,15 @@
           <!-- small box -->
           <div class="small-box bg-danger">
             <div class="inner">
-              <h3>1</h3>
+              @foreach($histories as $history)
+              @if($history['book_status']=='declined')
+              <input type="hidden" id="id" value="{{++$count}}" class="form-control">
+              @else
+              @endif
+              @endforeach
 
+              <h3>{{$count}}<sup style="font-size: 20px"></sup></h3>
+              <input type="hidden" id="id" value="{{$count=0}}" class="form-control">
               <p>Declined Requests</p>
             </div>
             <div class="icon">
@@ -83,7 +103,7 @@
                 <button type="button" class="btn btn-tool" data-card-widget="collapse">
                   <i class="fas fa-minus"></i>
                 </button>
-                
+
               </div>
             </div>
             <!-- /.card-header -->
@@ -102,25 +122,22 @@
                   <!-- /.chart-responsive -->
                 </div>
                 <!-- /.col -->
-                  <!-- /.progress-group -->
-                </div>
-                <!-- /.col -->
+                <!-- /.progress-group -->
               </div>
-              <!-- /.row -->
+              <!-- /.col -->
             </div>
-
-            <!-- /.card -->
+            <!-- /.row -->
           </div>
-          <!-- /.col -->
-          
+
+          <!-- /.card -->
         </div>
+        <!-- /.col -->
 
       </div>
+
     </div>
   </section>
-  <!-- ./col -->
-
-
 </div>
+
 <!-- /.content-wrapper -->
 @endsection
