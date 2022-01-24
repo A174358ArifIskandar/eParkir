@@ -83,21 +83,7 @@
                 <button type="button" class="btn btn-tool" data-card-widget="collapse">
                   <i class="fas fa-minus"></i>
                 </button>
-                <div class="btn-group">
-                  <button type="button" class="btn btn-tool dropdown-toggle" data-toggle="dropdown">
-                    <i class="fas fa-wrench"></i>
-                  </button>
-                  <div class="dropdown-menu dropdown-menu-right" role="menu">
-                    <a href="#" class="dropdown-item">Action</a>
-                    <a href="#" class="dropdown-item">Another action</a>
-                    <a href="#" class="dropdown-item">Something else here</a>
-                    <a class="dropdown-divider"></a>
-                    <a href="#" class="dropdown-item">Separated link</a>
-                  </div>
-                </div>
-                <button type="button" class="btn btn-tool" data-card-widget="remove">
-                  <i class="fas fa-times"></i>
-                </button>
+                
               </div>
             </div>
             <!-- /.card-header -->
@@ -110,43 +96,12 @@
 
                   <div class="card-body">
                     <div class="chart">
-
                       <div id="piechart" style="width: 900px; height: 350px;"></div>
-
                     </div>
                   </div>
                   <!-- /.chart-responsive -->
                 </div>
                 <!-- /.col -->
-                <div class="col-md-4">
-                  <p class="text-center">
-                    <strong>Occupied Parking</strong>
-                  </p>
-
-                  <div class="progress-group">
-                    Blok A
-                    <span class="float-right"><b>16</b>/40</span>
-                    <div class="progress progress-sm">
-                      <div class="progress-bar bg-primary" style="width: 40%"></div>
-                    </div>
-                  </div>
-                  <!-- /.progress-group -->
-
-                  <!-- /.progress-group -->
-                  <div class="progress-group">
-                    Blok C
-                    <span class="float-right"><b>25</b>/30</span>
-                    <div class="progress progress-sm">
-                      <div class="progress-bar bg-warning" style="width: 80%"></div>
-                    </div>
-                  </div>
-                  <div class="progress-group">
-                    Blok F
-                    <span class="float-right"><b>12</b>/30</span>
-                    <div class="progress progress-sm">
-                      <div class="progress-bar bg-danger" style="width: 40%"></div>
-                    </div>
-                  </div>
                   <!-- /.progress-group -->
                 </div>
                 <!-- /.col -->
