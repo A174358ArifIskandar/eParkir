@@ -87,6 +87,8 @@
                   <td class="project-state">
                     @if($bookings['lot_status']=='approved')
                     <span class="badge badge-success">Approved</span>
+                    @elseif($bookings['lot_status']=='notpaid')
+                    <span class="badge bg-orange color-palette">Not Paid</span>
                     @else
                     <span class="badge badge-warning">Pending</span>
                     @endif
@@ -158,9 +160,9 @@
                       <div class="card-body">
                         <img src="{{Storage::url($bookings->license_image)}}" id='image_preview' class="img-fluid">
                       </div>
-
+                      @if($bookings['lot_status']=='pending')
                       <div class="form-group">
-                        <input type="hidden" value="approved" name="book_status" id="name" class="form-control" placeholder="" readonly>
+                        <input type="hidden" value="notpaid" name="book_status" id="name" class="form-control" placeholder="" readonly>
                       </div>
                       <div class="form-group">
                         <input type="hidden" value="-" name="description" id="name" class="form-control" placeholder="" readonly>
@@ -172,6 +174,22 @@
                         </a>
                         <!-- <input type="submit" value="Decline" class="btn btn-danger"> -->
                       </div>
+                      @elseif($bookings['lot_status']=='notpaid')
+                      <div class="form-group">
+                        <input type="hidden" value="approved" name="book_status" id="name" class="form-control" placeholder="" readonly>
+                      </div>
+                      <div class="form-group">
+                        <input type="hidden" value="-" name="description" id="name" class="form-control" placeholder="" readonly>
+                      </div>
+                      <div class="text-center">
+                        <input type="submit" value="Approve Payment" class="btn btn-success">
+                        <form action="{{ route('parkingStatus.store') }}" method="post" enctype="multipart/form-data">
+                          <input type="hidden" value="declined" name="book_status" id="name" class="form-control" placeholder="" readonly>
+                          <input type="hidden" value="Cancel" name="description" id="name" class="form-control" placeholder="" readonly>
+                          <input type="submit" value="Cancel" class="btn btn-danger">
+                          <!-- <input type="submit" value="Decline" class="btn btn-danger"> -->
+                      </div>
+                      @endif
                     </div>
                   </div>
                 </div>

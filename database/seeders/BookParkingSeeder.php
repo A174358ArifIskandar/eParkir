@@ -20,15 +20,16 @@ class BookParkingSeeder extends Seeder
             'matric_no' => 'A174358',
             'plate_no' => 'ALA 1234',
             'area_id' => 'A',
-            'lot_id' => 'A01',
+            'lot_id' => 'A21',
             'lot_status' => 'approved',
             'license_image' => 'public\files\ObqRenGgHymdBYYFsTiYyAdzqDmyw6Es6wiT9CY7',
         ]);
         DB::table('booking_history')->insert([
             'book_details_id' => 'D001',
             'matric_no' => 'A174358',
-            'book_status' => 'declined',
-            'description' => '',
+            'book_status' => 'approved',
+            'description' => '-',
+            'updated_at' => '2022-01-24 17:48:53',
         ]);
     }
 }

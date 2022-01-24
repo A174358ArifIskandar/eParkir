@@ -48,29 +48,33 @@ class ParkingStatusController extends Controller
     public function store(Request $request)
     {
         //
-        $myParking = BookingHistory::all()->last();
-        $numeric_id = intval(substr($myParking->book_details_id, 1)); //retrieve numeric value of 'V001' (1)
-        $numeric_id++; //increment
-        if(mb_strlen($numeric_id) == 1)
-        {
-           $zero_string = '00';
-        }elseif(mb_strlen($numeric_id) == 2)
-        {
-           $zero_string = '0';
-        }else{
-           $zero_string = '';
+        if ($request->book_status == 'notpaid') {
+        } else {
+            $myParking = BookingHistory::all()->last();
+            $numeric_id = intval(substr($myParking->book_details_id, 1)); //retrieve numeric value of 'V001' (1)
+            $numeric_id++; //increment
+            if (mb_strlen($numeric_id) == 1) {
+                $zero_string = '00';
+            } elseif (mb_strlen($numeric_id) == 2) {
+                $zero_string = '0';
+            } else {
+                $zero_string = '';
+            }
+            $new_id = 'D' . $zero_string . $numeric_id;
+            $desc = $request->description . ' ' . $request->other;
+            BookingHistory::create([
+                'book_details_id' => $new_id,
+                'matric_no' => $request->matric_no,
+                'book_status' => $request->book_status,
+                'description' => $desc,
+            ]);
         }
-        $new_id = 'D'.$zero_string.$numeric_id;
-        BookingHistory::create([
-            'book_details_id' => $new_id,
-            'matric_no' => $request->matric_no,
-            'book_status' => $request->book_status,
-            'description' => $request->description,
-        ]);
         $lotStatus = BookParking::find($request->book_details_id);
-        if ($request->book_status=='approved'){
-            $lotStatus->update(['lot_status'=>'approved']);
-        } else if ($request->book_status=='declined'){
+        if ($request->book_status == 'notpaid') {
+            $lotStatus->update(['lot_status' => 'notpaid']);
+        } else if ($request->book_status == 'approved') {
+            $lotStatus->update(['lot_status' => 'approved']);
+        } else if ($request->book_status == 'declined') {
             $lotStatus->delete();
         }
         return redirect()->route('parkingStatus.index')->with('success', 'Booking Request has been updated successfully');
@@ -87,9 +91,9 @@ class ParkingStatusController extends Controller
         //
         $role = Auth::user()->role;
         if ($role == 'admin') {
-        $bookings = BookParking::findOrFail($id);
-        return view('admin.ManageBooking.formRequest', compact('bookings'));
-        } else{
+            $bookings = BookParking::findOrFail($id);
+            return view('admin.ManageBooking.formRequest', compact('bookings'));
+        } else {
             return view('layouts.error');
         }
     }
@@ -130,5 +134,8 @@ class ParkingStatusController extends Controller
         //
         // $bookings = BookParking::findOrFail($id);
         // return view('admin.ManageBooking.viewDetails', compact('bookings'));
+        // $lotStatus = BookParking::find($id);
+        // $lotStatus->delete();
+        // return redirect()->route('parkingStatus.index')->with('success', 'Booking Request has been updated successfully');
     }
 }
