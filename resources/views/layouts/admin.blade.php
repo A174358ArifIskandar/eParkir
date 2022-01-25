@@ -18,40 +18,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link href="{{ asset('dist/css/adminlte.min.css') }}" rel="stylesheet">
 
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  <script type="text/javascript">
-    google.charts.load('current', {
-      'packages': ['corechart']
-    });
-    google.charts.setOnLoadCallback(drawChart);
-
-    function drawChart() {
-
-      var data = google.visualization.arrayToDataTable([
-        ['Parking', 'Occupied', 'Available', { role: 'annotation' } ],
-        ['Blok A', 16, 24, ''],
-        ['Blok C', 25, 5, ''],
-        ['Blok F', 12, 18, '']
-      ]);
-
-      var options = {
-        title: 'Parking Area',
-        width: 600,
-        height: 400,
-        legend: {
-        position: 'top',
-        maxLines: 3
-        },
-        bar: {
-          groupWidth: '75%'
-        },
-        isStacked: true
-      };
-
-      var chart = new google.visualization.BarChart(document.getElementById('piechart'));
-
-      chart.draw(data, options);
-    }
-  </script>
+  
 
 </head>
 
