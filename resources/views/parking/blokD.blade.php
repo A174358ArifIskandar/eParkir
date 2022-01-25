@@ -1,143 +1,209 @@
 <svg width="297mm" height="210mm" version="1.1" viewBox="0 0 297 210" xmlns="http://www.w3.org/2000/svg">
-    <g fill="#e6e6e6" fill-rule="evenodd" stroke="#000" stroke-width=".237">
-        <rect transform="rotate(90)" x="164" y="-26.5" width="42.3" height="21.2" />
-        <rect transform="rotate(90)" x="164" y="-47.6" width="42.3" height="21.2" />
-        <rect transform="rotate(90)" x="164" y="-68.8" width="42.3" height="21.2" />
-        <rect transform="rotate(90)" x="164" y="-90" width="42.3" height="21.2" />
-        <rect transform="rotate(90)" x="164" y="-111" width="42.3" height="21.2" />
-        <rect transform="rotate(90)" x="164" y="-132" width="42.3" height="21.2" />
-        <rect transform="rotate(90)" x="164" y="-153" width="42.3" height="21.2" />
-        <rect transform="rotate(90)" x="164" y="-175" width="42.3" height="21.8" />
-        <rect transform="rotate(90)" x="164" y="-196" width="42.3" height="21.2" />
-        <rect transform="rotate(90)" x="164" y="-217" width="42.3" height="21.2" />
-        <rect transform="rotate(90)" x="95.2" y="-217" width="42.3" height="21.2" />
-        <rect transform="rotate(90)" x="95.2" y="-196" width="42.3" height="21.2" />
-        <rect transform="rotate(90)" x="95.2" y="-175" width="42.3" height="21.8" />
-        <rect transform="rotate(90)" x="95.3" y="-153" width="42.3" height="21.2" />
-        <rect transform="rotate(90)" x="95.2" y="-132" width="42.3" height="21.2" />
-        <rect transform="rotate(90)" x="95.2" y="-111" width="42.3" height="21.2" />
-        <rect transform="rotate(90)" x="95.2" y="-90" width="42.3" height="21.2" />
-        <rect transform="rotate(90)" x="95.3" y="-68.8" width="42.3" height="21.2" />
-        <rect transform="rotate(90)" x="52.9" y="-68.8" width="42.3" height="21.2" />
-        <rect transform="rotate(90)" x="52.9" y="-90" width="42.3" height="21.2" />
-        <rect transform="rotate(90)" x="52.9" y="-111" width="42.3" height="21.2" />
-        <rect transform="rotate(90)" x="52.9" y="-132" width="42.3" height="21.2" />
-        <rect transform="rotate(90)" x="52.9" y="-153" width="42.3" height="21.2" />
-        <rect transform="rotate(90)" x="52.9" y="-175" width="42.3" height="21.8" />
-        <rect transform="rotate(90)" x="52.9" y="-196" width="42.3" height="21.2" />
-        <rect transform="rotate(90)" x="52.9" y="-217" width="42.3" height="21.2" />
-        <rect transform="rotate(90)" x="108" y="-289" width="42.3" height="21.2" />
-        <rect transform="rotate(90)" x="66.1" y="-289" width="42.3" height="21.2" />
-        <rect transform="scale(-1)" x="-217" y="-23.8" width="42.3" height="21.2" />
-        <rect transform="scale(-1)" x="-132" y="-23.8" width="42.3" height="21.2" />
-        <rect transform="scale(-1)" x="-175" y="-23.8" width="42.8" height="21.2" />
-        <rect transform="scale(-1)" x="-92.6" y="-23.8" width="42.3" height="21.2" />
-        <rect transform="scale(-1)" x="-50.3" y="-23.8" width="42.3" height="21.2" />
+    <g stroke="#000000" stroke-width="0.23665" fill="#e6e6e6" fill-rule="evenodd">
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','1')]) }}">
+            <rect class="lot" x="8.13" y="156" width="21" height="42.8" />
+        </a>
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','2')]) }}">
+            <rect class="lot" x="29.3" y="156" width="21" height="42.8" />
+        </a>
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','3')]) }}">
+            <rect class="lot" x="50.5" y="156" width="21" height="42.8" />
+        </a>
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','4')]) }}">
+            <rect class="" x="71.6" y="156" width="21" height="42.8" />
+        </a>
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','5')]) }}">
+            <rect class="lot" x="92.8" y="156" width="21" height="42.8" />
+        </a>
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','6')]) }}">
+            <rect class="lot" x="114" y="156" width="21" height="42.8" />
+        </a>
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','7')]) }}">
+            <rect class="lot" x="135" y="156" width="21" height="42.8" />
+        </a>
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','8')]) }}">
+            <rect class="lot" x="156" y="156" width="21" height="42.8" />
+        </a>
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','9')]) }}">
+            <rect class="lot" x="177" y="156" width="21" height="42.8" />
+        </a>
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','10')]) }}">
+            <rect class="lot" x="198" y="156" width="21" height="42.8" />
+        </a>
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','11')]) }}">
+            <rect class="lot" x="198" y="91.6" width="21" height="42.8" />
+        </a>
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','12')]) }}">
+            <rect class="lot" x="177" y="91.6" width="21" height="42.8" />
+        </a>
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','13')]) }}">
+            <rect class="lot" x="156" y="91.6" width="21" height="42.8" />
+        </a>
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','14')]) }}">
+            <rect class="lot" x="135" y="91.6" width="21" height="42.8" />
+        </a>
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','15')]) }}">
+            <rect class="lot" x="114" y="91.6" width="21" height="42.8" />
+        </a>
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','16')]) }}">
+            <rect class="lot" x="92.8" y="91.6" width="21" height="42.8" />
+        </a>
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','17')]) }}">
+            <rect class="lot" x="71.6" y="91.6" width="21" height="42.8" />
+        </a>
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','18')]) }}">
+            <rect class="lot" x="50.5" y="91.6" width="21" height="42.8" />
+        </a>
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','19')]) }}">
+            <rect class="lot" x="50.5" y="48.7" width="21" height="42.8" />
+        </a>
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','20')]) }}">
+            <rect class="lot" x="71.6" y="48.7" width="21" height="42.8" />
+        </a>
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','21')]) }}">
+            <rect class="lot" x="92.8" y="48.7" width="21" height="42.8" />
+        </a>
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','22')]) }}">
+            <rect class="lot" x="114" y="48.7" width="21" height="42.8" />
+        </a>
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','23')]) }}">
+            <rect class="lot" x="135" y="48.7" width="21" height="42.8" />
+        </a>
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','24')]) }}">
+            <rect class="lot" x="156" y="48.7" width="21" height="42.8" />
+        </a>
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','25')]) }}">
+            <rect class="lot" x="177" y="48.7" width="21" height="42.8" />
+        </a>
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','26')]) }}">
+            <rect class="lot" x="198" y="48.7" width="21" height="42.8" />
+        </a>
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','27')]) }}">
+            <rect class="lot" x="270" y="91.6" width="21" height="42.8" />
+        </a>
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','28')]) }}">
+            <rect class="lot" x="270" y="48.8" width="21" height="42.8" />
+        </a>
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','29')]) }}">
+            <rect class="lot" transform="rotate(90)" x="5.16" y="-219" width="21" height="42.8" />
+        </a>
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','30')]) }}">
+            <rect class="lot" transform="rotate(90)" x="5.16" y="-176" width="21" height="42.8" />
+        </a>
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','31')]) }}">
+            <rect class="lot" transform="rotate(90)" x="5.16" y="-134" width="21" height="42.8" />
+        </a>
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','32')]) }}">
+            <rect class="lot" transform="rotate(90)" x="5.16" y="-90.9" width="21" height="42.8" />
+        </a>
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','33')]) }}">
+            <rect class="lot" transform="rotate(90)" x="5.29" y="-48" width="21" height="42.8" />
+        </a>
     </g>
-
-    <text x="239.0468" y="28.05673" font-size="10.6px" stroke-width=".265" style="line-height:1.25" xml:space="preserve">
-        <tspan x="239.0468" y="28.05673" stroke-width=".265">Entrance</tspan>
-    </text>
-
-    <g fill="#000000" font-family="sans-serif" font-size="7.97px">
-        <text transform="scale(.996 1)" x="9.8718872" y="184.62315" stroke-width=".223" style="line-height:1.25" xml:space="preserve">
-            <tspan x="9.8718872" y="184.62315" stroke-width=".223">D1</tspan>
+    <g fill="#000000" font-family="sans-serif">
+        <text x="239.71254" y="26.458332" style="line-height:1.25" font-size="8.18px" xml:space="preserve">
+            <tspan x="239.71254" y="26.458332" stroke-width=".265">Entrance</tspan>
         </text>
-        <text transform="scale(.968 1.03)" x="32.468296" y="179.3187" stroke-width=".213" style="line-height:1.25" xml:space="preserve">
-            <tspan x="32.468296" y="179.3187" stroke-width=".213">D2</tspan>
-        </text>
-        <text transform="scale(1.01 .994)" x="51.694813" y="186.15341" fill="#000000" font-family="sans-serif" stroke-width=".225" style="line-height:1.25" xml:space="preserve">
-            <tspan x="51.694813" y="186.15341" stroke-width=".225">D3</tspan>
-        </text>
-        <text transform="scale(.988 1.01)" x="74.177223" y="182.85854" stroke-width=".219" style="line-height:1.25" xml:space="preserve">
-            <tspan x="74.177223" y="182.85854" stroke-width=".219">D4</tspan>
-        </text>
-        <text transform="scale(.99 1.01)" x="95.729088" y="183.15831" stroke-width=".214" style="line-height:1.25" xml:space="preserve">
-            <tspan x="95.729088" y="183.15831" stroke-width=".214">D5</tspan>
-        </text>
-        <text transform="scale(.992 1.01)" x="116.67115" y="183.62604"  stroke-width=".209" style="line-height:1.25" xml:space="preserve">
-            <tspan x="116.67115" y="183.62604" stroke-width=".209">D6</tspan>
-        </text>
-        <text transform="scale(.952 1.05)" x="143.75696" y="176.21101"  stroke-width=".209" style="line-height:1.25" xml:space="preserve">
-            <tspan x="143.75696" y="176.21101" stroke-width=".209">D7</tspan>
-        </text>
-        <text transform="scale(1.02 .981)" x="154.84406" y="188.61713" fill="#000000" font-family="sans-serif" stroke-width=".224" style="line-height:1.25" xml:space="preserve">
-            <tspan x="154.84406" y="188.61713" stroke-width=".224">D8</tspan>
-        </text>
-        <text transform="scale(1 1)" x="179.16791" y="184.98471" stroke-width=".221" style="line-height:1.25" xml:space="preserve">
-            <tspan x="179.16791" y="184.98471" stroke-width=".221">D9</tspan>
-        </text>
-        <text transform="scale(.957 1.05)" x="207.51537" y="176.68756"  stroke-width=".206" style="line-height:1.25" xml:space="preserve">
-            <tspan x="207.51537" y="176.68756" stroke-width=".206">D10</tspan>
-        </text>
-        <text transform="scale(.974 1.03)" x="202.99477" y="113.56426"  stroke-width=".223" style="line-height:1.25" xml:space="preserve">
-            <tspan x="202.99477" y="113.56426" stroke-width=".223">D11</tspan>
-        </text>
-        <text transform="scale(1.05 .948)" x="166.55406" y="122.68348" stroke-width=".22" style="line-height:1.25" xml:space="preserve">
-            <tspan x="166.55406" y="122.68348" stroke-width=".22">D12</tspan>
-        </text>
-        <text transform="scale(.997 1)" x="155.69067" y="115.86417" stroke-width=".215" style="line-height:1.25" xml:space="preserve">
-            <tspan x="155.69067" y="115.86417" stroke-width=".215">D13</tspan>
-        </text>
-        <text transform="scale(.964 1.04)" x="139.30873" y="112.11645" stroke-width=".209" style="line-height:1.25" xml:space="preserve">
-            <tspan x="139.30873" y="112.11645" stroke-width=".209">D14</tspan>
-        </text>
-        <text transform="scale(.996 1)" x="113.33244" y="115.80965" stroke-width=".211" style="line-height:1.25" xml:space="preserve">
-            <tspan x="113.33244" y="115.80965" stroke-width=".211">D15</tspan>
-        </text>
-        <text transform="scale(.96 1.04)" x="96.373703" y="111.7021" fill="#000000" font-family="sans-serif" stroke-width=".205" style="line-height:1.25" xml:space="preserve">
-            <tspan x="96.373703" y="111.7021" stroke-width=".205">D16</tspan>
-        </text>
-        <text transform="scale(.938 1.07)" x="76.467934" y="109.09467" stroke-width=".203" style="line-height:1.25" xml:space="preserve">
-            <tspan x="76.467934" y="109.09467" stroke-width=".203">D17</tspan>
-        </text>
-        <text transform="scale(1 .999)" x="49.163815" y="116.35351" stroke-width=".215" style="line-height:1.25" xml:space="preserve">
-            <tspan x="49.163815" y="116.35351" stroke-width=".215">D18</tspan>
-        </text>
-        <text transform="scale(.949 1.05)" x="52.804611" y="70.10334" fill="#000000" font-family="sans-serif" stroke-width=".202" style="line-height:1.25" xml:space="preserve">
-            <tspan x="52.804611" y="70.10334" stroke-width=".202">D19</tspan>
-        </text>
-        <text transform="scale(.961 1.04)" x="74.739113" y="70.891693" fill="#000000" font-family="sans-serif" stroke-width=".203" style="line-height:1.25" xml:space="preserve">
-            <tspan x="74.739113" y="70.891693" stroke-width=".203">D20</tspan>
-        </text>
-        <text transform="scale(.968 1.03)" x="95.323357" y="71.513657" fill="#000000" font-family="sans-serif" stroke-width=".212" style="line-height:1.25" xml:space="preserve">
-            <tspan x="95.323357" y="71.513657" stroke-width=".212">D21</tspan>
-        </text>
-        <text transform="scale(.964 1.04)" x="117.35552" y="71.268448" fill="#000000" font-family="sans-serif" stroke-width=".21" style="line-height:1.25" xml:space="preserve">
-            <tspan x="117.35552" y="71.268448" stroke-width=".21">D22</tspan>
-        </text>
-        <text transform="scale(.91 1.1)" x="148.58833" y="67.127449" stroke-width=".199" style="line-height:1.25" xml:space="preserve">
-            <tspan x="148.58833" y="67.127449" stroke-width=".199">D23</tspan>
-        </text>
-        <text transform="scale(.91 1.1)" x="172.45799" y="67.216728" stroke-width=".198" style="line-height:1.25" xml:space="preserve">
-            <tspan x="172.45799" y="67.216728" stroke-width=".198">D24</tspan>
-        </text>
-        <text transform="scale(.93 1.08)" x="190.65916" y="68.520424" stroke-width=".203" style="line-height:1.25" xml:space="preserve">
-            <tspan x="190.65916" y="68.520424" stroke-width=".203">D25</tspan>
-        </text>
-        <text transform="scale(.931 1.07)" x="213.41339" y="68.665474" fill="#000000" font-family="sans-serif" stroke-width=".199" style="line-height:1.25" xml:space="preserve">
-            <tspan x="213.41339" y="68.665474" stroke-width=".199">D26</tspan>
-        </text>
-        <text transform="scale(.926 1.08)" x="291.95709" y="119.97847" stroke-width=".2" style="line-height:1.25" xml:space="preserve">
-            <tspan x="291.95709" y="119.97847" stroke-width=".2">D27</tspan>
-        </text>
-        <text transform="scale(.926 1.08)" x="291.93079" y="82.150986" stroke-width=".2" style="line-height:1.25" xml:space="preserve">
-            <tspan x="291.93079" y="82.150986" stroke-width=".2">D28</tspan>
-        </text>
-        <text transform="scale(.926 1.08)" x="202.78734" y="14.54952" fill="#000000" font-family="sans-serif" stroke-width=".2" style="line-height:1.25" xml:space="preserve">
-            <tspan x="202.78734" y="14.54952" stroke-width=".2">D29</tspan>
-        </text>
-        <text transform="scale(.926 1.08)" x="155.73177" y="14.536838" fill="#000000" font-family="sans-serif" stroke-width=".2" style="line-height:1.25" xml:space="preserve">
-            <tspan x="155.73177" y="14.536838" stroke-width=".2">D30</tspan>
-        </text>
-        <text transform="scale(.926 1.08)" x="111.32543" y="14.536838" fill="#000000" font-family="sans-serif" stroke-width=".2" style="line-height:1.25" xml:space="preserve">
-            <tspan x="111.32543" y="14.536838" stroke-width=".2">D31</tspan>
-        </text>
-        <text transform="scale(.926 1.08)" x="67.659874" y="14.792086" fill="#000000" font-family="sans-serif" stroke-width=".2" style="line-height:1.25" xml:space="preserve">
-            <tspan x="67.659874" y="14.792086" stroke-width=".2">D32</tspan>
-        </text>
-        <text transform="scale(.926 1.08)" x="23.69553" y="14.54952" stroke-width=".2" style="line-height:1.25" xml:space="preserve">
-            <tspan x="23.69553" y="14.54952" stroke-width=".2">D33</tspan>
-        </text>
+        <g font-size="6.34px" stroke-width=".159">
+            <text x="15" y="180" style="line-height:1.25" xml:space="preserve">
+                <tspan x="15" y="180" stroke-width=".159">D1</tspan>
+            </text>
+            <text x="36" y="180" style="line-height:1.25" xml:space="preserve">
+                <tspan x="36" y="180" stroke-width=".159">D2</tspan>
+            </text>
+            <text x="57" y="180" style="line-height:1.25" xml:space="preserve">
+                <tspan x="57" y="180" stroke-width=".159">D3</tspan>
+            </text>
+            <text x="78" y="180" style="line-height:1.25" xml:space="preserve">
+                <tspan x="78" y="180" stroke-width=".159">D4</tspan>
+            </text>
+            <text x="99" y="180" style="line-height:1.25" xml:space="preserve">
+                <tspan x="99" y="180" stroke-width=".159">D5</tspan>
+            </text>
+            <text x="120" y="180" style="line-height:1.25" xml:space="preserve">
+                <tspan x="120" y="180" stroke-width=".159">D6</tspan>
+            </text>
+            <text x="142" y="180" style="line-height:1.25" xml:space="preserve">
+                <tspan x="142" y="180" stroke-width=".159">D7</tspan>
+            </text>
+            <text x="163" y="180" style="line-height:1.25" xml:space="preserve">
+                <tspan x="163" y="180" stroke-width=".159">D8</tspan>
+            </text>
+            <text x="184" y="180" style="line-height:1.25" xml:space="preserve">
+                <tspan x="184" y="180" stroke-width=".159">D9</tspan>
+            </text>
+            <text x="203" y="180" style="line-height:1.25" xml:space="preserve">
+                <tspan x="203" y="180" stroke-width=".159">D10</tspan>
+            </text>
+            <text x="203" y="113.5" style="line-height:1.25" xml:space="preserve">
+                <tspan x="203" y="113.5" stroke-width=".159">D11</tspan>
+            </text>
+            <text x="181" y="113.5" style="line-height:1.25" xml:space="preserve">
+                <tspan x="181" y="113.5" stroke-width=".159">D12</tspan>
+            </text>
+            <text x="160" y="113.5" style="line-height:1.25" xml:space="preserve">
+                <tspan x="160" y="113.5" stroke-width=".159">D13</tspan>
+            </text>
+            <text x="140" y="113.5" style="line-height:1.25" xml:space="preserve">
+                <tspan x="140" y="113.5" stroke-width=".159">D14</tspan>
+            </text>
+            <text x="119" y="113.5" style="line-height:1.25" xml:space="preserve">
+                <tspan x="119" y="113.5" stroke-width=".159">D15</tspan>
+            </text>
+            <text x="97" y="113.5" style="line-height:1.25" xml:space="preserve">
+                <tspan x="97" y="113.5" stroke-width=".159">D16</tspan>
+            </text>
+            <text x="77" y="113.5" style="line-height:1.25" xml:space="preserve">
+                <tspan x="77" y="113.5" stroke-width=".159">D17</tspan>
+            </text>
+            <text x="56" y="113.5" style="line-height:1.25" xml:space="preserve">
+                <tspan x="56" y="113.5" stroke-width=".159">D18</tspan>
+            </text>
+            <text x="56" y="71" style="line-height:1.25" xml:space="preserve">
+                <tspan x="56" y="71" stroke-width=".159">D19</tspan>
+            </text>
+            <text x="77" y="71" style="line-height:1.25" xml:space="preserve">
+                <tspan x="77" y="71" stroke-width=".159">D20</tspan>
+            </text>
+            <text x="97" y="71" style="line-height:1.25" xml:space="preserve">
+                <tspan x="97" y="71" stroke-width=".159">D21</tspan>
+            </text>
+            <text x="119" y="71" style="line-height:1.25" xml:space="preserve">
+                <tspan x="119" y="71" stroke-width=".159">D22</tspan>
+            </text>
+            <text x="140" y="71" style="line-height:1.25" xml:space="preserve">
+                <tspan x="140" y="71" stroke-width=".159">D23</tspan>
+            </text>
+            <text x="160" y="71" style="line-height:1.25" xml:space="preserve">
+                <tspan x="160" y="71" stroke-width=".159">D24</tspan>
+            </text>
+            <text x="181" y="71" style="line-height:1.25" xml:space="preserve">
+                <tspan x="181" y="71" stroke-width=".159">D25</tspan>
+            </text>
+            <text x="203" y="71" style="line-height:1.25" xml:space="preserve">
+                <tspan x="203" y="71" stroke-width=".159">D26</tspan>
+            </text>
+            <text x="275" y="113.5" style="line-height:1.25" xml:space="preserve">
+                <tspan x="275" y="113.5" stroke-width=".159">D27</tspan>
+            </text>
+            <text x="275" y="71" style="line-height:1.25" xml:space="preserve">
+                <tspan x="275" y="71" stroke-width=".159">D28</tspan>
+            </text>
+            <text x="190" y="18.155447" style="line-height:1.25" xml:space="preserve">
+                <tspan x="190" y="18.155447" stroke-width=".159">D29</tspan>
+            </text>
+            <text x="147" y="18.021435" style="line-height:1.25" xml:space="preserve">
+                <tspan x="147" y="18" stroke-width=".159">D30</tspan>
+            </text>
+            <text x="105" y="18" style="line-height:1.25" xml:space="preserve">
+                <tspan x="105" y="18" stroke-width=".159">D31</tspan>
+            </text>
+            <text x="64" y="18.52083" style="line-height:1.25" xml:space="preserve">
+                <tspan x="64" y="18" stroke-width=".159">D32</tspan>
+            </text>
+            <text x="20" y="17.887434" style="line-height:1.25" xml:space="preserve">
+                <tspan x="20" y="18" stroke-width=".159">D33</tspan>
+            </text>
+        </g>
     </g>
 </svg>

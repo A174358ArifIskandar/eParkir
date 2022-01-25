@@ -1,40 +1,168 @@
-<svg width="297mm" height="210mm" viewBox="0 0 297 210" version="1.1" id="svg14760" inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)" sodipodi:docname="MapBlokF.svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
-    <sodipodi:namedview id="namedview14762" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:document-units="mm" showgrid="true" inkscape:zoom="0.71446409" inkscape:cx="388.40301" inkscape:cy="360.41" inkscape:window-width="1920" inkscape:window-height="991" inkscape:window-x="-9" inkscape:window-y="-9" inkscape:window-maximized="1" inkscape:current-layer="layer1">
-        <inkscape:grid type="xygrid" id="grid16888" />
-    </sodipodi:namedview>
-    <defs id="defs14757" />
-    <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1">
-        <rect style="fill:#e6e6e6;stroke:#000000;stroke-width:0.264583" id="rect14786" width="165.5349" height="98.506233" x="9.0900974" y="107.86877" />
-        <text xml:space="preserve" style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583" x="71.472565" y="164.05362" id="text15816">
-            <tspan sodipodi:role="line" id="tspan15814" style="stroke-width:0.264583" x="71.472565" y="164.05362">Blok F</tspan>
-        </text>
-        <rect style="fill:#e6e6e6;stroke:#000000;stroke-width:0.264583" id="rect16912" width="21.166666" height="37.041668" x="26.458334" y="5.2916641" />
-        <rect style="fill:#e6e6e6;stroke:#000000;stroke-width:0.264583" id="rect16912-2" width="21.166666" height="37.041668" x="47.625" y="5.2916675" />
-        <rect style="fill:#e6e6e6;stroke:#000000;stroke-width:0.264583" id="rect16912-6" width="21.166666" height="37.041668" x="68.791664" y="5.2916694" />
-        <rect style="fill:#e6e6e6;stroke:#000000;stroke-width:0.264583" id="rect16912-4" width="21.166666" height="37.041668" x="89.958336" y="5.2916656" />
-        <rect style="fill:#e6e6e6;stroke:#000000;stroke-width:0.264583" id="rect16912-49" width="21.166666" height="37.041668" x="111.125" y="5.2916675" />
-        <rect style="fill:#e6e6e6;stroke:#000000;stroke-width:0.264583" id="rect16912-9" width="21.166666" height="37.041668" x="132.29167" y="5.2916675" />
-        <rect style="fill:#e6e6e6;stroke:#000000;stroke-width:0.264583" id="rect16912-1" width="21.166666" height="37.041668" x="153.45833" y="5.2916656" />
-        <rect style="fill:#e6e6e6;stroke:#000000;stroke-width:0.264583" id="rect16912-61" width="21.166666" height="37.041668" x="174.625" y="5.2916656" />
-        <rect style="fill:#e6e6e6;stroke:#000000;stroke-width:0.264583" id="rect16912-3" width="21.166666" height="37.041668" x="195.79166" y="5.2916694" />
-        <rect style="fill:#e6e6e6;stroke:#000000;stroke-width:0.264583" id="rect16912-60" width="21.166666" height="37.041668" x="216.95833" y="5.2916656" />
-        <rect style="fill:#e6e6e6;stroke:#000000;stroke-width:0.264583" id="rect16912-8" width="21.166666" height="37.041668" x="238.125" y="5.2916675" />
-        <rect style="fill:#e6e6e6;stroke:#000000;stroke-width:0.264583" id="rect16912-7" width="21.166666" height="37.041668" x="26.458334" y="63.5" />
-        <rect style="fill:#e6e6e6;stroke:#000000;stroke-width:0.264583" id="rect16912-78" width="21.166666" height="37.041668" x="47.625004" y="63.5" />
-        <rect style="fill:#e6e6e6;stroke:#000000;stroke-width:0.264583" id="rect16912-17" width="21.166666" height="37.041668" x="68.791664" y="63.500004" />
-        <rect style="fill:#e6e6e6;stroke:#000000;stroke-width:0.264583" id="rect16912-71" width="21.166666" height="37.041668" x="89.958336" y="63.500004" />
-        <rect style="fill:#e6e6e6;stroke:#000000;stroke-width:0.264583" id="rect16912-14" width="21.166666" height="37.041668" x="111.12499" y="63.500004" />
-        <rect style="fill:#e6e6e6;stroke:#000000;stroke-width:0.264583" id="rect16912-46" width="21.166666" height="37.041668" x="132.29167" y="63.499996" />
-        <rect style="fill:#e6e6e6;stroke:#000000;stroke-width:0.264583" id="rect16912-74" width="21.166666" height="37.041668" x="153.45833" y="63.499996" />
-        <rect style="fill:#e6e6e6;stroke:#000000;stroke-width:0.264583" id="rect16912-712" width="21.166666" height="37.041668" x="179.91666" y="95.25" />
-        <rect style="fill:#e6e6e6;stroke:#000000;stroke-width:0.264583" id="rect16912-0" width="21.166666" height="37.041668" x="179.91666" y="132.29166" />
-        <rect style="fill:#e6e6e6;stroke:#000000;stroke-width:0.264583" id="rect16912-76" width="21.166666" height="37.041668" x="179.91667" y="169.33333" />
-        <rect style="fill:#e6e6e6;stroke:#000000;stroke-width:0.264583" id="rect16912-710" width="21.166666" height="37.041668" x="269.875" y="58.208328" />
-        <rect style="fill:#e6e6e6;stroke:#000000;stroke-width:0.264583" id="rect16912-45" width="21.166666" height="37.041668" x="269.875" y="95.25" />
-        <rect style="fill:#e6e6e6;stroke:#000000;stroke-width:0.264583" id="rect16912-88" width="21.166666" height="37.041668" x="269.875" y="132.29167" />
-        <rect style="fill:#e6e6e6;stroke:#000000;stroke-width:0.264583" id="rect16912-35" width="21.166666" height="37.041668" x="269.875" y="169.33333" />
-        <text xml:space="preserve" style="font-style:normal;font-weight:normal;font-size:8.04098px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.201025" x="3.0145299" y="50.220367" id="text18791" transform="scale(0.88494519,1.1300135)">
-            <tspan sodipodi:role="line" id="tspan18789" style="stroke-width:0.201025" x="3.0145299" y="50.220367">Entrance</tspan>
-        </text>
+<svg width="297mm" height="210mm" version="1.1" viewBox="0 0 297 210" xmlns="http://www.w3.org/2000/svg">
+
+    <g stroke="#000000" stroke-width="0.23665" fill="#e6e6e6" fill-rule="evenodd">
+        <rect x="9.09" y="108" width="166" height="98.5" />
+
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','1')]) }}">
+            <rect class="lot" x="26.5" y="5.29" width="21.2" height="37" />
+        </a>
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','2')]) }}">
+            <rect class="lot" x="47.6" y="5.29" width="21.2" height="37" />
+        </a>
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','3')]) }}">
+            <rect class="lot" x="68.8" y="5.29" width="21.2" height="37" />
+        </a>
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','4')]) }}">
+            <rect class="lot" x="90" y="5.29" width="21.2" height="37" />
+        </a>
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','5')]) }}">
+            <rect class="lot" x="111" y="5.29" width="21.2" height="37" />
+        </a>
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','6')]) }}">
+            <rect class="lot" x="132" y="5.29" width="21.2" height="37" />
+        </a>
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','7')]) }}">
+            <rect class="lot" x="153" y="5.29" width="21.2" height="37" />
+        </a>
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','8')]) }}">
+            <rect class="lot" x="174" y="5.29" width="21.2" height="37" />
+        </a>
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','9')]) }}">
+            <rect class="lot" x="195" y="5.29" width="21.2" height="37" />
+        </a>
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','10')]) }}">
+            <rect class="lot" x="216" y="5.29" width="21.2" height="37" />
+        </a>
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','11')]) }}">
+            <rect class="lot" x="237" y="5.29" width="21.2" height="37" />
+        </a>
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','12')]) }}">
+            <rect class="lot" x="26.5" y="63.5" width="21.2" height="37" />
+        </a>
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','13')]) }}">
+            <rect class="lot" x="47.6" y="63.5" width="21.2" height="37" />
+        </a>
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','14')]) }}">
+            <rect class="lot" x="68.8" y="63.5" width="21.2" height="37" />
+        </a>
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','15')]) }}">
+            <rect class="lot" x="90" y="63.5" width="21.2" height="37" />
+        </a>
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','16')]) }}">
+            <rect class="lot" x="111" y="63.5" width="21.2" height="37" />
+        </a>
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','17')]) }}">
+            <rect class="lot" x="132" y="63.5" width="21.2" height="37" />
+        </a>
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','18')]) }}">
+            <rect class="lot" x="153" y="63.5" width="21.2" height="37" />
+        </a>
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','19')]) }}">
+            <rect class="lot" x="180" y="95.2" width="21.2" height="37" />
+        </a>
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','20')]) }}">
+            <rect class="lot" x="180" y="132" width="21.2" height="37" />
+        </a>
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','21')]) }}">
+            <rect class="lot" x="180" y="169" width="21.2" height="37" />
+        </a>
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','22')]) }}">
+            <rect class="lot" x="270" y="58.2" width="21.2" height="37" />
+        </a>
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','23')]) }}">
+            <rect class="lot" x="270" y="95.2" width="21.2" height="37" />
+        </a>
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','24')]) }}">
+            <rect class="lot" x="270" y="132" width="21.2" height="37" />
+        </a>
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','25')]) }}">
+            <rect class="lot" x="270" y="169" width="21.2" height="37" />
+        </a>
     </g>
+
+    <text x="71.472565" y="164.05362" fill="#000000" font-family="sans-serif" font-size="10.6px" stroke-width=".265" style="line-height:1.25" xml:space="preserve">
+        <tspan x="71.472565" y="164.05362" stroke-width=".265">Blok F</tspan>
+    </text>
+
+    <g fill="#000000" font-family="sans-serif">
+        <text transform="scale(.885 1.13)" x="3.0145299" y="50.220367" font-size="8.18px" style="line-height:1.25" xml:space="preserve">
+            <tspan x="3.0145299" y="50.220367" stroke-width=".201">Entrance</tspan>
+        </text>
+        <g font-size="6.34px" stroke-width=".159">
+            <text x="33" y="25" style="line-height:1.25" xml:space="preserve">
+                <tspan x="33" y="25" stroke-width=".159">F1</tspan>
+            </text>
+            <text x="55" y="25" style="line-height:1.25" xml:space="preserve">
+                <tspan x="55" y="25" stroke-width=".159">F2</tspan>
+            </text>
+            <text x="76" y="25" style="line-height:1.25" xml:space="preserve">
+                <tspan x="76" y="25" stroke-width=".159">F3</tspan>
+            </text>
+            <text x="97" y="25" style="line-height:1.25" xml:space="preserve">
+                <tspan x="97" y="25" stroke-width=".159">F4</tspan>
+            </text>
+            <text x="117" y="25" style="line-height:1.25" xml:space="preserve">
+                <tspan x="117" y="25" stroke-width=".159">F5</tspan>
+            </text>
+            <text x="138" y="25" style="line-height:1.25" xml:space="preserve">
+                <tspan x="138" y="25" stroke-width=".159">F6</tspan>
+            </text>
+            <text x="160" y="25" style="line-height:1.25" xml:space="preserve">
+                <tspan x="160" y="25" stroke-width=".159">F7</tspan>
+            </text>
+            <text transform="scale(1 1)" x="181" y="25" style="line-height:1.25" xml:space="preserve">
+                <tspan x="181" y="25" stroke-width=".159">F8</tspan>
+            </text>
+            <text x="202" y="25" style="line-height:1.25" xml:space="preserve">
+                <tspan x="202" y="25" stroke-width=".159">F9</tspan>
+            </text>
+            <text x="220" y="25" style="line-height:1.25" xml:space="preserve">
+                <tspan x="220" y="25" stroke-width=".159">F10</tspan>
+            </text>
+            <text x="243" y="25" style="line-height:1.25" xml:space="preserve">
+                <tspan x="243" y="25" stroke-width=".159">F11</tspan>
+            </text>
+            <text x="31" y="83.85479" style="line-height:1.25" xml:space="preserve">
+                <tspan x="31" y="83.85479" stroke-width=".159">F12</tspan>
+            </text>
+            <text x="53" y="83.85479" style="line-height:1.25" xml:space="preserve">
+                <tspan x="53" y="83.85479" stroke-width=".159">F13</tspan>
+            </text>
+            <text x="74" y="83.720436" style="line-height:1.25" xml:space="preserve">
+                <tspan x="74" y="83.720436" stroke-width=".159">F14</tspan>
+            </text>
+            <text x="95" y="83.720436" style="line-height:1.25" xml:space="preserve">
+                <tspan x="95" y="83.720436" stroke-width=".159">F15</tspan>
+            </text>
+            <text x="115" y="83.839287" style="line-height:1.25" xml:space="preserve">
+                <tspan x="115" y="83.839287" stroke-width=".159">F16</tspan>
+            </text>
+            <text x="136" y="83.720436" style="line-height:1.25" xml:space="preserve">
+                <tspan x="136" y="83.720436" stroke-width=".159">F17</tspan>
+            </text>
+            <text x="158" y="83.870293" style="line-height:1.25" xml:space="preserve">
+                <tspan x="158" y="83.870293" stroke-width=".159">F18</tspan>
+            </text>
+            <text x="185" y="116" style="line-height:1.25" xml:space="preserve">
+                <tspan x="185" y="116" stroke-width=".159">F19</tspan>
+            </text>
+            <text x="185" y="152" style="line-height:1.25" xml:space="preserve">
+                <tspan x="185" y="152" stroke-width=".159">F20</tspan>
+            </text>
+            <text x="185" y="187" style="line-height:1.25" xml:space="preserve">
+                <tspan x="185" y="187" stroke-width=".159">F21</tspan>
+            </text>
+            <text x="275" y="80" style="line-height:1.25" xml:space="preserve">
+                <tspan x="275" y="80" stroke-width=".159">F22</tspan>
+            </text>
+            <text transform="scale(1 .997)" x="275" y="116" style="line-height:1.25" xml:space="preserve">
+                <tspan x="275" y="116" stroke-width=".159">F23</tspan>
+            </text>
+            <text transform="scale(.995 1.01)" x="277" y="152" style="line-height:1.25" xml:space="preserve">
+                <tspan x="277" y="152" stroke-width=".159">F24</tspan>
+            </text>
+            <text x="275" y="187" style="line-height:1.25" xml:space="preserve">
+                <tspan x="275" y="187" stroke-width=".159">F25</tspan>
+            </text>
+        </g>
 </svg>
