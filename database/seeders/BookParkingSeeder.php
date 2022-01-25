@@ -20,7 +20,7 @@ class BookParkingSeeder extends Seeder
             'matric_no' => 'A174358',
             'plate_no' => 'ALA 1234',
             'area_id' => 'A',
-            'lot_id' => 'A21',
+            'lot_id' => 'A20',
             'lot_status' => 'approved',
             'license_image' => 'public\files\ObqRenGgHymdBYYFsTiYyAdzqDmyw6Es6wiT9CY7',
         ]);

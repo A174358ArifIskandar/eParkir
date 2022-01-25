@@ -80,7 +80,7 @@
                     <span class="float-right"><b>{{$count}}</b>/{{$parking->area_total_availability}}</span>
                     <input type="hidden" id="id" value="{{$count=$count/$parking->area_total_availability*100}}" class="form-control">
                     <div class="progress">
-                      <div class="progress-bar bg-danger" style="width:40%"></div>
+                      <div class="progress-bar bg-danger" id="ProgressBar" style="width: {{$count}}%"></div>
                     </div>
                   </div>
                   <input type="hidden" id="id" value="{{$count=0}}" class="form-control">

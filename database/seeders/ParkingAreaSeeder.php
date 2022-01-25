@@ -19,14 +19,26 @@ class ParkingAreaSeeder extends Seeder
             'area_id' => 'A',
             'area_name' => 'Blok A',
             'area_image' => 'public/files/u8ZvVupxJn3Q5x9xHruBYPcrYQxSsNAIaVsa7m7Z.jpg',
-            'area_total_availability' => '20',
+            'area_total_availability' => '42',
         ]);
 
         DB::table('parking_area')->insert([
             'area_id' => 'F',
             'area_name' => 'Blok F',
             'area_image' => 'public/files/aat86E17T7HjOmfWEcprOP374GauGOfrz8yJiK0g.jpg',
-            'area_total_availability' => '15',
+            'area_total_availability' => '25',
+        ]);
+        DB::table('parking_area')->insert([
+            'area_id' => 'C',
+            'area_name' => 'Blok C',
+            'area_image' => 'public/files/aat86E17T7HjOmfWEcprOP374GauGOfrz8yJiK0g.jpg',
+            'area_total_availability' => '25',
+        ]);
+        DB::table('parking_area')->insert([
+            'area_id' => 'D',
+            'area_name' => 'Blok D',
+            'area_image' => 'public/files/aat86E17T7HjOmfWEcprOP374GauGOfrz8yJiK0g.jpg',
+            'area_total_availability' => '25',
         ]);
     }
 }
