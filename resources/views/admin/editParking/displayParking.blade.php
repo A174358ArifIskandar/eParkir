@@ -9,6 +9,9 @@
         margin-right: auto;
         width: 50%;
     }
+    .lot:hover {
+        opacity: 0.8;
+    }
 </style>
 
 <div class="content-wrapper">
@@ -38,6 +41,15 @@
                 <h3 class="card-title">{{$parkings->area_name}}</h3>
             </div>
             <div class="container-fluid">
+                @if($parkings->area_id=="A")
+                @include('parking.blokA')
+                @elseif($parkings->area_id=="F")
+                @include('parking.blokF')
+                @elseif($parkings->area_id=="D")
+                @include('parking.blokD')
+                @elseif($parkings->area_id=="C")
+                @include('parking.blokC')
+                @endif
                 <img src="{{Storage::url($parkings->area_image)}}" style="width: 600px; height:300px" class="center">
             </div>
             <div class="card-body p-0">

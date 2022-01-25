@@ -41,17 +41,27 @@
             <div class="card-body">
               <div class="row">
                 @foreach($parkings as $parking)
+                @foreach($bookings as $booking)
+                @if($booking['lot_status']=='approved'||'pending'||'notpaid')
+                @if($booking['area_id']==$parking['area_id'])
+                <input type="hidden" id="id" value="{{++$count}}" class="form-control">
+                @else
+                @endif
+                @else
+                @endif
+                @endforeach
                 <div class="col-md-3 col-sm-6 col-12">
                   <a href="{{route('parkingArea.show', $parking->area_id)}}">
                     <div class="info-box bg-success">
                       <div class="info-box-content">
                         <span class="info-box-text">{{$parking->area_name}}</span>
-                        <span class="info-box-number">{{$parking->area_total_availability}} Parking Lots</span>
+                        <span class="info-box-number">{{$parking->area_total_availability-$count}} Parking Lots Available</span>
                         <div class="progress">
-                          <div class="progress-bar" style="width: 70%"></div>
+                          <input type="hidden" id="id" value="{{$countperc=$count/$parking->area_total_availability*100}}" class="form-control">
+                          <div class="progress-bar" style="width: {{$countperc}}%"></div>
                         </div>
                         <span class="progress-description">
-                          {{$parking->area_total_availability}} Parking Lots Available
+                          {{$parking->area_total_availability}} Total Parking Lots
                         </span>
                         <!-- <form action="{{route('parkingArea.destroy', $parking->area_id)}}" method="post">
                         @csrf
@@ -75,6 +85,7 @@
                     <!-- /.info-box -->
                   </a>
                 </div>
+                <input type="hidden" id="id" value="{{$count=0}}" class="form-control">
                 @endforeach
                 <!-- </div> -->
               </div>

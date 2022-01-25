@@ -20,10 +20,14 @@ class ParkingAreaController extends Controller
         //
         if ($role == 'admin') {
             $parkings = ParkingArea::all();
-            return view('admin.editParking.editParkingArea', compact('parkings'));
+            $bookings = BookParking::all();
+            $count=0;
+            return view('admin.editParking.editParkingArea', compact('parkings','bookings','count'));
         } else {
             $parkings = ParkingArea::all();
-            return view('student.bookParking.studentParkingArea', compact('parkings'));
+            $bookings = BookParking::all();
+            $count=0;
+            return view('student.bookParking.studentParkingArea', compact('parkings','bookings','count'));
         }
     }
 
@@ -77,6 +81,7 @@ class ParkingAreaController extends Controller
         //
         $role = Auth::user()->role;
         $parkings = ParkingArea::findOrFail($id);
+        $bookings = BookParking::all();
         $booked = BookParking::where('area_id', $parkings->area_id)->get(['lot_status', 'book_id', 'lot_id'])->mapWithKeys(function ($item) {
             return [$item->lot_id => ['lot_status' => $item->lot_status, 'book_id' => $item->book_id]];
         });
@@ -84,9 +89,9 @@ class ParkingAreaController extends Controller
             return [$parkings->area_id . $item => null];
         })->merge($booked);
         if ($role == 'admin') {
-            return view('admin.editParking.displayParking', compact('parkings', 'lots'));
+            return view('admin.editParking.displayParking', compact('parkings', 'lots','role'));
         } else {
-            return view('student.bookParking.studentDisplay', compact('parkings', 'lots'));
+            return view('student.bookParking.studentDisplay', compact('parkings', 'lots','role'));
         }
     }
 
