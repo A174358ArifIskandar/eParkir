@@ -37,7 +37,7 @@
             </rect>
         </a>
         <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','8')]) }}">
-            <rect class="lot" transform="rotate(90)" x="5.29" y="-175" width="42.3" height="21.2">
+            <rect class="lot" transform="rotate(90)" x="5.29" y="-175" width="42.3" height="21.8">
                 <title>A8</title>
             </rect>
         </a>
@@ -51,24 +51,24 @@
                 <title>A10</title>
             </rect>
         </a>
-        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','11')]) }}">
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','19')]) }}">
             <rect class="lot" transform="rotate(90)" x="63.5" y="-196" width="42.3" height="21.2">
-                <title>A11</title>
+                <title>A19</title>
             </rect>
         </a>
-        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','12')]) }}">
-            <rect class="lot" transform="rotate(90)" x="63.5" y="-175" width="42.3" height="21.2">
-                <title>A12</title>
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','18')]) }}">
+            <rect class="lot" transform="rotate(90)" x="63.5" y="-175" width="42.3" height="21.8">
+                <title>A18</title>
             </rect>
         </a>
-        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','13')]) }}">
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','17')]) }}">
             <rect class="lot" transform="rotate(90)" x="63.5" y="-153" width="42.3" height="21.2">
-                <title>A13</title>
+                <title>A17</title>
             </rect>
         </a>
-        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','14')]) }}">
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','16')]) }}">
             <rect class="lot" transform="rotate(90)" x="63.5" y="-132" width="42.3" height="21.2">
-                <title>A14</title>
+                <title>A16</title>
             </rect>
         </a>
         <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','15')]) }}">
@@ -76,44 +76,44 @@
                 <title>A15</title>
             </rect>
         </a>
-        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','16')]) }}">
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','14')]) }}">
             <rect class="lot" transform="rotate(90)" x="63.5" y="-90" width="42.3" height="21.2">
-                <title>A16</title>
+                <title>A14</title>
             </rect>
         </a>
-        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','17')]) }}">
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','13')]) }}">
             <rect class="lot" transform="rotate(90)" x="63.5" y="-68.8" width="42.3" height="21.2">
-                <title>A17</title>
+                <title>A13</title>
             </rect>
         </a>
-        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','18')]) }}">
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','12')]) }}">
             <rect class="lot" transform="rotate(90)" x="63.5" y="-47.6" width="42.3" height="21.2">
-                <title>A18</title>
+                <title>A12</title>
             </rect>
         </a>
-        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','19')]) }}">
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','11')]) }}">
             <rect class="lot" transform="rotate(90)" x="63.5" y="-26.5" width="42.3" height="21.2">
-                <title>A19</title>
+                <title>A11</title>
             </rect>
         </a>
-        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','20')]) }}">
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','28')]) }}">
             <rect class="lot" transform="rotate(90)" x="106" y="-26.5" width="42.3" height="21.2">
-                <title>A20</title>
+                <title>A28</title>
             </rect>
         </a>
-        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','21')]) }}">
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','27')]) }}">
             <rect class="lot" transform="rotate(90)" x="106" y="-47.6" width="42.3" height="21.2">
-                <title>A21</title>
+                <title>A27</title>
             </rect>
         </a>
-        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','22')]) }}">
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','26')]) }}">
             <rect class="lot" transform="rotate(90)" x="106" y="-68.8" width="42.3" height="21.2">
-                <title>A22</title>
+                <title>A26</title>
             </rect>
         </a>
-        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','23')]) }}">
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','25')]) }}">
             <rect class="lot" transform="rotate(90)" x="106" y="-90" width="42.3" height="21.2">
-                <title>A23</title>
+                <title>A25</title>
             </rect>
         </a>
         <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','24')]) }}">
@@ -121,74 +121,74 @@
                 <title>A24</title>
             </rect>
         </a>
-        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','25')]) }}">
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','23')]) }}">
             <rect class="lot" transform="rotate(90)" x="106" y="-132" width="42.3" height="21.2">
-                <title>A25</title>
+                <title>A23</title>
             </rect>
         </a>
-        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','26')]) }}">
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','22')]) }}">
             <rect class="lot" transform="rotate(90)" x="106" y="-153" width="42.3" height="21.2">
-                <title>A26</title>
+                <title>A22</title>
             </rect>
         </a>
-        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','27')]) }}">
-            <rect class="lot" transform="rotate(90)" x="106" y="-175" width="42.3" height="21.2">
-                <title>A27</title>
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','21')]) }}">
+            <rect class="lot" transform="rotate(90)" x="106" y="-175" width="42.3" height="21.8">
+                <title>A21</title>
             </rect>
         </a>
-        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','28')]) }}">
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','20')]) }}">
             <rect class="lot" transform="rotate(90)" x="106" y="-196" width="42.3" height="21.2">
-                <title>A28</title>
+                <title>A20</title>
             </rect>
         </a>
-        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','29')]) }}">
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','38')]) }}">
             <rect class="lot" transform="rotate(90)" x="164" y="-217" width="42.3" height="21.2">
-                <title>A29</title>
+                <title>A38</title>
             </rect>
         </a>
-        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','30')]) }}">
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','37')]) }}">
             <rect class="lot" transform="rotate(90)" x="164" y="-196" width="42.3" height="21.2">
-                <title>A30</title>
+                <title>A37</title>
             </rect>
         </a>
-        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','31')]) }}">
-            <rect class="lot" transform="rotate(90)" x="164" y="-175" width="42.3" height="21.2">
-                <title>A31</title>
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','36')]) }}">
+            <rect class="lot" transform="rotate(90)" x="164" y="-175" width="42.3" height="21.8">
+                <title>A36</title>
             </rect>
         </a>
-        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','32')]) }}">
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','35')]) }}">
             <rect class="lot" transform="rotate(90)" x="164" y="-153" width="42.3" height="21.2">
-                <title>A32</title>
+                <title>A35</title>
             </rect>
         </a>
-        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','33')]) }}">
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','34')]) }}">
             <rect class="lot" transform="rotate(90)" x="164" y="-132" width="42.3" height="21.2">
-                <title>A33</title>
+                <title>A34</title>
             </rect>
         </a>
         <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','34')]) }}">
             <rect class="lot" transform="rotate(90)" x="164" y="-111" width="42.3" height="21.2">
-                <title>A34</title>
+                <title>A33</title>
             </rect>
         </a>
-        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','35')]) }}">
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','32')]) }}">
             <rect class="lot" transform="rotate(90)" x="164" y="-90" width="42.3" height="21.2">
-                <title>A35</title>
+                <title>A32</title>
             </rect>
         </a>
-        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','36')]) }}">
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','31')]) }}">
             <rect class="lot" transform="rotate(90)" x="164" y="-68.8" width="42.3" height="21.2">
-                <title>A36</title>
+                <title>A31</title>
             </rect>
         </a>
-        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','37')]) }}">
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','30')]) }}">
             <rect class="lot" transform="rotate(90)" x="164" y="-47.6" width="42.3" height="21.2">
-                <title>A37</title>
+                <title>A30</title>
             </rect>
         </a>
-        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','38')]) }}">
+        <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','29')]) }}">
             <rect class="lot" transform="rotate(90)" x="164" y="-26.5" width="42.3" height="21.2">
-                <title>A38</title>
+                <title>A29</title>
             </rect>
         </a>
         <a fill="#e6e6e6" href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','39')]) }}">
