@@ -125,16 +125,25 @@
               function drawChart() {
 
                 var data = google.visualization.arrayToDataTable([
-                  ['Parking', 'Available', 'Occupied', {
-                    role: 'annotation'
-                  }],
-                  ['Blok A', 16, 24, ''],
-                  ['Blok C', 25, 5, ''],
-                  ['Blok F', 12, 18, '']
+                  ['Parking', 'Occupied',{ role: 'annotation' }, 'Available',{ role: 'annotation' }],
+                  <?php foreach ($parkings as $parking) {
+                    foreach ($bookings as $booking) {
+                      if ($booking['lot_status'] == 'approved' || 'pending' || 'notpaid') {
+                        if ($booking['area_id'] == $parking['area_id']) {
+                          $count++;
+                        } else {
+                        }
+                      }
+                    }
+                    echo "['{$parking->area_name}', $count, $count, ({$parking->area_total_availability}-$count), {$parking->area_total_availability}-$count],";
+                    $count = 0;
+                  }
+                  ?>
                 ]);
 
                 var options = {
                   title: 'Parking Area',
+                  colors: ['#cc1100', '#389738'],
                   width: 750,
                   height: 400,
                   legend: {

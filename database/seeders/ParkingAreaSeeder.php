@@ -32,13 +32,13 @@ class ParkingAreaSeeder extends Seeder
             'area_id' => 'C',
             'area_name' => 'Blok C',
             'area_image' => 'public/files/aat86E17T7HjOmfWEcprOP374GauGOfrz8yJiK0g.jpg',
-            'area_total_availability' => '25',
+            'area_total_availability' => '17',
         ]);
         DB::table('parking_area')->insert([
             'area_id' => 'D',
             'area_name' => 'Blok D',
             'area_image' => 'public/files/aat86E17T7HjOmfWEcprOP374GauGOfrz8yJiK0g.jpg',
-            'area_total_availability' => '25',
+            'area_total_availability' => '33',
         ]);
     }
 }
