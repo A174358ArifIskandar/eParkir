@@ -194,11 +194,11 @@
 
               function drawChart() {
                 var data = google.visualization.arrayToDataTable([
-                  ['Semester', 'Blok A', 'Blok C', 'Dataran Dinamis'],
-                  ['Sem I 2019/2020', 1000, 400, 200],
-                  ['Sem II 2019/2020', 1170, 460, 250],
-                  ['Sem I 2020/2021', 660, 1120, 300],
-                  ['Sem II 2020/2021', 1030, 540, 350]
+                  ['Semester', 'Blok A', 'Blok C', 'Blok D', 'Blok F'],
+                  ['Sem I 2019/2020', 40, 12, 30, 25],
+                  ['Sem II 2019/2020', 38, 17, 31, 20],
+                  ['Sem I 2020/2021', 42, 16, 32, 25],
+                  ['Sem II 2020/2021', 41, 17, 33, 25]
                 ]);
 
                 var options = {
@@ -218,7 +218,7 @@
             <body>
               <br>
               <h5 class="chartheader text-center">Parking Sold per Semester</h5>
-              <h6 class="chartheader text-center">Blok A, Blok C, Dataran Dinamis: 2019-2022</h6>
+              <h6 class="chartheader text-center">Blok A, Blok C, Blok D, Blok F: 2019-2021</h6>
               <br>
               <div id="columnchart_material" style="width: 1000px; height: 350px;"></div>
             </body>
