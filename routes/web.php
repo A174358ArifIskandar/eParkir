@@ -49,6 +49,10 @@ Route::get('/profile', function () {
     return view('student.profile');
 });
 
+Route::get('/disableParking', function () {
+    return view('admin.editParking.disableParking');
+});
+
 Route::resource('parkingArea', ParkingAreaController::class);
 Route::get('/bookParking/{id}/edit/{lot}', [BookParkingController::class, 'edit'])->name('bookParking.edit');
 Route::resource('bookParking', BookParkingController::class)->except(['edit']);
