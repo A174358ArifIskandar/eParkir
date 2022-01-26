@@ -125,7 +125,11 @@
               function drawChart() {
 
                 var data = google.visualization.arrayToDataTable([
-                  ['Parking', 'Occupied',{ role: 'annotation' }, 'Available',{ role: 'annotation' }],
+                  ['Parking', 'Occupied', {
+                    role: 'annotation'
+                  }, 'Available', {
+                    role: 'annotation'
+                  }],
                   <?php foreach ($parkings as $parking) {
                     foreach ($bookings as $booking) {
                       if ($booking['lot_status'] == 'approved' || 'pending' || 'notpaid') {
@@ -186,48 +190,52 @@
               </div>
             </div>
 
-            <script type="text/javascript">
-              google.charts.load('current', {
-                'packages': ['bar']
-              });
-              google.charts.setOnLoadCallback(drawChart);
+            <br>
+            <div class="row justify-content-md-center">
 
-              function drawChart() {
-                var data = google.visualization.arrayToDataTable([
-                  ['Semester', 'Blok A', 'Blok C', 'Blok D', 'Blok F'],
-                  ['Sem I 2019/2020', 40, 12, 30, 25],
-                  ['Sem II 2019/2020', 38, 17, 31, 20],
-                  ['Sem I 2020/2021', 42, 16, 32, 25],
-                  ['Sem II 2020/2021', 41, 17, 33, 25]
-                ]);
+              <script type="text/javascript">
+                google.charts.load('current', {
+                  'packages': ['bar']
+                });
+                google.charts.setOnLoadCallback(drawChart);
 
-                var options = {
-                  legend: {
-                    alignment: 'start'
-                  },
-                  width: 1000,
-                  height: 350,
-                };
+                function drawChart() {
+                  var data = google.visualization.arrayToDataTable([
+                    ['Semester', 'Blok A', 'Blok C', 'Blok D', 'Blok F'],
+                    ['Sem I 2019/2020', 40, 12, 30, 25],
+                    ['Sem II 2019/2020', 38, 17, 31, 20],
+                    ['Sem I 2020/2021', 42, 16, 32, 25],
+                    ['Sem II 2020/2021', 41, 17, 33, 25]
+                  ]);
 
-                var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+                  var options = {
+                    title: 'Parking Sold per Semester',
+                    subtitle: 'Blok A, Blok C, Blok D, Blok F: 2019-2021',
+                    legend: {
+                      alignment: 'start'
+                    },
+                    width: 1000,
+                    height: 350,
+                  };
 
-                chart.draw(data, google.charts.Bar.convertOptions(options));
-              }
-            </script>
+                  var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
 
-            <body>
-              <br>
-              <h5 class="chartheader text-center">Parking Sold per Semester</h5>
-              <h6 class="chartheader text-center">Blok A, Blok C, Blok D, Blok F: 2019-2021</h6>
-              <br>
-              <div id="columnchart_material" style="width: 1000px; height: 350px;"></div>
-            </body>
+                  chart.draw(data, google.charts.Bar.convertOptions(options));
+                }
+              </script>
+
+              <body>
+
+                <div id="columnchart_material" style="width: 1000px; height: 350px;"></div>
+              </body>
+            </div>
+            <!-- /.col -->
+            <!-- /.progress-group -->
           </div>
-          <!-- /.col -->
-          <!-- /.progress-group -->
         </div>
         <!-- /.col -->
       </div>
+
     </div>
   </section>
 </div>
