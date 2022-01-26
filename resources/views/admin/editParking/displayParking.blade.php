@@ -40,6 +40,23 @@
             <div class="card-header">
                 <h3 class="card-title">{{$parkings->area_name}}</h3>
             </div>
+            <br>
+            <div class="d-flex flex-row justify-content-end">
+                <span class="mr-2">
+                    <i class="fas fa-square" style="color: #389738;"></i> Available
+                </span>
+                <span class="mr-2">
+                    <i class="fas fa-square" style="color: #cc1100;"></i> Occupied
+                </span>
+                <br>
+                <span class="mr-2">
+                    <i class="fas fa-square" style="color: #fdfd66;"></i> Pending
+                </span>
+                <span class="mr-4">
+                    <i class="fas fa-square" style="color: #AEAEAE;"></i> Disabled
+                </span>
+            </div>
+            <br>
             <div class="container-fluid">
                 @if($parkings->area_id=="A")
                 @include('parking.blokA')
