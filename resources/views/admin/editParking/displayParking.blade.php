@@ -49,18 +49,18 @@
             </div>
             <br>
             <div class="d-flex flex-row justify-content-end">
-                <span class="mr-2">
-                    <i class="fas fa-square" style="color: #389738;"></i> Available
+            <span class="mr-2">
+                    <i class="fas fa-square text-success" ></i> Available
                 </span>
                 <span class="mr-2">
-                    <i class="fas fa-square" style="color: #cc1100;"></i> Occupied
+                    <i class="fas fa-square" style="color:#cc1100;" ></i> Occupied
                 </span>
                 <br>
                 <span class="mr-2">
-                    <i class="fas fa-square" style="color: #fdfd66;"></i> Pending
+                    <i class="fas fa-square" style="color:#fde52f;" ></i> Pending
                 </span>
                 <span class="mr-4">
-                    <i class="fas fa-square" style="color: #AEAEAE;"></i> Unavailable
+                    <i class="fas fa-square text-gray" ></i> Unavailable
                 </span>
             </div>
             <br>
