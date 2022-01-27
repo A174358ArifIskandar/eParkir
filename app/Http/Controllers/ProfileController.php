@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BookingHistory;
 use App\Models\BookParking;
 use App\Models\ParkingArea;
 use App\Models\Student;

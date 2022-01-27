@@ -9,7 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'e-Parkir') }}</title>
-
+    <link rel="shortcut icon" type="image/png" href="{{ asset('images/logoparkir2.png') }}">
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 

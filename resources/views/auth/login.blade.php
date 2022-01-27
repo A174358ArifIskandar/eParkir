@@ -11,9 +11,9 @@
         background-image: url("images/bg-kpz3.png");
         background-position: center;
         background-repeat: no-repeat;
-        background-size: 110% 119%;
+        background-size: cover;
         position: bottom;
-        
+
     }
 
     .user_card {
@@ -100,6 +100,9 @@
                 <div class="d-flex justify-content-center">
                     <div class="brand_logo_container">
                         <img src="{{ asset('images/logoparkir1.png') }}" class="brand_logo" alt="Logo">
+                    </div>
+                    <div class="text-center">
+                        <img src="{{ asset('images/eparkirkpz.png') }}" class="brand-image" alt="Logo">
                     </div>
                 </div>
 

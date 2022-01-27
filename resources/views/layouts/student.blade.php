@@ -16,7 +16,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- Theme style -->
   <link href="{{ asset('dist/css/adminlte.min.css') }}" rel="stylesheet">
-
+  <link rel="shortcut icon" type="image/png" href="{{ asset('images/logoparkir2.png') }}">
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script type="text/javascript">
     google.charts.load('current', {
@@ -117,8 +117,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
       <a href="/home" class="brand-link">
-        <img src="{{ asset('images/logoparkir2.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3">
-        <span class="brand-text font-weight-light">eParkir</span>
+      <div class="text-center">
+        <img src="{{ asset('images/logoparkir2.png') }}" alt="AdminLTE Logo" class="brand-image-center img-circle elevation-3" style="width:20%;"><br>
+        <span class="brand-text font-weight-light">eParkir</span></div>
       </a>
 
       <!-- Sidebar -->
@@ -181,7 +182,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                               } else {
                                                                 echo 'nav-link';
                                                               } ?>">
-                <i class="nav-icon fas fa-book"></i>
+                <i class="nav-icon fas fa-parking"></i>
                 <p>
                   Book Parking
                   <span class="right badge badge-danger"></span>
@@ -197,6 +198,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <i class="nav-icon fas fa-clipboard"></i>
                 <p>
                   My Parking
+                  <span class="right badge badge-danger"></span>
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{{route('parkingArea.create')}}" class="<?php if ($page == 'history') {
+                                                                  echo 'nav-link bg-info active';
+                                                                } else {
+                                                                  echo 'nav-link';
+                                                                } ?>">
+                <i class="nav-icon fas fa-book"></i>
+                <p>
+                  My Booking History
                   <span class="right badge badge-danger"></span>
                 </p>
               </a>

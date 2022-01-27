@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BookingHistory;
 use App\Models\BookParking;
 use App\Models\ParkingArea;
 use App\Models\Student;
@@ -41,7 +42,9 @@ class ParkingAreaController extends Controller
     public function create()
     {
         //
-        return view('admin.editParking.addParkingArea');
+        $histories = BookingHistory::where('matric_no', auth()->user()->matric_no)->get();
+        $student = Student::where('matric_no', auth()->user()->matric_no)->first();
+        return view('student.myParking.studentmyHistory', compact('histories','student'));
     }
 
     /**
