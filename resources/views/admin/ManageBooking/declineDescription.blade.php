@@ -74,7 +74,7 @@
                 <label for="customRadio3" class="custom-control-label">Invalid student card</label>
               </div>
               <div class="custom-control custom-radio">
-                <input class="custom-control-input" type="radio" id="customRadio4" name="description" value="Others" required>
+                <input class="custom-control-input" type="radio" id="customRadio4" name="description" value="Others : " required>
                 <label for="customRadio4" class="custom-control-label">Others</label>
                 <input type="text" name="other" id="id" class="form-control">
               </div>
