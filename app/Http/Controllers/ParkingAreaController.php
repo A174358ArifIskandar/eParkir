@@ -167,9 +167,10 @@ class ParkingAreaController extends Controller
      */
     public function destroy($parking_id)
     {
+        $parkings = BookParking::where('book_id',$parking_id)->pluck('area_id')->first();
         $color = BookParking::find($parking_id);
         $color->delete();
-        return redirect()->route('parkingArea.index')
+        return redirect()->route('parkingArea.show',$parkings)
             ->with('success', 'Parking Lot has been updated successfully');
     }
 }

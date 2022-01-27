@@ -37,6 +37,12 @@
 
     <!-- Default box -->
     <section class="content">
+    @if ($message = Session::get('success'))
+      <div class="alert alert-success">
+        <h5><i class="icon fas fa-check"></i> Success!</h5>
+        <p>{{ $message }}</p>
+      </div>
+      @endif
         <div class="card">
             <div class="card-header">
                 <h3 class="card-title">{{$parkings->area_name}}</h3>

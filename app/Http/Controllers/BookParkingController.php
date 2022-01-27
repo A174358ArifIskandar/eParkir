@@ -84,7 +84,7 @@ class BookParkingController extends Controller
                 'lot_status' => $request->lot_status,
                 'license_image' => $request->fileToUpload,
             ]);
-            return redirect()->route('parkingArea.index')->with('success', 'Parking has been updated successfully');
+            return redirect()->route('parkingArea.show',$request->area_id)->with('success', 'Parking Lot has been updated successfully');
         } else {
             BookParking::create([
                 'book_id' => $new_id,
