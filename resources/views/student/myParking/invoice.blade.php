@@ -98,7 +98,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <div class="row">
                 <div class="col-6">
                   <p class="lead">Payment Methods:</p>
-                  <p class="text">Please Pay at the KPZ Office</p>
+                  <p class="text">Please pay at the KPZ Office within 7 days after booking approved.</p>
                 </div>
                 <div class="table-responsive">
                   <table class="table">

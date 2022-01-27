@@ -145,7 +145,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 @endforeach
                 <p>
                   Parking Status
+                  @if($count==0)
+                  @else
                   <span class="right badge badge-danger">{{$count}}</span>
+                  @endif
                 </p>
               </a>
             </li>
