@@ -50,44 +50,49 @@
                                 </rect>
                             </a>
                             @if($role == 'admin')
-                            @foreach($lots as $area_id => $lot)
-                            @if($area_id == 'A2')
-                            @if (isset($lot))
-                            @if ($lot['lot_status'] == 'disabled')
-                            <a href="{{ route('profile.edit', [$parkings->area_id, $lot['book_id'], str_replace($parkings->area_id,'','2')]) }}" style="<?php echo '" fill="#e6e6e6'; ?>">
-                                @else
-                                <a href="{{ route('parkingStatus.show', $lot['book_id'])}}" style="<?php
-                                                                                                    if ($lot['lot_status'] == 'approved') {
-                                                                                                        echo '" fill="#cc1100';
-                                                                                                    } elseif ($lot['lot_status'] == 'pending' || 'notpaid') {
-                                                                                                        echo '" fill="#fdfd66';
-                                                                                                    }
-                                                                                                    ?>">
-                                    @endif
-                                    @else
-                                    <a href="{{ route('parkingArea.edit', [$parkings->area_id, str_replace($parkings->area_id,'','2')]) }}" style="<?php echo '" fill="#389738';
-                                                                                                                                                    ?>">
-                                        @endif
-                                        @else
-                                        @endif
-                                        @endforeach
-                                        @else
-                                        <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','2')]) }}" style="
-        <?php foreach ($lots as $area_id => $lot) {
-            if ($area_id == 'A2') {
-                if (isset($lot)) {
-                    if ($lot['lot_status'] == 'approved') {
+        @foreach($lots as $area_id => $lot)
+        @if($area_id == 'A2')
+        @if (isset($lot))
+        @if ($lot['lot_status'] == 'disabled')
+        <a href="{{ route('profile.edit', [$parkings->area_id, $lot['book_id'], str_replace($parkings->area_id,'','2')]) }}" style="<?php echo '" fill="#e6e6e6'; ?>">
+            @else
+            <a href="{{ route('parkingStatus.show', $lot['book_id'])}}" style="<?php
+                                                                                if ($lot['lot_status'] == 'approved') {
+                                                                                    echo '" fill="#cc1100';
+                                                                                } elseif ($lot['lot_status'] == 'pending' || 'notpaid') {
+                                                                                    echo '" fill="#fdfd66';
+                                                                                }
+                                                                                ?>">
+                @endif
+                @else
+                <a href="{{ route('parkingArea.edit', [$parkings->area_id, str_replace($parkings->area_id,'','2')]) }}" style="<?php echo '" fill="#389738';
+                                                                                                                                ?>">
+                    @endif
+                    @else
+                    @endif
+                    @endforeach
+                    @else
+                    @foreach($lots as $area_id => $lot)
+                    @if($area_id == 'A2')
+                    @if (isset($lot))
+                    @if ($lot['lot_status'] == 'disabled')
+                    <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','2')]) }}" style="<?php echo 'pointer-events: none" fill="#e6e6e6'; ?>">
+                        @else
+                        <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','2')]) }}" style="
+                    <?php if ($lot['lot_status'] == 'approved') {
                         echo 'pointer-events: none" fill="#cc1100';
                     } elseif ($lot['lot_status'] == 'pending' || 'notpaid') {
                         echo 'pointer-events: none" fill="#fdfd66';
                     }
-                } else {
-                    echo '" fill="#389738';
-                }
-            }
-        }
-        ?>">
-                                            @endif
+                    ?>">
+                            @endif
+                            @else
+                            <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','2')]) }}" style="<?php echo '" fill="#389738'; ?>">
+                                @endif
+                                @else
+                                @endif
+                                @endforeach
+                                @endif
                                             <rect class="lot" transform="rotate(90)" x="5.29" y="-47.6" width="42.3" height="21.2">
                                                 <title>A2</title>
                                             </rect>

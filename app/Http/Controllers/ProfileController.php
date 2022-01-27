@@ -72,6 +72,7 @@ class ProfileController extends Controller
         $parkings = ParkingArea::find($id);
         $student = Student::where('matric_no',auth()->user()->matric_no)->first();
         $bookings = BookParking::all();
+        $count = 0;
         $booked = BookParking::where('area_id', $parkings->area_id)->get(['lot_status', 'book_id', 'lot_id'])->mapWithKeys(function ($item) {
             return [$item->lot_id => ['lot_status' => $item->lot_status, 'book_id' => $item->book_id]];
         });
@@ -85,7 +86,8 @@ class ProfileController extends Controller
             'role'=>$role,
             'lots'=>$lots,
             'lotno'=>$lotno,
-            'bookings'=>$bookings
+            'bookings'=>$bookings,
+            'count'=>$count
         ]);
     }
 
