@@ -53,8 +53,11 @@
                   <input type="text" name="plate_no" id="name" class="form-control" placeholder="Enter plate no">
                 </div>
                 <div class="form-group">
-                  <label for="area_name">Blok:</label>
-                  <input type="" value="{{ $parkings->area_id }}" name="area_id" id="area_id" class="form-control" placeholder="" readonly>
+                  <label for="area_name">Parking Area:</label>
+                  <input type="" value="{{ $parkings->area_name }}" name="area_name" id="area_name" class="form-control" placeholder="" readonly>
+                </div>
+                <div class="form-group">
+                  <input type="hidden" value="{{ $parkings->area_id }}" name="area_id" id="area_id" class="form-control" placeholder="" readonly>
                 </div>
                 <div class="form-group">
                   <label for="lot_id">Lot ID:</label>

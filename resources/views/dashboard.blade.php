@@ -24,7 +24,7 @@
   <section class="content">
     <div class="col-12">
       <div class="row">
-        <div class="col-md-4 card-deck row">
+        <div class="col-md-5 card-deck row">
           <div class="card card-primary card-outline">
             <div class="card-body box-profile">
               <div class="text-center">
@@ -33,17 +33,44 @@
               </div>
               <h3 class="profile-username text-center">{{$student->user->user_name}}</h3>
               <p class="text-muted text-center">{{$student->matric_no}}</p>
-              <hr>
-              <p><i class="far fa-building"></i> College: {{$student->college_name}}</p>
-              <p><i class="fas fa-book mr-1"></i> Faculty: {{$student->student_faculty}}</p>
-              <p><i class="far fa-envelope-open"></i> Email: {{$student->user->user_email}}</p>
-              <p><i class="fas fa-phone-alt mr-1"></i> Phone Number: {{$student->user->user_phone}}</p>
 
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <td><i class="far fa-building"></i></td>
+                    <td>College:</td>
+                    <td>{{$student->college_name}}</td>
+                    <td class="text-right py-0 align-middle">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><i class="fas fa-book mr-1"></i></td>
+                    <td>Faculty:</td>
+                    <td>{{$student->student_faculty}}</td>
+                    <td class="text-right py-0 align-middle">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><i class="far fa-envelope-open"></i></td>
+                    <td>Email:</td>
+                    <td>{{$student->user->user_email}}</td>
+                    <td class="text-right py-0 align-middle">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><i class="fas fa-phone-alt mr-1"></i></td>
+                    <td>Phone No:</td>
+                    <td>{{$student->user->user_phone}}</td>
+                    <td class="text-right py-0 align-middle">
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
 
-        <div class="col-md-8">
+        <div class="col-md-7">
           <div class="card card-info">
             <div class="card-header">
               <h5 class="card-title">Parking Area</h5>

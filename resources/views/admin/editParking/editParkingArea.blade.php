@@ -51,47 +51,28 @@
                 @endif
                 @endforeach
                 <div class="col-md-3 col-sm-6 col-12">
-                  <div class="info-box bg-danger">
-                    <div class="info-box-content">
-                      <span class="info-box-text">{{$parking->area_name}}</span>
-                      <span class="info-box-number">{{$parking->area_total_availability-$count}} Parking Lots Available</span>
-                      <div class="progress" style="height: 10px;">
-                        <input type="hidden" id="id" value="{{$countperc=($parking->area_total_availability-$count)/$parking->area_total_availability*100}}" class="form-control">
-                        <div class="progress-bar" style="width: {{$countperc}}%"></div>
-                      </div>
-                      <span class="progress-description">
-                        {{$parking->area_total_availability}} Total Parking Lots
-                      </span>
-                      <form action="{{route('parkingArea.destroy', $parking->area_id)}}" method="post">
-                        @csrf
-                        @method('delete')
-                        <div class="btn-group">
-                          <a href="{{route('parkingArea.show', $parking->area_id)}}" class="btn btn-default">
-                            <i class="fas fa-info-circle"></i>
-                          </a>
-                          
-                          <button type="submit" onclick="return confirm('Are you sure you want to delete this parking area?');" class="btn btn-default">
-                            <i class="far fa-trash-alt"></i>
-                          </button>
+                  <a href="{{route('parkingArea.show', $parking->area_id)}}">
+                    <div class="info-box bg-danger">
+                      <div class="info-box-content">
+                        <span class="info-box-text">{{$parking->area_name}}</span>
+                        <span class="info-box-number">{{$parking->area_total_availability-$count}} Parking Lots Available</span>
+                        <div class="progress" style="height: 10px;">
+                          <input type="hidden" id="id" value="{{$countperc=($parking->area_total_availability-$count)/$parking->area_total_availability*100}}" class="form-control">
+                          <div class="progress-bar" style="width: {{$countperc}}%"></div>
                         </div>
+                        <span class="progress-description">
+                          {{$parking->area_total_availability}} Total Parking Lots
+                        </span>
 
-                      </form>
+                      </div>
+                      <!-- /.info-box-content -->
                     </div>
-                    <!-- /.info-box-content -->
-                  </div>
-                  <!-- /.info-box -->
+                    <!-- /.info-box -->
+                  </a>
                 </div>
                 <input type="hidden" id="id" value="{{$count=0}}" class="form-control">
                 @endforeach
-                <!-- </div> -->
-                <!-- <a href="{{route('parkingArea.create')}}"><button type="button" class="btn btn-outline-secondary">
 
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="30" fill="currentColor" color="#000000" class="bi bi-plus" viewBox="0 0 16 16">
-                      <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
-                    </svg>
-                    <span class="visually-hidden"></span>
-
-                  </button></a> -->
               </div>
             </div>
           </div>
@@ -101,7 +82,7 @@
       </div>
       <!-- /.row -->
     </div><!-- /.container-fluid -->
-
+  </section>
 </div>
 <!-- /.content -->
 @endsection

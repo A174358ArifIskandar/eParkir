@@ -63,20 +63,6 @@
                         <span class="progress-description">
                           {{$parking->area_total_availability}} Total Parking Lots
                         </span>
-                        <!-- <form action="{{route('parkingArea.destroy', $parking->area_id)}}" method="post">
-                        @csrf
-                        @method('delete')
-                        <div class="btn-group">
-                          <a href="{{route('parkingArea.show', $parking->area_id)}}" class="btn btn-default">
-                            <i class="fas fa-info-circle"></i>
-                          </a>
-                          
-                          <button type="submit" onclick="return confirm('Are you sure you want to delete this parking area?');" class="btn btn-default">
-                            <i class="far fa-trash-alt"></i>
-                          </button>
-                        </div>
-
-                      </form> -->
                       </div>
                       <!-- /.info-box-content -->
                     </div>

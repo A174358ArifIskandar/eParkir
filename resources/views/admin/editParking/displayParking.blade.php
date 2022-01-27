@@ -44,7 +44,7 @@
       </div>
       @endif
         <div class="card">
-            <div class="card-header">
+            <div class="card-header bg-info">
                 <h3 class="card-title">{{$parkings->area_name}}</h3>
             </div>
             <br>
