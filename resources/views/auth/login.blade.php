@@ -76,7 +76,7 @@
     }
 
     .input-group-text {
-        background: #c0392b !important;
+        background: #323232 !important;
         color: white !important;
         border: 0 !important;
         border-radius: 0.25rem 0 0 0.25rem !important;
@@ -146,7 +146,7 @@
 
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" style="background-color:#323232;" class="btn btn-primary">
+                                <button type="submit" style="background-color:#c0392b;" class="btn btn-primary">
                                     {{ __('Login') }}
                                 </button>
 
