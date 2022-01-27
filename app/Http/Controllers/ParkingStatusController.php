@@ -20,8 +20,9 @@ class ParkingStatusController extends Controller
         //
         $role = Auth::user()->role;
         if ($role == 'admin') {
-            $bookings = BookParking::all();
-            return view('admin.ManageBooking.bookingRequest', compact('bookings'));
+            $bookings = BookParking::where('lot_status','notpaid')->orWhere('lot_status','pending')->get();
+            $count = 0;
+            return view('admin.ManageBooking.bookingRequest', compact('bookings','count'));
         } else {
             return view('layouts.error');
         }
@@ -36,7 +37,9 @@ class ParkingStatusController extends Controller
     {
         //
         $histories = BookingHistory::all();
-        return view('admin.ManageBooking.bookingHistory', compact('histories'));
+        $bookings = BookParking::all();
+        $count = 0;
+        return view('admin.ManageBooking.bookingHistory', compact('histories','bookings','count'));
     }
 
     /**
@@ -91,8 +94,10 @@ class ParkingStatusController extends Controller
         //
         $role = Auth::user()->role;
         if ($role == 'admin') {
-            $bookings = BookParking::findOrFail($id);
-            return view('admin.ManageBooking.formRequest', compact('bookings'));
+            $bookingids = BookParking::findOrFail($id);
+            $bookings = BookParking::all();
+            $count = 0;
+            return view('admin.ManageBooking.formRequest', compact('bookingids','bookings','count'));
         } else {
             return view('layouts.error');
         }
@@ -107,8 +112,10 @@ class ParkingStatusController extends Controller
     public function edit($id)
     {
         //
-        $bookings = BookParking::findOrFail($id);
-        return view('admin.ManageBooking.declineDescription', compact('bookings'));
+        $bookingids = BookParking::findOrFail($id);
+        $bookings = BookParking::all();
+        $count = 0;
+        return view('admin.ManageBooking.declineDescription', compact('bookingids','bookings','count'));
     }
 
     /**
@@ -132,10 +139,7 @@ class ParkingStatusController extends Controller
     public function destroy($id)
     {
         //
-        // $bookings = BookParking::findOrFail($id);
-        // return view('admin.ManageBooking.viewDetails', compact('bookings'));
-        // $lotStatus = BookParking::find($id);
-        // $lotStatus->delete();
-        // return redirect()->route('parkingStatus.index')->with('success', 'Booking Request has been updated successfully');
+
+      
     }
 }

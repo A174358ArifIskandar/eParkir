@@ -5,61 +5,74 @@
         @foreach($lots as $area_id => $lot)
         @if($area_id == 'A1')
         @if (isset($lot))
-        <a href="{{ route('parkingStatus.show', $lot['book_id'])}}" style="<?php
-                                                                            if ($lot['lot_status'] == 'approved') {
-                                                                                echo '" fill="#cc1100';
-                                                                            } elseif ($lot['lot_status'] == 'pending' || 'notpaid') {
-                                                                                echo '" fill="#fdfd66';
-                                                                            }
-                                                                            ?>">
+        @if ($lot['lot_status'] == 'disabled')
+        <a href="{{ route('profile.edit', [$parkings->area_id, $lot['book_id'], str_replace($parkings->area_id,'','1')]) }}" style="<?php echo '" fill="#e6e6e6'; ?>">
             @else
-            <a href="" style="<?php echo '" fill="#389738';
-                                ?>">
+            <a href="{{ route('parkingStatus.show', $lot['book_id'])}}" style="<?php
+                                                                                if ($lot['lot_status'] == 'approved') {
+                                                                                    echo '" fill="#cc1100';
+                                                                                } elseif ($lot['lot_status'] == 'pending' || 'notpaid') {
+                                                                                    echo '" fill="#fdfd66';
+                                                                                }
+                                                                                ?>">
                 @endif
                 @else
-                @endif
-                @endforeach
-                @else
-                <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','1')]) }}" style="
-        <?php foreach ($lots as $area_id => $lot) {
-            if ($area_id == 'A1') {
-                if (isset($lot)) {
-                    if ($lot['lot_status'] == 'approved') {
+                <a href="{{ route('parkingArea.edit', [$parkings->area_id, str_replace($parkings->area_id,'','1')]) }}" style="<?php echo '" fill="#389738';
+                                                                                                                                ?>">
+                    @endif
+                    @else
+                    @endif
+                    @endforeach
+                    @else
+                    @foreach($lots as $area_id => $lot)
+                    @if($area_id == 'A1')
+                    @if (isset($lot))
+                    @if ($lot['lot_status'] == 'disabled')
+                    <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','1')]) }}" style="<?php echo 'pointer-events: none" fill="#e6e6e6'; ?>">
+                        @else
+                        <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','1')]) }}" style="
+                    <?php if ($lot['lot_status'] == 'approved') {
                         echo 'pointer-events: none" fill="#cc1100';
                     } elseif ($lot['lot_status'] == 'pending' || 'notpaid') {
                         echo 'pointer-events: none" fill="#fdfd66';
                     }
-                } else {
-                    echo '" fill="#389738';
-                }
-            }
-        }
-        ?>">
-                    @endif
-                    <rect class="lot" transform="rotate(90)" x="5.29" y="-26.5" width="42.3" height="21.2">
-                        <title>A1</title>
-                    </rect>
-                </a>
-                @if($role == 'admin')
-                @foreach($lots as $area_id => $lot)
-                @if($area_id == 'A2')
-                @if (isset($lot))
-                <a href="{{ route('parkingStatus.show', $lot['book_id'])}}" style="<?php
-                                                                                    if ($lot['lot_status'] == 'approved') {
-                                                                                        echo '" fill="#cc1100';
-                                                                                    } elseif ($lot['lot_status'] == 'pending' || 'notpaid') {
-                                                                                        echo '" fill="#fdfd66';
-                                                                                    }
-                                                                                    ?>">
-                    @else
-                    <a href="" style="<?php echo '" fill="#389738';
-                                        ?>">
-                        @endif
-                        @else
-                        @endif
-                        @endforeach
-                        @else
-                        <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','2')]) }}" style="
+                    ?>">
+                            @endif
+                            @else
+                            <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','1')]) }}" style="<?php echo '" fill="#389738'; ?>">
+                                @endif
+                                @else
+                                @endif
+                                @endforeach
+                                @endif
+                                <rect class="lot" transform="rotate(90)" x="5.29" y="-26.5" width="42.3" height="21.2">
+                                    <title>A1</title>
+                                </rect>
+                            </a>
+                            @if($role == 'admin')
+                            @foreach($lots as $area_id => $lot)
+                            @if($area_id == 'A2')
+                            @if (isset($lot))
+                            @if ($lot['lot_status'] == 'disabled')
+                            <a href="{{ route('profile.edit', [$parkings->area_id, $lot['book_id'], str_replace($parkings->area_id,'','2')]) }}" style="<?php echo '" fill="#e6e6e6'; ?>">
+                                @else
+                                <a href="{{ route('parkingStatus.show', $lot['book_id'])}}" style="<?php
+                                                                                                    if ($lot['lot_status'] == 'approved') {
+                                                                                                        echo '" fill="#cc1100';
+                                                                                                    } elseif ($lot['lot_status'] == 'pending' || 'notpaid') {
+                                                                                                        echo '" fill="#fdfd66';
+                                                                                                    }
+                                                                                                    ?>">
+                                    @endif
+                                    @else
+                                    <a href="{{ route('parkingArea.edit', [$parkings->area_id, str_replace($parkings->area_id,'','2')]) }}" style="<?php echo '" fill="#389738';
+                                                                                                                                                    ?>">
+                                        @endif
+                                        @else
+                                        @endif
+                                        @endforeach
+                                        @else
+                                        <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','2')]) }}" style="
         <?php foreach ($lots as $area_id => $lot) {
             if ($area_id == 'A2') {
                 if (isset($lot)) {
@@ -74,92 +87,14 @@
             }
         }
         ?>">
-                            @endif
-                            <rect class="lot" transform="rotate(90)" x="5.29" y="-47.6" width="42.3" height="21.2">
-                                <title>A2</title>
-                            </rect>
-                        </a>
-                        @if($role == 'admin')
-                        @foreach($lots as $area_id => $lot)
-                        @if($area_id == 'A3')
-                        @if (isset($lot))
-                        <a href="{{ route('parkingStatus.show', $lot['book_id'])}}" style="<?php
-                                                                                            if ($lot['lot_status'] == 'approved') {
-                                                                                                echo '" fill="#cc1100';
-                                                                                            } elseif ($lot['lot_status'] == 'pending' || 'notpaid') {
-                                                                                                echo '" fill="#fdfd66';
-                                                                                            }
-                                                                                            ?>">
-                            @else
-                            <a href="" style="<?php echo '" fill="#389738';
-                                                ?>">
-                                @endif
-                                @else
-                                @endif
-                                @endforeach
-                                @else
-                                <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','3')]) }}" style="
-        <?php foreach ($lots as $area_id => $lot) {
-            if ($area_id == 'A3') {
-                if (isset($lot)) {
-                    if ($lot['lot_status'] == 'approved') {
-                        echo 'pointer-events: none" fill="#cc1100';
-                    } elseif ($lot['lot_status'] == 'pending' || 'notpaid') {
-                        echo 'pointer-events: none" fill="#fdfd66';
-                    }
-                } else {
-                    echo '" fill="#389738';
-                }
-            }
-        }
-        ?>">
-                                    @endif
-                                    <rect class="lot" transform="rotate(90)" x="5.29" y="-68.8" width="42.3" height="21.2">
-                                        <title>A3</title>
-                                    </rect>
-                                </a>
-                                @if($role == 'admin')
-                                @foreach($lots as $area_id => $lot)
-                                @if($area_id == 'A4')
-                                @if (isset($lot))
-                                <a href="{{ route('parkingStatus.show', $lot['book_id'])}}" style="<?php
-                                                                                                    if ($lot['lot_status'] == 'approved') {
-                                                                                                        echo '" fill="#cc1100';
-                                                                                                    } elseif ($lot['lot_status'] == 'pending' || 'notpaid') {
-                                                                                                        echo '" fill="#fdfd66';
-                                                                                                    }
-                                                                                                    ?>">
-                                    @else
-                                    <a href="" style="<?php echo '" fill="#389738';
-                                                        ?>">
-                                        @endif
-                                        @else
-                                        @endif
-                                        @endforeach
-                                        @else
-                                        <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','4')]) }}" style="
-        <?php foreach ($lots as $area_id => $lot) {
-            if ($area_id == 'A4') {
-                if (isset($lot)) {
-                    if ($lot['lot_status'] == 'approved') {
-                        echo 'pointer-events: none" fill="#cc1100';
-                    } elseif ($lot['lot_status'] == 'pending' || 'notpaid') {
-                        echo 'pointer-events: none" fill="#fdfd66';
-                    }
-                } else {
-                    echo '" fill="#389738';
-                }
-            }
-        }
-        ?>">
                                             @endif
-                                            <rect class="lot" transform="rotate(90)" x="5.29" y="-90" width="42.3" height="21.2">
-                                                <title>A4</title>
+                                            <rect class="lot" transform="rotate(90)" x="5.29" y="-47.6" width="42.3" height="21.2">
+                                                <title>A2</title>
                                             </rect>
                                         </a>
                                         @if($role == 'admin')
                                         @foreach($lots as $area_id => $lot)
-                                        @if($area_id == 'A5')
+                                        @if($area_id == 'A3')
                                         @if (isset($lot))
                                         <a href="{{ route('parkingStatus.show', $lot['book_id'])}}" style="<?php
                                                                                                             if ($lot['lot_status'] == 'approved') {
@@ -176,9 +111,9 @@
                                                 @endif
                                                 @endforeach
                                                 @else
-                                                <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','5')]) }}" style="
+                                                <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','3')]) }}" style="
         <?php foreach ($lots as $area_id => $lot) {
-            if ($area_id == 'A5') {
+            if ($area_id == 'A3') {
                 if (isset($lot)) {
                     if ($lot['lot_status'] == 'approved') {
                         echo 'pointer-events: none" fill="#cc1100';
@@ -192,13 +127,13 @@
         }
         ?>">
                                                     @endif
-                                                    <rect class="lot" transform="rotate(90)" x="5.29" y="-111" width="42.3" height="21.2">
-                                                        <title>A5</title>
+                                                    <rect class="lot" transform="rotate(90)" x="5.29" y="-68.8" width="42.3" height="21.2">
+                                                        <title>A3</title>
                                                     </rect>
                                                 </a>
                                                 @if($role == 'admin')
                                                 @foreach($lots as $area_id => $lot)
-                                                @if($area_id == 'A6')
+                                                @if($area_id == 'A4')
                                                 @if (isset($lot))
                                                 <a href="{{ route('parkingStatus.show', $lot['book_id'])}}" style="<?php
                                                                                                                     if ($lot['lot_status'] == 'approved') {
@@ -215,9 +150,9 @@
                                                         @endif
                                                         @endforeach
                                                         @else
-                                                        <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','6')]) }}" style="
+                                                        <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','4')]) }}" style="
         <?php foreach ($lots as $area_id => $lot) {
-            if ($area_id == 'A6') {
+            if ($area_id == 'A4') {
                 if (isset($lot)) {
                     if ($lot['lot_status'] == 'approved') {
                         echo 'pointer-events: none" fill="#cc1100';
@@ -231,13 +166,13 @@
         }
         ?>">
                                                             @endif
-                                                            <rect class="lot" transform="rotate(90)" x="5.29" y="-132" width="42.3" height="21.2">
-                                                                <title>A6</title>
+                                                            <rect class="lot" transform="rotate(90)" x="5.29" y="-90" width="42.3" height="21.2">
+                                                                <title>A4</title>
                                                             </rect>
                                                         </a>
                                                         @if($role == 'admin')
                                                         @foreach($lots as $area_id => $lot)
-                                                        @if($area_id == 'A7')
+                                                        @if($area_id == 'A5')
                                                         @if (isset($lot))
                                                         <a href="{{ route('parkingStatus.show', $lot['book_id'])}}" style="<?php
                                                                                                                             if ($lot['lot_status'] == 'approved') {
@@ -254,9 +189,9 @@
                                                                 @endif
                                                                 @endforeach
                                                                 @else
-                                                                <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','7')]) }}" style="
+                                                                <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','5')]) }}" style="
         <?php foreach ($lots as $area_id => $lot) {
-            if ($area_id == 'A7') {
+            if ($area_id == 'A5') {
                 if (isset($lot)) {
                     if ($lot['lot_status'] == 'approved') {
                         echo 'pointer-events: none" fill="#cc1100';
@@ -270,13 +205,13 @@
         }
         ?>">
                                                                     @endif
-                                                                    <rect fill="#389738" class="lot" transform="rotate(90)" x="5.29" y="-153" width="42.3" height="21.2">
-                                                                        <title>A7</title>
+                                                                    <rect class="lot" transform="rotate(90)" x="5.29" y="-111" width="42.3" height="21.2">
+                                                                        <title>A5</title>
                                                                     </rect>
                                                                 </a>
                                                                 @if($role == 'admin')
                                                                 @foreach($lots as $area_id => $lot)
-                                                                @if($area_id == 'A8')
+                                                                @if($area_id == 'A6')
                                                                 @if (isset($lot))
                                                                 <a href="{{ route('parkingStatus.show', $lot['book_id'])}}" style="<?php
                                                                                                                                     if ($lot['lot_status'] == 'approved') {
@@ -293,9 +228,9 @@
                                                                         @endif
                                                                         @endforeach
                                                                         @else
-                                                                        <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','8')]) }}" style="
+                                                                        <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','6')]) }}" style="
         <?php foreach ($lots as $area_id => $lot) {
-            if ($area_id == 'A8') {
+            if ($area_id == 'A6') {
                 if (isset($lot)) {
                     if ($lot['lot_status'] == 'approved') {
                         echo 'pointer-events: none" fill="#cc1100';
@@ -309,13 +244,13 @@
         }
         ?>">
                                                                             @endif
-                                                                            <rect class="lot" transform="rotate(90)" x="5.29" y="-175" width="42.3" height="21.8">
-                                                                                <title>A8</title>
+                                                                            <rect class="lot" transform="rotate(90)" x="5.29" y="-132" width="42.3" height="21.2">
+                                                                                <title>A6</title>
                                                                             </rect>
                                                                         </a>
                                                                         @if($role == 'admin')
                                                                         @foreach($lots as $area_id => $lot)
-                                                                        @if($area_id == 'A9')
+                                                                        @if($area_id == 'A7')
                                                                         @if (isset($lot))
                                                                         <a href="{{ route('parkingStatus.show', $lot['book_id'])}}" style="<?php
                                                                                                                                             if ($lot['lot_status'] == 'approved') {
@@ -332,9 +267,9 @@
                                                                                 @endif
                                                                                 @endforeach
                                                                                 @else
-                                                                                <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','9')]) }}" style="
+                                                                                <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','7')]) }}" style="
         <?php foreach ($lots as $area_id => $lot) {
-            if ($area_id == 'A9') {
+            if ($area_id == 'A7') {
                 if (isset($lot)) {
                     if ($lot['lot_status'] == 'approved') {
                         echo 'pointer-events: none" fill="#cc1100';
@@ -348,13 +283,13 @@
         }
         ?>">
                                                                                     @endif
-                                                                                    <rect class="lot" transform="rotate(90)" x="5.29" y="-196" width="42.3" height="21.2">
-                                                                                        <title>A9</title>
+                                                                                    <rect fill="#389738" class="lot" transform="rotate(90)" x="5.29" y="-153" width="42.3" height="21.2">
+                                                                                        <title>A7</title>
                                                                                     </rect>
                                                                                 </a>
                                                                                 @if($role == 'admin')
                                                                                 @foreach($lots as $area_id => $lot)
-                                                                                @if($area_id == 'A10')
+                                                                                @if($area_id == 'A8')
                                                                                 @if (isset($lot))
                                                                                 <a href="{{ route('parkingStatus.show', $lot['book_id'])}}" style="<?php
                                                                                                                                                     if ($lot['lot_status'] == 'approved') {
@@ -371,9 +306,9 @@
                                                                                         @endif
                                                                                         @endforeach
                                                                                         @else
-                                                                                        <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','10')]) }}" style="
+                                                                                        <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','8')]) }}" style="
         <?php foreach ($lots as $area_id => $lot) {
-            if ($area_id == 'A10') {
+            if ($area_id == 'A8') {
                 if (isset($lot)) {
                     if ($lot['lot_status'] == 'approved') {
                         echo 'pointer-events: none" fill="#cc1100';
@@ -387,13 +322,13 @@
         }
         ?>">
                                                                                             @endif
-                                                                                            <rect class="lot" transform="rotate(90)" x="5.29" y="-217" width="42.3" height="21.2">
-                                                                                                <title>A10</title>
+                                                                                            <rect class="lot" transform="rotate(90)" x="5.29" y="-175" width="42.3" height="21.8">
+                                                                                                <title>A8</title>
                                                                                             </rect>
                                                                                         </a>
                                                                                         @if($role == 'admin')
                                                                                         @foreach($lots as $area_id => $lot)
-                                                                                        @if($area_id == 'A19')
+                                                                                        @if($area_id == 'A9')
                                                                                         @if (isset($lot))
                                                                                         <a href="{{ route('parkingStatus.show', $lot['book_id'])}}" style="<?php
                                                                                                                                                             if ($lot['lot_status'] == 'approved') {
@@ -410,9 +345,9 @@
                                                                                                 @endif
                                                                                                 @endforeach
                                                                                                 @else
-                                                                                                <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','19')]) }}" style="
+                                                                                                <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','9')]) }}" style="
         <?php foreach ($lots as $area_id => $lot) {
-            if ($area_id == 'A19') {
+            if ($area_id == 'A9') {
                 if (isset($lot)) {
                     if ($lot['lot_status'] == 'approved') {
                         echo 'pointer-events: none" fill="#cc1100';
@@ -426,13 +361,13 @@
         }
         ?>">
                                                                                                     @endif
-                                                                                                    <rect class="lot" transform="rotate(90)" x="63.5" y="-196" width="42.3" height="21.2">
-                                                                                                        <title>A19</title>
+                                                                                                    <rect class="lot" transform="rotate(90)" x="5.29" y="-196" width="42.3" height="21.2">
+                                                                                                        <title>A9</title>
                                                                                                     </rect>
                                                                                                 </a>
                                                                                                 @if($role == 'admin')
                                                                                                 @foreach($lots as $area_id => $lot)
-                                                                                                @if($area_id == 'A18')
+                                                                                                @if($area_id == 'A10')
                                                                                                 @if (isset($lot))
                                                                                                 <a href="{{ route('parkingStatus.show', $lot['book_id'])}}" style="<?php
                                                                                                                                                                     if ($lot['lot_status'] == 'approved') {
@@ -449,9 +384,9 @@
                                                                                                         @endif
                                                                                                         @endforeach
                                                                                                         @else
-                                                                                                        <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','18')]) }}" style="
+                                                                                                        <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','10')]) }}" style="
         <?php foreach ($lots as $area_id => $lot) {
-            if ($area_id == 'A18') {
+            if ($area_id == 'A10') {
                 if (isset($lot)) {
                     if ($lot['lot_status'] == 'approved') {
                         echo 'pointer-events: none" fill="#cc1100';
@@ -465,13 +400,13 @@
         }
         ?>">
                                                                                                             @endif
-                                                                                                            <rect class="lot" transform="rotate(90)" x="63.5" y="-175" width="42.3" height="21.8">
-                                                                                                                <title>A18</title>
+                                                                                                            <rect class="lot" transform="rotate(90)" x="5.29" y="-217" width="42.3" height="21.2">
+                                                                                                                <title>A10</title>
                                                                                                             </rect>
                                                                                                         </a>
                                                                                                         @if($role == 'admin')
                                                                                                         @foreach($lots as $area_id => $lot)
-                                                                                                        @if($area_id == 'A17')
+                                                                                                        @if($area_id == 'A19')
                                                                                                         @if (isset($lot))
                                                                                                         <a href="{{ route('parkingStatus.show', $lot['book_id'])}}" style="<?php
                                                                                                                                                                             if ($lot['lot_status'] == 'approved') {
@@ -488,9 +423,9 @@
                                                                                                                 @endif
                                                                                                                 @endforeach
                                                                                                                 @else
-                                                                                                                <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','17')]) }}" style="
+                                                                                                                <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','19')]) }}" style="
         <?php foreach ($lots as $area_id => $lot) {
-            if ($area_id == 'A17') {
+            if ($area_id == 'A19') {
                 if (isset($lot)) {
                     if ($lot['lot_status'] == 'approved') {
                         echo 'pointer-events: none" fill="#cc1100';
@@ -504,13 +439,13 @@
         }
         ?>">
                                                                                                                     @endif
-                                                                                                                    <rect class="lot" transform="rotate(90)" x="63.5" y="-153" width="42.3" height="21.2">
-                                                                                                                        <title>A17</title>
+                                                                                                                    <rect class="lot" transform="rotate(90)" x="63.5" y="-196" width="42.3" height="21.2">
+                                                                                                                        <title>A19</title>
                                                                                                                     </rect>
                                                                                                                 </a>
                                                                                                                 @if($role == 'admin')
                                                                                                                 @foreach($lots as $area_id => $lot)
-                                                                                                                @if($area_id == 'A16')
+                                                                                                                @if($area_id == 'A18')
                                                                                                                 @if (isset($lot))
                                                                                                                 <a href="{{ route('parkingStatus.show', $lot['book_id'])}}" style="<?php
                                                                                                                                                                                     if ($lot['lot_status'] == 'approved') {
@@ -527,9 +462,9 @@
                                                                                                                         @endif
                                                                                                                         @endforeach
                                                                                                                         @else
-                                                                                                                        <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','16')]) }}" style="
+                                                                                                                        <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','18')]) }}" style="
         <?php foreach ($lots as $area_id => $lot) {
-            if ($area_id == 'A16') {
+            if ($area_id == 'A18') {
                 if (isset($lot)) {
                     if ($lot['lot_status'] == 'approved') {
                         echo 'pointer-events: none" fill="#cc1100';
@@ -543,13 +478,13 @@
         }
         ?>">
                                                                                                                             @endif
-                                                                                                                            <rect class="lot" transform="rotate(90)" x="63.5" y="-132" width="42.3" height="21.2">
-                                                                                                                                <title>A16</title>
+                                                                                                                            <rect class="lot" transform="rotate(90)" x="63.5" y="-175" width="42.3" height="21.8">
+                                                                                                                                <title>A18</title>
                                                                                                                             </rect>
                                                                                                                         </a>
                                                                                                                         @if($role == 'admin')
                                                                                                                         @foreach($lots as $area_id => $lot)
-                                                                                                                        @if($area_id == 'A15')
+                                                                                                                        @if($area_id == 'A17')
                                                                                                                         @if (isset($lot))
                                                                                                                         <a href="{{ route('parkingStatus.show', $lot['book_id'])}}" style="<?php
                                                                                                                                                                                             if ($lot['lot_status'] == 'approved') {
@@ -566,9 +501,9 @@
                                                                                                                                 @endif
                                                                                                                                 @endforeach
                                                                                                                                 @else
-                                                                                                                                <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','15')]) }}" style="
+                                                                                                                                <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','17')]) }}" style="
         <?php foreach ($lots as $area_id => $lot) {
-            if ($area_id == 'A15') {
+            if ($area_id == 'A17') {
                 if (isset($lot)) {
                     if ($lot['lot_status'] == 'approved') {
                         echo 'pointer-events: none" fill="#cc1100';
@@ -582,13 +517,13 @@
         }
         ?>">
                                                                                                                                     @endif
-                                                                                                                                    <rect class="lot" transform="rotate(90)" x="63.5" y="-111" width="42.3" height="21.2">
-                                                                                                                                        <title>A15</title>
+                                                                                                                                    <rect class="lot" transform="rotate(90)" x="63.5" y="-153" width="42.3" height="21.2">
+                                                                                                                                        <title>A17</title>
                                                                                                                                     </rect>
                                                                                                                                 </a>
                                                                                                                                 @if($role == 'admin')
                                                                                                                                 @foreach($lots as $area_id => $lot)
-                                                                                                                                @if($area_id == 'A14')
+                                                                                                                                @if($area_id == 'A16')
                                                                                                                                 @if (isset($lot))
                                                                                                                                 <a href="{{ route('parkingStatus.show', $lot['book_id'])}}" style="<?php
                                                                                                                                                                                                     if ($lot['lot_status'] == 'approved') {
@@ -605,9 +540,9 @@
                                                                                                                                         @endif
                                                                                                                                         @endforeach
                                                                                                                                         @else
-                                                                                                                                        <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','14')]) }}" style="
+                                                                                                                                        <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','16')]) }}" style="
         <?php foreach ($lots as $area_id => $lot) {
-            if ($area_id == 'A14') {
+            if ($area_id == 'A16') {
                 if (isset($lot)) {
                     if ($lot['lot_status'] == 'approved') {
                         echo 'pointer-events: none" fill="#cc1100';
@@ -621,13 +556,13 @@
         }
         ?>">
                                                                                                                                             @endif
-                                                                                                                                            <rect class="lot" transform="rotate(90)" x="63.5" y="-90" width="42.3" height="21.2">
-                                                                                                                                                <title>A14</title>
+                                                                                                                                            <rect class="lot" transform="rotate(90)" x="63.5" y="-132" width="42.3" height="21.2">
+                                                                                                                                                <title>A16</title>
                                                                                                                                             </rect>
                                                                                                                                         </a>
                                                                                                                                         @if($role == 'admin')
                                                                                                                                         @foreach($lots as $area_id => $lot)
-                                                                                                                                        @if($area_id == 'A13')
+                                                                                                                                        @if($area_id == 'A15')
                                                                                                                                         @if (isset($lot))
                                                                                                                                         <a href="{{ route('parkingStatus.show', $lot['book_id'])}}" style="<?php
                                                                                                                                                                                                             if ($lot['lot_status'] == 'approved') {
@@ -644,9 +579,9 @@
                                                                                                                                                 @endif
                                                                                                                                                 @endforeach
                                                                                                                                                 @else
-                                                                                                                                                <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','13')]) }}" style="
+                                                                                                                                                <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','15')]) }}" style="
         <?php foreach ($lots as $area_id => $lot) {
-            if ($area_id == 'A13') {
+            if ($area_id == 'A15') {
                 if (isset($lot)) {
                     if ($lot['lot_status'] == 'approved') {
                         echo 'pointer-events: none" fill="#cc1100';
@@ -660,13 +595,13 @@
         }
         ?>">
                                                                                                                                                     @endif
-                                                                                                                                                    <rect class="lot" transform="rotate(90)" x="63.5" y="-68.8" width="42.3" height="21.2">
-                                                                                                                                                        <title>A13</title>
+                                                                                                                                                    <rect class="lot" transform="rotate(90)" x="63.5" y="-111" width="42.3" height="21.2">
+                                                                                                                                                        <title>A15</title>
                                                                                                                                                     </rect>
                                                                                                                                                 </a>
                                                                                                                                                 @if($role == 'admin')
                                                                                                                                                 @foreach($lots as $area_id => $lot)
-                                                                                                                                                @if($area_id == 'A12')
+                                                                                                                                                @if($area_id == 'A14')
                                                                                                                                                 @if (isset($lot))
                                                                                                                                                 <a href="{{ route('parkingStatus.show', $lot['book_id'])}}" style="<?php
                                                                                                                                                                                                                     if ($lot['lot_status'] == 'approved') {
@@ -683,9 +618,9 @@
                                                                                                                                                         @endif
                                                                                                                                                         @endforeach
                                                                                                                                                         @else
-                                                                                                                                                        <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','12')]) }}" style="
+                                                                                                                                                        <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','14')]) }}" style="
         <?php foreach ($lots as $area_id => $lot) {
-            if ($area_id == 'A12') {
+            if ($area_id == 'A14') {
                 if (isset($lot)) {
                     if ($lot['lot_status'] == 'approved') {
                         echo 'pointer-events: none" fill="#cc1100';
@@ -699,13 +634,13 @@
         }
         ?>">
                                                                                                                                                             @endif
-                                                                                                                                                            <rect class="lot" transform="rotate(90)" x="63.5" y="-47.6" width="42.3" height="21.2">
-                                                                                                                                                                <title>A12</title>
+                                                                                                                                                            <rect class="lot" transform="rotate(90)" x="63.5" y="-90" width="42.3" height="21.2">
+                                                                                                                                                                <title>A14</title>
                                                                                                                                                             </rect>
                                                                                                                                                         </a>
                                                                                                                                                         @if($role == 'admin')
                                                                                                                                                         @foreach($lots as $area_id => $lot)
-                                                                                                                                                        @if($area_id == 'A11')
+                                                                                                                                                        @if($area_id == 'A13')
                                                                                                                                                         @if (isset($lot))
                                                                                                                                                         <a href="{{ route('parkingStatus.show', $lot['book_id'])}}" style="<?php
                                                                                                                                                                                                                             if ($lot['lot_status'] == 'approved') {
@@ -722,9 +657,9 @@
                                                                                                                                                                 @endif
                                                                                                                                                                 @endforeach
                                                                                                                                                                 @else
-                                                                                                                                                                <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','11')]) }}" style="
+                                                                                                                                                                <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','13')]) }}" style="
         <?php foreach ($lots as $area_id => $lot) {
-            if ($area_id == 'A11') {
+            if ($area_id == 'A13') {
                 if (isset($lot)) {
                     if ($lot['lot_status'] == 'approved') {
                         echo 'pointer-events: none" fill="#cc1100';
@@ -738,13 +673,13 @@
         }
         ?>">
                                                                                                                                                                     @endif
-                                                                                                                                                                    <rect class="lot" transform="rotate(90)" x="63.5" y="-26.5" width="42.3" height="21.2">
-                                                                                                                                                                        <title>A11</title>
+                                                                                                                                                                    <rect class="lot" transform="rotate(90)" x="63.5" y="-68.8" width="42.3" height="21.2">
+                                                                                                                                                                        <title>A13</title>
                                                                                                                                                                     </rect>
                                                                                                                                                                 </a>
                                                                                                                                                                 @if($role == 'admin')
                                                                                                                                                                 @foreach($lots as $area_id => $lot)
-                                                                                                                                                                @if($area_id == 'A28')
+                                                                                                                                                                @if($area_id == 'A12')
                                                                                                                                                                 @if (isset($lot))
                                                                                                                                                                 <a href="{{ route('parkingStatus.show', $lot['book_id'])}}" style="<?php
                                                                                                                                                                                                                                     if ($lot['lot_status'] == 'approved') {
@@ -761,9 +696,9 @@
                                                                                                                                                                         @endif
                                                                                                                                                                         @endforeach
                                                                                                                                                                         @else
-                                                                                                                                                                        <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','28')]) }}" style="
+                                                                                                                                                                        <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','12')]) }}" style="
         <?php foreach ($lots as $area_id => $lot) {
-            if ($area_id == 'A28') {
+            if ($area_id == 'A12') {
                 if (isset($lot)) {
                     if ($lot['lot_status'] == 'approved') {
                         echo 'pointer-events: none" fill="#cc1100';
@@ -777,13 +712,13 @@
         }
         ?>">
                                                                                                                                                                             @endif
-                                                                                                                                                                            <rect class="lot" transform="rotate(90)" x="106" y="-26.5" width="42.3" height="21.2">
-                                                                                                                                                                                <title>A28</title>
+                                                                                                                                                                            <rect class="lot" transform="rotate(90)" x="63.5" y="-47.6" width="42.3" height="21.2">
+                                                                                                                                                                                <title>A12</title>
                                                                                                                                                                             </rect>
                                                                                                                                                                         </a>
                                                                                                                                                                         @if($role == 'admin')
                                                                                                                                                                         @foreach($lots as $area_id => $lot)
-                                                                                                                                                                        @if($area_id == 'A27')
+                                                                                                                                                                        @if($area_id == 'A11')
                                                                                                                                                                         @if (isset($lot))
                                                                                                                                                                         <a href="{{ route('parkingStatus.show', $lot['book_id'])}}" style="<?php
                                                                                                                                                                                                                                             if ($lot['lot_status'] == 'approved') {
@@ -800,9 +735,9 @@
                                                                                                                                                                                 @endif
                                                                                                                                                                                 @endforeach
                                                                                                                                                                                 @else
-                                                                                                                                                                                <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','27')]) }}" style="
+                                                                                                                                                                                <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','11')]) }}" style="
         <?php foreach ($lots as $area_id => $lot) {
-            if ($area_id == 'A27') {
+            if ($area_id == 'A11') {
                 if (isset($lot)) {
                     if ($lot['lot_status'] == 'approved') {
                         echo 'pointer-events: none" fill="#cc1100';
@@ -816,13 +751,13 @@
         }
         ?>">
                                                                                                                                                                                     @endif
-                                                                                                                                                                                    <rect class="lot" transform="rotate(90)" x="106" y="-47.6" width="42.3" height="21.2">
-                                                                                                                                                                                        <title>A27</title>
+                                                                                                                                                                                    <rect class="lot" transform="rotate(90)" x="63.5" y="-26.5" width="42.3" height="21.2">
+                                                                                                                                                                                        <title>A11</title>
                                                                                                                                                                                     </rect>
                                                                                                                                                                                 </a>
                                                                                                                                                                                 @if($role == 'admin')
                                                                                                                                                                                 @foreach($lots as $area_id => $lot)
-                                                                                                                                                                                @if($area_id == 'A26')
+                                                                                                                                                                                @if($area_id == 'A28')
                                                                                                                                                                                 @if (isset($lot))
                                                                                                                                                                                 <a href="{{ route('parkingStatus.show', $lot['book_id'])}}" style="<?php
                                                                                                                                                                                                                                                     if ($lot['lot_status'] == 'approved') {
@@ -839,9 +774,9 @@
                                                                                                                                                                                         @endif
                                                                                                                                                                                         @endforeach
                                                                                                                                                                                         @else
-                                                                                                                                                                                        <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','26')]) }}" style="
+                                                                                                                                                                                        <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','28')]) }}" style="
         <?php foreach ($lots as $area_id => $lot) {
-            if ($area_id == 'A26') {
+            if ($area_id == 'A28') {
                 if (isset($lot)) {
                     if ($lot['lot_status'] == 'approved') {
                         echo 'pointer-events: none" fill="#cc1100';
@@ -855,13 +790,13 @@
         }
         ?>">
                                                                                                                                                                                             @endif
-                                                                                                                                                                                            <rect class="lot" transform="rotate(90)" x="106" y="-68.8" width="42.3" height="21.2">
-                                                                                                                                                                                                <title>A26</title>
+                                                                                                                                                                                            <rect class="lot" transform="rotate(90)" x="106" y="-26.5" width="42.3" height="21.2">
+                                                                                                                                                                                                <title>A28</title>
                                                                                                                                                                                             </rect>
                                                                                                                                                                                         </a>
                                                                                                                                                                                         @if($role == 'admin')
                                                                                                                                                                                         @foreach($lots as $area_id => $lot)
-                                                                                                                                                                                        @if($area_id == 'A25')
+                                                                                                                                                                                        @if($area_id == 'A27')
                                                                                                                                                                                         @if (isset($lot))
                                                                                                                                                                                         <a href="{{ route('parkingStatus.show', $lot['book_id'])}}" style="<?php
                                                                                                                                                                                                                                                             if ($lot['lot_status'] == 'approved') {
@@ -878,9 +813,9 @@
                                                                                                                                                                                                 @endif
                                                                                                                                                                                                 @endforeach
                                                                                                                                                                                                 @else
-                                                                                                                                                                                                <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','25')]) }}" style="
+                                                                                                                                                                                                <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','27')]) }}" style="
         <?php foreach ($lots as $area_id => $lot) {
-            if ($area_id == 'A25') {
+            if ($area_id == 'A27') {
                 if (isset($lot)) {
                     if ($lot['lot_status'] == 'approved') {
                         echo 'pointer-events: none" fill="#cc1100';
@@ -894,13 +829,13 @@
         }
         ?>">
                                                                                                                                                                                                     @endif
-                                                                                                                                                                                                    <rect class="lot" transform="rotate(90)" x="106" y="-90" width="42.3" height="21.2">
-                                                                                                                                                                                                        <title>A25</title>
+                                                                                                                                                                                                    <rect class="lot" transform="rotate(90)" x="106" y="-47.6" width="42.3" height="21.2">
+                                                                                                                                                                                                        <title>A27</title>
                                                                                                                                                                                                     </rect>
                                                                                                                                                                                                 </a>
                                                                                                                                                                                                 @if($role == 'admin')
                                                                                                                                                                                                 @foreach($lots as $area_id => $lot)
-                                                                                                                                                                                                @if($area_id == 'A24')
+                                                                                                                                                                                                @if($area_id == 'A26')
                                                                                                                                                                                                 @if (isset($lot))
                                                                                                                                                                                                 <a href="{{ route('parkingStatus.show', $lot['book_id'])}}" style="<?php
                                                                                                                                                                                                                                                                     if ($lot['lot_status'] == 'approved') {
@@ -917,9 +852,9 @@
                                                                                                                                                                                                         @endif
                                                                                                                                                                                                         @endforeach
                                                                                                                                                                                                         @else
-                                                                                                                                                                                                        <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','24')]) }}" style="
+                                                                                                                                                                                                        <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','26')]) }}" style="
         <?php foreach ($lots as $area_id => $lot) {
-            if ($area_id == 'A24') {
+            if ($area_id == 'A26') {
                 if (isset($lot)) {
                     if ($lot['lot_status'] == 'approved') {
                         echo 'pointer-events: none" fill="#cc1100';
@@ -933,13 +868,13 @@
         }
         ?>">
                                                                                                                                                                                                             @endif
-                                                                                                                                                                                                            <rect class="lot" transform="rotate(90)" x="106" y="-111" width="42.3" height="21.2">
-                                                                                                                                                                                                                <title>A24</title>
+                                                                                                                                                                                                            <rect class="lot" transform="rotate(90)" x="106" y="-68.8" width="42.3" height="21.2">
+                                                                                                                                                                                                                <title>A26</title>
                                                                                                                                                                                                             </rect>
                                                                                                                                                                                                         </a>
                                                                                                                                                                                                         @if($role == 'admin')
                                                                                                                                                                                                         @foreach($lots as $area_id => $lot)
-                                                                                                                                                                                                        @if($area_id == 'A23')
+                                                                                                                                                                                                        @if($area_id == 'A25')
                                                                                                                                                                                                         @if (isset($lot))
                                                                                                                                                                                                         <a href="{{ route('parkingStatus.show', $lot['book_id'])}}" style="<?php
                                                                                                                                                                                                                                                                             if ($lot['lot_status'] == 'approved') {
@@ -956,9 +891,9 @@
                                                                                                                                                                                                                 @endif
                                                                                                                                                                                                                 @endforeach
                                                                                                                                                                                                                 @else
-                                                                                                                                                                                                                <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','23')]) }}" style="
+                                                                                                                                                                                                                <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','25')]) }}" style="
         <?php foreach ($lots as $area_id => $lot) {
-            if ($area_id == 'A23') {
+            if ($area_id == 'A25') {
                 if (isset($lot)) {
                     if ($lot['lot_status'] == 'approved') {
                         echo 'pointer-events: none" fill="#cc1100';
@@ -972,13 +907,13 @@
         }
         ?>">
                                                                                                                                                                                                                     @endif
-                                                                                                                                                                                                                    <rect class="lot" transform="rotate(90)" x="106" y="-132" width="42.3" height="21.2">
-                                                                                                                                                                                                                        <title>A23</title>
+                                                                                                                                                                                                                    <rect class="lot" transform="rotate(90)" x="106" y="-90" width="42.3" height="21.2">
+                                                                                                                                                                                                                        <title>A25</title>
                                                                                                                                                                                                                     </rect>
                                                                                                                                                                                                                 </a>
                                                                                                                                                                                                                 @if($role == 'admin')
                                                                                                                                                                                                                 @foreach($lots as $area_id => $lot)
-                                                                                                                                                                                                                @if($area_id == 'A22')
+                                                                                                                                                                                                                @if($area_id == 'A24')
                                                                                                                                                                                                                 @if (isset($lot))
                                                                                                                                                                                                                 <a href="{{ route('parkingStatus.show', $lot['book_id'])}}" style="<?php
                                                                                                                                                                                                                                                                                     if ($lot['lot_status'] == 'approved') {
@@ -995,9 +930,9 @@
                                                                                                                                                                                                                         @endif
                                                                                                                                                                                                                         @endforeach
                                                                                                                                                                                                                         @else
-                                                                                                                                                                                                                        <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','22')]) }}" style="
+                                                                                                                                                                                                                        <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','24')]) }}" style="
         <?php foreach ($lots as $area_id => $lot) {
-            if ($area_id == 'A22') {
+            if ($area_id == 'A24') {
                 if (isset($lot)) {
                     if ($lot['lot_status'] == 'approved') {
                         echo 'pointer-events: none" fill="#cc1100';
@@ -1011,13 +946,13 @@
         }
         ?>">
                                                                                                                                                                                                                             @endif
-                                                                                                                                                                                                                            <rect class="lot" transform="rotate(90)" x="106" y="-153" width="42.3" height="21.2">
-                                                                                                                                                                                                                                <title>A22</title>
+                                                                                                                                                                                                                            <rect class="lot" transform="rotate(90)" x="106" y="-111" width="42.3" height="21.2">
+                                                                                                                                                                                                                                <title>A24</title>
                                                                                                                                                                                                                             </rect>
                                                                                                                                                                                                                         </a>
                                                                                                                                                                                                                         @if($role == 'admin')
                                                                                                                                                                                                                         @foreach($lots as $area_id => $lot)
-                                                                                                                                                                                                                        @if($area_id == 'A21')
+                                                                                                                                                                                                                        @if($area_id == 'A23')
                                                                                                                                                                                                                         @if (isset($lot))
                                                                                                                                                                                                                         <a href="{{ route('parkingStatus.show', $lot['book_id'])}}" style="<?php
                                                                                                                                                                                                                                                                                             if ($lot['lot_status'] == 'approved') {
@@ -1034,9 +969,9 @@
                                                                                                                                                                                                                                 @endif
                                                                                                                                                                                                                                 @endforeach
                                                                                                                                                                                                                                 @else
-                                                                                                                                                                                                                                <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','21')]) }}" style="
+                                                                                                                                                                                                                                <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','23')]) }}" style="
         <?php foreach ($lots as $area_id => $lot) {
-            if ($area_id == 'A21') {
+            if ($area_id == 'A23') {
                 if (isset($lot)) {
                     if ($lot['lot_status'] == 'approved') {
                         echo 'pointer-events: none" fill="#cc1100';
@@ -1050,13 +985,13 @@
         }
         ?>">
                                                                                                                                                                                                                                     @endif
-                                                                                                                                                                                                                                    <rect class="lot" transform="rotate(90)" x="106" y="-175" width="42.3" height="21.8">
-                                                                                                                                                                                                                                        <title>A21</title>
+                                                                                                                                                                                                                                    <rect class="lot" transform="rotate(90)" x="106" y="-132" width="42.3" height="21.2">
+                                                                                                                                                                                                                                        <title>A23</title>
                                                                                                                                                                                                                                     </rect>
                                                                                                                                                                                                                                 </a>
                                                                                                                                                                                                                                 @if($role == 'admin')
                                                                                                                                                                                                                                 @foreach($lots as $area_id => $lot)
-                                                                                                                                                                                                                                @if($area_id == 'A20')
+                                                                                                                                                                                                                                @if($area_id == 'A22')
                                                                                                                                                                                                                                 @if (isset($lot))
                                                                                                                                                                                                                                 <a href="{{ route('parkingStatus.show', $lot['book_id'])}}" style="<?php
                                                                                                                                                                                                                                                                                                     if ($lot['lot_status'] == 'approved') {
@@ -1073,9 +1008,9 @@
                                                                                                                                                                                                                                         @endif
                                                                                                                                                                                                                                         @endforeach
                                                                                                                                                                                                                                         @else
-                                                                                                                                                                                                                                        <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','20')]) }}" style="
+                                                                                                                                                                                                                                        <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','22')]) }}" style="
         <?php foreach ($lots as $area_id => $lot) {
-            if ($area_id == 'A20') {
+            if ($area_id == 'A22') {
                 if (isset($lot)) {
                     if ($lot['lot_status'] == 'approved') {
                         echo 'pointer-events: none" fill="#cc1100';
@@ -1089,13 +1024,13 @@
         }
         ?>">
                                                                                                                                                                                                                                             @endif
-                                                                                                                                                                                                                                            <rect class="lot" transform="rotate(90)" x="106" y="-196" width="42.3" height="21.2">
-                                                                                                                                                                                                                                                <title>A20</title>
+                                                                                                                                                                                                                                            <rect class="lot" transform="rotate(90)" x="106" y="-153" width="42.3" height="21.2">
+                                                                                                                                                                                                                                                <title>A22</title>
                                                                                                                                                                                                                                             </rect>
                                                                                                                                                                                                                                         </a>
                                                                                                                                                                                                                                         @if($role == 'admin')
                                                                                                                                                                                                                                         @foreach($lots as $area_id => $lot)
-                                                                                                                                                                                                                                        @if($area_id == 'A38')
+                                                                                                                                                                                                                                        @if($area_id == 'A21')
                                                                                                                                                                                                                                         @if (isset($lot))
                                                                                                                                                                                                                                         <a href="{{ route('parkingStatus.show', $lot['book_id'])}}" style="<?php
                                                                                                                                                                                                                                                                                                             if ($lot['lot_status'] == 'approved') {
@@ -1112,9 +1047,9 @@
                                                                                                                                                                                                                                                 @endif
                                                                                                                                                                                                                                                 @endforeach
                                                                                                                                                                                                                                                 @else
-                                                                                                                                                                                                                                                <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','38')]) }}" style="
+                                                                                                                                                                                                                                                <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','21')]) }}" style="
         <?php foreach ($lots as $area_id => $lot) {
-            if ($area_id == 'A38') {
+            if ($area_id == 'A21') {
                 if (isset($lot)) {
                     if ($lot['lot_status'] == 'approved') {
                         echo 'pointer-events: none" fill="#cc1100';
@@ -1128,13 +1063,13 @@
         }
         ?>">
                                                                                                                                                                                                                                                     @endif
-                                                                                                                                                                                                                                                    <rect class="lot" transform="rotate(90)" x="164" y="-217" width="42.3" height="21.2">
-                                                                                                                                                                                                                                                        <title>A38</title>
+                                                                                                                                                                                                                                                    <rect class="lot" transform="rotate(90)" x="106" y="-175" width="42.3" height="21.8">
+                                                                                                                                                                                                                                                        <title>A21</title>
                                                                                                                                                                                                                                                     </rect>
                                                                                                                                                                                                                                                 </a>
                                                                                                                                                                                                                                                 @if($role == 'admin')
                                                                                                                                                                                                                                                 @foreach($lots as $area_id => $lot)
-                                                                                                                                                                                                                                                @if($area_id == 'A37')
+                                                                                                                                                                                                                                                @if($area_id == 'A20')
                                                                                                                                                                                                                                                 @if (isset($lot))
                                                                                                                                                                                                                                                 <a href="{{ route('parkingStatus.show', $lot['book_id'])}}" style="<?php
                                                                                                                                                                                                                                                                                                                     if ($lot['lot_status'] == 'approved') {
@@ -1151,9 +1086,9 @@
                                                                                                                                                                                                                                                         @endif
                                                                                                                                                                                                                                                         @endforeach
                                                                                                                                                                                                                                                         @else
-                                                                                                                                                                                                                                                        <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','37')]) }}" style="
+                                                                                                                                                                                                                                                        <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','20')]) }}" style="
         <?php foreach ($lots as $area_id => $lot) {
-            if ($area_id == 'A37') {
+            if ($area_id == 'A20') {
                 if (isset($lot)) {
                     if ($lot['lot_status'] == 'approved') {
                         echo 'pointer-events: none" fill="#cc1100';
@@ -1167,13 +1102,13 @@
         }
         ?>">
                                                                                                                                                                                                                                                             @endif
-                                                                                                                                                                                                                                                            <rect class="lot" transform="rotate(90)" x="164" y="-196" width="42.3" height="21.2">
-                                                                                                                                                                                                                                                                <title>A37</title>
+                                                                                                                                                                                                                                                            <rect class="lot" transform="rotate(90)" x="106" y="-196" width="42.3" height="21.2">
+                                                                                                                                                                                                                                                                <title>A20</title>
                                                                                                                                                                                                                                                             </rect>
                                                                                                                                                                                                                                                         </a>
                                                                                                                                                                                                                                                         @if($role == 'admin')
                                                                                                                                                                                                                                                         @foreach($lots as $area_id => $lot)
-                                                                                                                                                                                                                                                        @if($area_id == 'A36')
+                                                                                                                                                                                                                                                        @if($area_id == 'A38')
                                                                                                                                                                                                                                                         @if (isset($lot))
                                                                                                                                                                                                                                                         <a href="{{ route('parkingStatus.show', $lot['book_id'])}}" style="<?php
                                                                                                                                                                                                                                                                                                                             if ($lot['lot_status'] == 'approved') {
@@ -1190,9 +1125,9 @@
                                                                                                                                                                                                                                                                 @endif
                                                                                                                                                                                                                                                                 @endforeach
                                                                                                                                                                                                                                                                 @else
-                                                                                                                                                                                                                                                                <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','36')]) }}" style="
+                                                                                                                                                                                                                                                                <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','38')]) }}" style="
         <?php foreach ($lots as $area_id => $lot) {
-            if ($area_id == 'A36') {
+            if ($area_id == 'A38') {
                 if (isset($lot)) {
                     if ($lot['lot_status'] == 'approved') {
                         echo 'pointer-events: none" fill="#cc1100';
@@ -1206,13 +1141,13 @@
         }
         ?>">
                                                                                                                                                                                                                                                                     @endif
-                                                                                                                                                                                                                                                                    <rect class="lot" transform="rotate(90)" x="164" y="-175" width="42.3" height="21.8">
-                                                                                                                                                                                                                                                                        <title>A36</title>
+                                                                                                                                                                                                                                                                    <rect class="lot" transform="rotate(90)" x="164" y="-217" width="42.3" height="21.2">
+                                                                                                                                                                                                                                                                        <title>A38</title>
                                                                                                                                                                                                                                                                     </rect>
                                                                                                                                                                                                                                                                 </a>
                                                                                                                                                                                                                                                                 @if($role == 'admin')
                                                                                                                                                                                                                                                                 @foreach($lots as $area_id => $lot)
-                                                                                                                                                                                                                                                                @if($area_id == 'A35')
+                                                                                                                                                                                                                                                                @if($area_id == 'A37')
                                                                                                                                                                                                                                                                 @if (isset($lot))
                                                                                                                                                                                                                                                                 <a href="{{ route('parkingStatus.show', $lot['book_id'])}}" style="<?php
                                                                                                                                                                                                                                                                                                                                     if ($lot['lot_status'] == 'approved') {
@@ -1229,9 +1164,9 @@
                                                                                                                                                                                                                                                                         @endif
                                                                                                                                                                                                                                                                         @endforeach
                                                                                                                                                                                                                                                                         @else
-                                                                                                                                                                                                                                                                        <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','35')]) }}" style="
+                                                                                                                                                                                                                                                                        <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','37')]) }}" style="
         <?php foreach ($lots as $area_id => $lot) {
-            if ($area_id == 'A35') {
+            if ($area_id == 'A37') {
                 if (isset($lot)) {
                     if ($lot['lot_status'] == 'approved') {
                         echo 'pointer-events: none" fill="#cc1100';
@@ -1245,13 +1180,13 @@
         }
         ?>">
                                                                                                                                                                                                                                                                             @endif
-                                                                                                                                                                                                                                                                            <rect class="lot" transform="rotate(90)" x="164" y="-153" width="42.3" height="21.2">
-                                                                                                                                                                                                                                                                                <title>A35</title>
+                                                                                                                                                                                                                                                                            <rect class="lot" transform="rotate(90)" x="164" y="-196" width="42.3" height="21.2">
+                                                                                                                                                                                                                                                                                <title>A37</title>
                                                                                                                                                                                                                                                                             </rect>
                                                                                                                                                                                                                                                                         </a>
                                                                                                                                                                                                                                                                         @if($role == 'admin')
                                                                                                                                                                                                                                                                         @foreach($lots as $area_id => $lot)
-                                                                                                                                                                                                                                                                        @if($area_id == 'A34')
+                                                                                                                                                                                                                                                                        @if($area_id == 'A36')
                                                                                                                                                                                                                                                                         @if (isset($lot))
                                                                                                                                                                                                                                                                         <a href="{{ route('parkingStatus.show', $lot['book_id'])}}" style="<?php
                                                                                                                                                                                                                                                                                                                                             if ($lot['lot_status'] == 'approved') {
@@ -1268,9 +1203,9 @@
                                                                                                                                                                                                                                                                                 @endif
                                                                                                                                                                                                                                                                                 @endforeach
                                                                                                                                                                                                                                                                                 @else
-                                                                                                                                                                                                                                                                                <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','34')]) }}" style="
+                                                                                                                                                                                                                                                                                <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','36')]) }}" style="
         <?php foreach ($lots as $area_id => $lot) {
-            if ($area_id == 'A34') {
+            if ($area_id == 'A36') {
                 if (isset($lot)) {
                     if ($lot['lot_status'] == 'approved') {
                         echo 'pointer-events: none" fill="#cc1100';
@@ -1284,13 +1219,13 @@
         }
         ?>">
                                                                                                                                                                                                                                                                                     @endif
-                                                                                                                                                                                                                                                                                    <rect class="lot" transform="rotate(90)" x="164" y="-132" width="42.3" height="21.2">
-                                                                                                                                                                                                                                                                                        <title>A34</title>
+                                                                                                                                                                                                                                                                                    <rect class="lot" transform="rotate(90)" x="164" y="-175" width="42.3" height="21.8">
+                                                                                                                                                                                                                                                                                        <title>A36</title>
                                                                                                                                                                                                                                                                                     </rect>
                                                                                                                                                                                                                                                                                 </a>
                                                                                                                                                                                                                                                                                 @if($role == 'admin')
                                                                                                                                                                                                                                                                                 @foreach($lots as $area_id => $lot)
-                                                                                                                                                                                                                                                                                @if($area_id == 'A33')
+                                                                                                                                                                                                                                                                                @if($area_id == 'A35')
                                                                                                                                                                                                                                                                                 @if (isset($lot))
                                                                                                                                                                                                                                                                                 <a href="{{ route('parkingStatus.show', $lot['book_id'])}}" style="<?php
                                                                                                                                                                                                                                                                                                                                                     if ($lot['lot_status'] == 'approved') {
@@ -1307,9 +1242,9 @@
                                                                                                                                                                                                                                                                                         @endif
                                                                                                                                                                                                                                                                                         @endforeach
                                                                                                                                                                                                                                                                                         @else
-                                                                                                                                                                                                                                                                                        <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','33')]) }}" style="
+                                                                                                                                                                                                                                                                                        <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','35')]) }}" style="
         <?php foreach ($lots as $area_id => $lot) {
-            if ($area_id == 'A33') {
+            if ($area_id == 'A35') {
                 if (isset($lot)) {
                     if ($lot['lot_status'] == 'approved') {
                         echo 'pointer-events: none" fill="#cc1100';
@@ -1323,13 +1258,13 @@
         }
         ?>">
                                                                                                                                                                                                                                                                                             @endif
-                                                                                                                                                                                                                                                                                            <rect class="lot" transform="rotate(90)" x="164" y="-111" width="42.3" height="21.2">
-                                                                                                                                                                                                                                                                                                <title>A33</title>
+                                                                                                                                                                                                                                                                                            <rect class="lot" transform="rotate(90)" x="164" y="-153" width="42.3" height="21.2">
+                                                                                                                                                                                                                                                                                                <title>A35</title>
                                                                                                                                                                                                                                                                                             </rect>
                                                                                                                                                                                                                                                                                         </a>
                                                                                                                                                                                                                                                                                         @if($role == 'admin')
                                                                                                                                                                                                                                                                                         @foreach($lots as $area_id => $lot)
-                                                                                                                                                                                                                                                                                        @if($area_id == 'A32')
+                                                                                                                                                                                                                                                                                        @if($area_id == 'A34')
                                                                                                                                                                                                                                                                                         @if (isset($lot))
                                                                                                                                                                                                                                                                                         <a href="{{ route('parkingStatus.show', $lot['book_id'])}}" style="<?php
                                                                                                                                                                                                                                                                                                                                                             if ($lot['lot_status'] == 'approved') {
@@ -1346,9 +1281,9 @@
                                                                                                                                                                                                                                                                                                 @endif
                                                                                                                                                                                                                                                                                                 @endforeach
                                                                                                                                                                                                                                                                                                 @else
-                                                                                                                                                                                                                                                                                                <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','32')]) }}" style="
+                                                                                                                                                                                                                                                                                                <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','34')]) }}" style="
         <?php foreach ($lots as $area_id => $lot) {
-            if ($area_id == 'A32') {
+            if ($area_id == 'A34') {
                 if (isset($lot)) {
                     if ($lot['lot_status'] == 'approved') {
                         echo 'pointer-events: none" fill="#cc1100';
@@ -1362,13 +1297,13 @@
         }
         ?>">
                                                                                                                                                                                                                                                                                                     @endif
-                                                                                                                                                                                                                                                                                                    <rect class="lot" transform="rotate(90)" x="164" y="-90" width="42.3" height="21.2">
-                                                                                                                                                                                                                                                                                                        <title>A32</title>
+                                                                                                                                                                                                                                                                                                    <rect class="lot" transform="rotate(90)" x="164" y="-132" width="42.3" height="21.2">
+                                                                                                                                                                                                                                                                                                        <title>A34</title>
                                                                                                                                                                                                                                                                                                     </rect>
                                                                                                                                                                                                                                                                                                 </a>
                                                                                                                                                                                                                                                                                                 @if($role == 'admin')
                                                                                                                                                                                                                                                                                                 @foreach($lots as $area_id => $lot)
-                                                                                                                                                                                                                                                                                                @if($area_id == 'A31')
+                                                                                                                                                                                                                                                                                                @if($area_id == 'A33')
                                                                                                                                                                                                                                                                                                 @if (isset($lot))
                                                                                                                                                                                                                                                                                                 <a href="{{ route('parkingStatus.show', $lot['book_id'])}}" style="<?php
                                                                                                                                                                                                                                                                                                                                                                     if ($lot['lot_status'] == 'approved') {
@@ -1385,9 +1320,9 @@
                                                                                                                                                                                                                                                                                                         @endif
                                                                                                                                                                                                                                                                                                         @endforeach
                                                                                                                                                                                                                                                                                                         @else
-                                                                                                                                                                                                                                                                                                        <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','31')]) }}" style="
+                                                                                                                                                                                                                                                                                                        <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','33')]) }}" style="
         <?php foreach ($lots as $area_id => $lot) {
-            if ($area_id == 'A31') {
+            if ($area_id == 'A33') {
                 if (isset($lot)) {
                     if ($lot['lot_status'] == 'approved') {
                         echo 'pointer-events: none" fill="#cc1100';
@@ -1401,13 +1336,13 @@
         }
         ?>">
                                                                                                                                                                                                                                                                                                             @endif
-                                                                                                                                                                                                                                                                                                            <rect class="lot" transform="rotate(90)" x="164" y="-68.8" width="42.3" height="21.2">
-                                                                                                                                                                                                                                                                                                                <title>A31</title>
+                                                                                                                                                                                                                                                                                                            <rect class="lot" transform="rotate(90)" x="164" y="-111" width="42.3" height="21.2">
+                                                                                                                                                                                                                                                                                                                <title>A33</title>
                                                                                                                                                                                                                                                                                                             </rect>
                                                                                                                                                                                                                                                                                                         </a>
                                                                                                                                                                                                                                                                                                         @if($role == 'admin')
                                                                                                                                                                                                                                                                                                         @foreach($lots as $area_id => $lot)
-                                                                                                                                                                                                                                                                                                        @if($area_id == 'A30')
+                                                                                                                                                                                                                                                                                                        @if($area_id == 'A32')
                                                                                                                                                                                                                                                                                                         @if (isset($lot))
                                                                                                                                                                                                                                                                                                         <a href="{{ route('parkingStatus.show', $lot['book_id'])}}" style="<?php
                                                                                                                                                                                                                                                                                                                                                                             if ($lot['lot_status'] == 'approved') {
@@ -1424,9 +1359,9 @@
                                                                                                                                                                                                                                                                                                                 @endif
                                                                                                                                                                                                                                                                                                                 @endforeach
                                                                                                                                                                                                                                                                                                                 @else
-                                                                                                                                                                                                                                                                                                                <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','30')]) }}" style="
+                                                                                                                                                                                                                                                                                                                <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','32')]) }}" style="
         <?php foreach ($lots as $area_id => $lot) {
-            if ($area_id == 'A30') {
+            if ($area_id == 'A32') {
                 if (isset($lot)) {
                     if ($lot['lot_status'] == 'approved') {
                         echo 'pointer-events: none" fill="#cc1100';
@@ -1440,13 +1375,13 @@
         }
         ?>">
                                                                                                                                                                                                                                                                                                                     @endif
-                                                                                                                                                                                                                                                                                                                    <rect class="lot" transform="rotate(90)" x="164" y="-47.6" width="42.3" height="21.2">
-                                                                                                                                                                                                                                                                                                                        <title>A30</title>
+                                                                                                                                                                                                                                                                                                                    <rect class="lot" transform="rotate(90)" x="164" y="-90" width="42.3" height="21.2">
+                                                                                                                                                                                                                                                                                                                        <title>A32</title>
                                                                                                                                                                                                                                                                                                                     </rect>
                                                                                                                                                                                                                                                                                                                 </a>
                                                                                                                                                                                                                                                                                                                 @if($role == 'admin')
                                                                                                                                                                                                                                                                                                                 @foreach($lots as $area_id => $lot)
-                                                                                                                                                                                                                                                                                                                @if($area_id == 'A29')
+                                                                                                                                                                                                                                                                                                                @if($area_id == 'A31')
                                                                                                                                                                                                                                                                                                                 @if (isset($lot))
                                                                                                                                                                                                                                                                                                                 <a href="{{ route('parkingStatus.show', $lot['book_id'])}}" style="<?php
                                                                                                                                                                                                                                                                                                                                                                                     if ($lot['lot_status'] == 'approved') {
@@ -1463,9 +1398,9 @@
                                                                                                                                                                                                                                                                                                                         @endif
                                                                                                                                                                                                                                                                                                                         @endforeach
                                                                                                                                                                                                                                                                                                                         @else
-                                                                                                                                                                                                                                                                                                                        <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','29')]) }}" style="
+                                                                                                                                                                                                                                                                                                                        <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','31')]) }}" style="
         <?php foreach ($lots as $area_id => $lot) {
-            if ($area_id == 'A29') {
+            if ($area_id == 'A31') {
                 if (isset($lot)) {
                     if ($lot['lot_status'] == 'approved') {
                         echo 'pointer-events: none" fill="#cc1100';
@@ -1479,13 +1414,13 @@
         }
         ?>">
                                                                                                                                                                                                                                                                                                                             @endif
-                                                                                                                                                                                                                                                                                                                            <rect class="lot" transform="rotate(90)" x="164" y="-26.5" width="42.3" height="21.2">
-                                                                                                                                                                                                                                                                                                                                <title>A29</title>
+                                                                                                                                                                                                                                                                                                                            <rect class="lot" transform="rotate(90)" x="164" y="-68.8" width="42.3" height="21.2">
+                                                                                                                                                                                                                                                                                                                                <title>A31</title>
                                                                                                                                                                                                                                                                                                                             </rect>
                                                                                                                                                                                                                                                                                                                         </a>
                                                                                                                                                                                                                                                                                                                         @if($role == 'admin')
                                                                                                                                                                                                                                                                                                                         @foreach($lots as $area_id => $lot)
-                                                                                                                                                                                                                                                                                                                        @if($area_id == 'A39')
+                                                                                                                                                                                                                                                                                                                        @if($area_id == 'A30')
                                                                                                                                                                                                                                                                                                                         @if (isset($lot))
                                                                                                                                                                                                                                                                                                                         <a href="{{ route('parkingStatus.show', $lot['book_id'])}}" style="<?php
                                                                                                                                                                                                                                                                                                                                                                                             if ($lot['lot_status'] == 'approved') {
@@ -1502,9 +1437,9 @@
                                                                                                                                                                                                                                                                                                                                 @endif
                                                                                                                                                                                                                                                                                                                                 @endforeach
                                                                                                                                                                                                                                                                                                                                 @else
-                                                                                                                                                                                                                                                                                                                                <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','39')]) }}" style="
+                                                                                                                                                                                                                                                                                                                                <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','30')]) }}" style="
         <?php foreach ($lots as $area_id => $lot) {
-            if ($area_id == 'A39') {
+            if ($area_id == 'A30') {
                 if (isset($lot)) {
                     if ($lot['lot_status'] == 'approved') {
                         echo 'pointer-events: none" fill="#cc1100';
@@ -1517,14 +1452,14 @@
             }
         }
         ?>">
-                                                                                                                                                                                                                                                                                                                                    @endif<rect class="lot" transform="scale(-1)" x="-291" y="-148" width="42.3" height="21.2">
-
-                                                                                                                                                                                                                                                                                                                                        <title>A39</title>
+                                                                                                                                                                                                                                                                                                                                    @endif
+                                                                                                                                                                                                                                                                                                                                    <rect class="lot" transform="rotate(90)" x="164" y="-47.6" width="42.3" height="21.2">
+                                                                                                                                                                                                                                                                                                                                        <title>A30</title>
                                                                                                                                                                                                                                                                                                                                     </rect>
                                                                                                                                                                                                                                                                                                                                 </a>
                                                                                                                                                                                                                                                                                                                                 @if($role == 'admin')
                                                                                                                                                                                                                                                                                                                                 @foreach($lots as $area_id => $lot)
-                                                                                                                                                                                                                                                                                                                                @if($area_id == 'A40')
+                                                                                                                                                                                                                                                                                                                                @if($area_id == 'A29')
                                                                                                                                                                                                                                                                                                                                 @if (isset($lot))
                                                                                                                                                                                                                                                                                                                                 <a href="{{ route('parkingStatus.show', $lot['book_id'])}}" style="<?php
                                                                                                                                                                                                                                                                                                                                                                                                     if ($lot['lot_status'] == 'approved') {
@@ -1541,9 +1476,9 @@
                                                                                                                                                                                                                                                                                                                                         @endif
                                                                                                                                                                                                                                                                                                                                         @endforeach
                                                                                                                                                                                                                                                                                                                                         @else
-                                                                                                                                                                                                                                                                                                                                        <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','40')]) }}" style="
+                                                                                                                                                                                                                                                                                                                                        <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','29')]) }}" style="
         <?php foreach ($lots as $area_id => $lot) {
-            if ($area_id == 'A40') {
+            if ($area_id == 'A29') {
                 if (isset($lot)) {
                     if ($lot['lot_status'] == 'approved') {
                         echo 'pointer-events: none" fill="#cc1100';
@@ -1557,13 +1492,13 @@
         }
         ?>">
                                                                                                                                                                                                                                                                                                                                             @endif
-                                                                                                                                                                                                                                                                                                                                            <rect class="lot" transform="scale(-1)" x="-291" y="-127" width="42.3" height="21.2">
-                                                                                                                                                                                                                                                                                                                                                <title>A40</title>
+                                                                                                                                                                                                                                                                                                                                            <rect class="lot" transform="rotate(90)" x="164" y="-26.5" width="42.3" height="21.2">
+                                                                                                                                                                                                                                                                                                                                                <title>A29</title>
                                                                                                                                                                                                                                                                                                                                             </rect>
                                                                                                                                                                                                                                                                                                                                         </a>
                                                                                                                                                                                                                                                                                                                                         @if($role == 'admin')
                                                                                                                                                                                                                                                                                                                                         @foreach($lots as $area_id => $lot)
-                                                                                                                                                                                                                                                                                                                                        @if($area_id == 'A41')
+                                                                                                                                                                                                                                                                                                                                        @if($area_id == 'A39')
                                                                                                                                                                                                                                                                                                                                         @if (isset($lot))
                                                                                                                                                                                                                                                                                                                                         <a href="{{ route('parkingStatus.show', $lot['book_id'])}}" style="<?php
                                                                                                                                                                                                                                                                                                                                                                                                             if ($lot['lot_status'] == 'approved') {
@@ -1580,9 +1515,9 @@
                                                                                                                                                                                                                                                                                                                                                 @endif
                                                                                                                                                                                                                                                                                                                                                 @endforeach
                                                                                                                                                                                                                                                                                                                                                 @else
-                                                                                                                                                                                                                                                                                                                                                <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','41')]) }}" style="
+                                                                                                                                                                                                                                                                                                                                                <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','39')]) }}" style="
         <?php foreach ($lots as $area_id => $lot) {
-            if ($area_id == 'A41') {
+            if ($area_id == 'A39') {
                 if (isset($lot)) {
                     if ($lot['lot_status'] == 'approved') {
                         echo 'pointer-events: none" fill="#cc1100';
@@ -1595,14 +1530,14 @@
             }
         }
         ?>">
-                                                                                                                                                                                                                                                                                                                                                    @endif
-                                                                                                                                                                                                                                                                                                                                                    <rect class="lot" transform="scale(-1)" x="-291" y="-106" width="42.3" height="21.2">
-                                                                                                                                                                                                                                                                                                                                                        <title>A41</title>
+                                                                                                                                                                                                                                                                                                                                                    @endif<rect class="lot" transform="scale(-1)" x="-291" y="-148" width="42.3" height="21.2">
+
+                                                                                                                                                                                                                                                                                                                                                        <title>A39</title>
                                                                                                                                                                                                                                                                                                                                                     </rect>
                                                                                                                                                                                                                                                                                                                                                 </a>
                                                                                                                                                                                                                                                                                                                                                 @if($role == 'admin')
                                                                                                                                                                                                                                                                                                                                                 @foreach($lots as $area_id => $lot)
-                                                                                                                                                                                                                                                                                                                                                @if($area_id == 'A42')
+                                                                                                                                                                                                                                                                                                                                                @if($area_id == 'A40')
                                                                                                                                                                                                                                                                                                                                                 @if (isset($lot))
                                                                                                                                                                                                                                                                                                                                                 <a href="{{ route('parkingStatus.show', $lot['book_id'])}}" style="<?php
                                                                                                                                                                                                                                                                                                                                                                                                                     if ($lot['lot_status'] == 'approved') {
@@ -1619,7 +1554,85 @@
                                                                                                                                                                                                                                                                                                                                                         @endif
                                                                                                                                                                                                                                                                                                                                                         @endforeach
                                                                                                                                                                                                                                                                                                                                                         @else
-                                                                                                                                                                                                                                                                                                                                                        <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','42')]) }}" style="
+                                                                                                                                                                                                                                                                                                                                                        <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','40')]) }}" style="
+        <?php foreach ($lots as $area_id => $lot) {
+            if ($area_id == 'A40') {
+                if (isset($lot)) {
+                    if ($lot['lot_status'] == 'approved') {
+                        echo 'pointer-events: none" fill="#cc1100';
+                    } elseif ($lot['lot_status'] == 'pending' || 'notpaid') {
+                        echo 'pointer-events: none" fill="#fdfd66';
+                    }
+                } else {
+                    echo '" fill="#389738';
+                }
+            }
+        }
+        ?>">
+                                                                                                                                                                                                                                                                                                                                                            @endif
+                                                                                                                                                                                                                                                                                                                                                            <rect class="lot" transform="scale(-1)" x="-291" y="-127" width="42.3" height="21.2">
+                                                                                                                                                                                                                                                                                                                                                                <title>A40</title>
+                                                                                                                                                                                                                                                                                                                                                            </rect>
+                                                                                                                                                                                                                                                                                                                                                        </a>
+                                                                                                                                                                                                                                                                                                                                                        @if($role == 'admin')
+                                                                                                                                                                                                                                                                                                                                                        @foreach($lots as $area_id => $lot)
+                                                                                                                                                                                                                                                                                                                                                        @if($area_id == 'A41')
+                                                                                                                                                                                                                                                                                                                                                        @if (isset($lot))
+                                                                                                                                                                                                                                                                                                                                                        <a href="{{ route('parkingStatus.show', $lot['book_id'])}}" style="<?php
+                                                                                                                                                                                                                                                                                                                                                                                                                            if ($lot['lot_status'] == 'approved') {
+                                                                                                                                                                                                                                                                                                                                                                                                                                echo '" fill="#cc1100';
+                                                                                                                                                                                                                                                                                                                                                                                                                            } elseif ($lot['lot_status'] == 'pending' || 'notpaid') {
+                                                                                                                                                                                                                                                                                                                                                                                                                                echo '" fill="#fdfd66';
+                                                                                                                                                                                                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                                                                                                                                                                                                            ?>">
+                                                                                                                                                                                                                                                                                                                                                            @else
+                                                                                                                                                                                                                                                                                                                                                            <a href="" style="<?php echo '" fill="#389738';
+                                                                                                                                                                                                                                                                                                                                                                                ?>">
+                                                                                                                                                                                                                                                                                                                                                                @endif
+                                                                                                                                                                                                                                                                                                                                                                @else
+                                                                                                                                                                                                                                                                                                                                                                @endif
+                                                                                                                                                                                                                                                                                                                                                                @endforeach
+                                                                                                                                                                                                                                                                                                                                                                @else
+                                                                                                                                                                                                                                                                                                                                                                <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','41')]) }}" style="
+        <?php foreach ($lots as $area_id => $lot) {
+            if ($area_id == 'A41') {
+                if (isset($lot)) {
+                    if ($lot['lot_status'] == 'approved') {
+                        echo 'pointer-events: none" fill="#cc1100';
+                    } elseif ($lot['lot_status'] == 'pending' || 'notpaid') {
+                        echo 'pointer-events: none" fill="#fdfd66';
+                    }
+                } else {
+                    echo '" fill="#389738';
+                }
+            }
+        }
+        ?>">
+                                                                                                                                                                                                                                                                                                                                                                    @endif
+                                                                                                                                                                                                                                                                                                                                                                    <rect class="lot" transform="scale(-1)" x="-291" y="-106" width="42.3" height="21.2">
+                                                                                                                                                                                                                                                                                                                                                                        <title>A41</title>
+                                                                                                                                                                                                                                                                                                                                                                    </rect>
+                                                                                                                                                                                                                                                                                                                                                                </a>
+                                                                                                                                                                                                                                                                                                                                                                @if($role == 'admin')
+                                                                                                                                                                                                                                                                                                                                                                @foreach($lots as $area_id => $lot)
+                                                                                                                                                                                                                                                                                                                                                                @if($area_id == 'A42')
+                                                                                                                                                                                                                                                                                                                                                                @if (isset($lot))
+                                                                                                                                                                                                                                                                                                                                                                <a href="{{ route('parkingStatus.show', $lot['book_id'])}}" style="<?php
+                                                                                                                                                                                                                                                                                                                                                                                                                                    if ($lot['lot_status'] == 'approved') {
+                                                                                                                                                                                                                                                                                                                                                                                                                                        echo '" fill="#cc1100';
+                                                                                                                                                                                                                                                                                                                                                                                                                                    } elseif ($lot['lot_status'] == 'pending' || 'notpaid') {
+                                                                                                                                                                                                                                                                                                                                                                                                                                        echo '" fill="#fdfd66';
+                                                                                                                                                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                                                                                                                                                    ?>">
+                                                                                                                                                                                                                                                                                                                                                                    @else
+                                                                                                                                                                                                                                                                                                                                                                    <a href="" style="<?php echo '" fill="#389738';
+                                                                                                                                                                                                                                                                                                                                                                                        ?>">
+                                                                                                                                                                                                                                                                                                                                                                        @endif
+                                                                                                                                                                                                                                                                                                                                                                        @else
+                                                                                                                                                                                                                                                                                                                                                                        @endif
+                                                                                                                                                                                                                                                                                                                                                                        @endforeach
+                                                                                                                                                                                                                                                                                                                                                                        @else
+                                                                                                                                                                                                                                                                                                                                                                        <a href="{{ route('bookParking.edit', [$parkings->area_id, str_replace($parkings->area_id,'','42')]) }}" style="
         <?php foreach ($lots as $area_id => $lot) {
             if ($area_id == 'A42') {
                 if (isset($lot)) {
@@ -1634,11 +1647,11 @@
             }
         }
         ?>">
-                                                                                                                                                                                                                                                                                                                                                            @endif
-                                                                                                                                                                                                                                                                                                                                                            <rect class="lot" transform="scale(-1)" x="-291" y="-84.7" width="42.3" height="21.2">
-                                                                                                                                                                                                                                                                                                                                                                <title>A42</title>
-                                                                                                                                                                                                                                                                                                                                                            </rect>
-                                                                                                                                                                                                                                                                                                                                                        </a>
+                                                                                                                                                                                                                                                                                                                                                                            @endif
+                                                                                                                                                                                                                                                                                                                                                                            <rect class="lot" transform="scale(-1)" x="-291" y="-84.7" width="42.3" height="21.2">
+                                                                                                                                                                                                                                                                                                                                                                                <title>A42</title>
+                                                                                                                                                                                                                                                                                                                                                                            </rect>
+                                                                                                                                                                                                                                                                                                                                                                        </a>
     </g>
     <g fill="#000000" font-family="sans-serif">
         <text transform="matrix(.876 -.00249 .00325 1.14 0 0)" x="274.69351" y="25.888197" font-size="8.18px" stroke-width=".204" style="line-height:1.25" xml:space="preserve">

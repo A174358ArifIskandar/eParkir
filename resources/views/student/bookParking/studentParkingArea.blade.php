@@ -56,8 +56,8 @@
                       <div class="info-box-content">
                         <span class="info-box-text">{{$parking->area_name}}</span>
                         <span class="info-box-number">{{$parking->area_total_availability-$count}} Parking Lots Available</span>
-                        <div class="progress">
-                          <input type="hidden" id="id" value="{{$countperc=$count/$parking->area_total_availability*100}}" class="form-control">
+                        <div class="progress" style="height: 10px;">
+                          <input type="hidden" id="id" value="{{$countperc=($parking->area_total_availability-$count)/$parking->area_total_availability*100}}" class="form-control">
                           <div class="progress-bar" style="width: {{$countperc}}%"></div>
                         </div>
                         <span class="progress-description">
@@ -70,9 +70,7 @@
                           <a href="{{route('parkingArea.show', $parking->area_id)}}" class="btn btn-default">
                             <i class="fas fa-info-circle"></i>
                           </a>
-                          <a href="{{route('parkingArea.edit', $parking->area_id)}}" class="btn btn-default">
-                            <i class="far fa-edit"></i>
-                          </a>
+                          
                           <button type="submit" onclick="return confirm('Are you sure you want to delete this parking area?');" class="btn btn-default">
                             <i class="far fa-trash-alt"></i>
                           </button>

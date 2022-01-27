@@ -8,20 +8,21 @@
         @endforeach
     </div>
     @endif
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="enable" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Disable Parking Lot {{ $parkings->area_id }}{{$name}}</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Enable Parking Lot {{ $parkings->area_id }}{{$lotno}}</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="{{ route('bookParking.store') }}" method="post" enctype="multipart/form-data">
+                <form action="{{route('parkingArea.destroy', $name)}}" method="post" enctype="multipart/form-data">
                     @csrf
+                    @method('delete')
                     <fieldset>
                         <div class="modal-body">
-                            Are you sure you want to disable this parking lot?
+                            Are you sure you want to enable this parking lot?
                         </div>
                         <div class="form-group">
                             <input type="hidden" name="book_id" id="id" class="form-control">
@@ -61,7 +62,7 @@
 </div>
 <script>
     window.onload = function() {
-        $("#btn").click();
+        $("#btn1").click();
     }
 </script>
-<button hidden="hidden" id="btn" data-toggle="modal" data-target="#exampleModal"></button>
+<button hidden="hidden" id="btn1" data-toggle="modal" data-target="#enable"></button>

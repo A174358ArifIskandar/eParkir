@@ -18,7 +18,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link href="{{ asset('dist/css/adminlte.min.css') }}" rel="stylesheet">
 
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  
+
 
 </head>
 
@@ -83,7 +83,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
       <a href="/home" class="brand-link">
-        <img src="{{ asset('images/logop.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <img src="{{ asset('images/logoparkir1.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3">
         <span class="brand-text font-weight-light">eParkir</span>
       </a>
 
@@ -92,7 +92,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
           <div class="image">
-            <img src="{{ asset('dist/img/boxed-bg.jpg') }}" class="img-circle elevation-2" alt="User Image">
+            <img src="{{ asset('images/admin1.jpeg') }}" class="img-circle elevation-2" alt="User Image">
           </div>
           <div class="info">
             <a href="#" class="d-block">{{ \Illuminate\Support\Facades\Auth::user()->user_name }} | {{ ucfirst(\Illuminate\Support\Facades\Auth::user()->role) }}</a>
@@ -116,12 +116,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-            <li class="<?php if ($page == 'home') {
-                          echo 'nav-item menu-open';
-                        } else {
-                          echo 'nav-item';
-                        } ?>">
-              <a href="/home" class="nav-link">
+            <li class="nav-item">
+              <a href="/home" class="<?php if ($page == 'home') {
+                                        echo 'nav-link bg-info active';
+                                      } else {
+                                        echo 'nav-link';
+                                      } ?>">
                 <i class="nav-icon fas fa-home"></i>
                 <p>
                   Dashboard
@@ -130,23 +130,30 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </li>
             <li class="nav-item">
               <a href="{{route('parkingStatus.index')}}" class="<?php if ($page == 'parkingStatus') {
-                                                                  echo 'nav-link active';
+                                                                  echo 'nav-link bg-info active';
                                                                 } else {
                                                                   echo 'nav-link';
                                                                 } ?>">
                 <i class="nav-icon fas fa-th"></i>
+                @foreach($bookings as $booking)
+                @if($booking['lot_status']=='pending')
+                <input type="hidden" id="id" value="{{++$count}}" class="form-control">
+                @elseif($booking['lot_status']=='notpaid')
+                <input type="hidden" id="id" value="{{++$count}}" class="form-control">
+                @endif
+                @endforeach
                 <p>
                   Parking Status
-                  <span class="right badge badge-danger">1</span>
+                  <span class="right badge badge-danger">{{$count}}</span>
                 </p>
               </a>
             </li>
-            <li class="<?php if ($page == 'parkingArea') {
-                          echo 'nav-item menu-open';
-                        } else {
-                          echo 'nav-item';
-                        } ?>">
-              <a href="{{route('parkingArea.index')}}" class="nav-link">
+            <li class="nav-item">
+              <a href="{{route('parkingArea.index')}}" class="<?php if ($page == 'parkingArea') {
+                                                                echo 'nav-link bg-info active';
+                                                              } else {
+                                                                echo 'nav-link';
+                                                              } ?>">
                 <i class="nav-icon fas fa-clipboard"></i>
                 <p>
                   Parking Area
@@ -154,12 +161,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </p>
               </a>
             </li>
-            <li class="<?php if ($page == 'history') {
-                          echo 'nav-item menu-open';
-                        } else {
-                          echo 'nav-item';
-                        } ?>">
-              <a href="{{route('parkingStatus.create')}}" class="nav-link">
+            <li class="nav-item">
+              <a href="{{route('parkingStatus.create')}}" class="<?php if ($page == 'history') {
+                                                                    echo 'nav-link bg-info active';
+                                                                  } else {
+                                                                    echo 'nav-link';
+                                                                  } ?>">
                 <i class="nav-icon fas fa-book"></i>
                 <p>
                   Booking History

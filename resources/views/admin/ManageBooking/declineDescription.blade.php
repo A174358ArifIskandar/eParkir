@@ -15,7 +15,7 @@
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="/home">Home</a></li>
             <li class="breadcrumb-item"><a href="{{route('parkingStatus.index')}}">Booking Request</a></li>
-            <li class="breadcrumb-item"><a href="{{route('parkingStatus.show', $bookings->book_id)}}">Booking Status</a></li>
+            <li class="breadcrumb-item"><a href="{{route('parkingStatus.show', $bookingids->book_id)}}">Booking Status</a></li>
             <li class="breadcrumb-item active">@yield('title')</li>
           </ol>
         </div><!-- /.col -->
@@ -44,18 +44,18 @@
           <!-- form start -->
           <form>
             <div class="card-body">
-              <input type="hidden" name="book_details_id" value="{{$bookings->book_id}}" id="id" class="form-control">
+              <input type="hidden" name="book_details_id" value="{{$bookingids->book_id}}" id="id" class="form-control">
               <div class="form-group">
                 <label for="id">Book ID:</label>
-                <input type="" name="book_id" value="{{$bookings->book_id}}" id="id" class="form-control" readonly>
+                <input type="" name="book_id" value="{{$bookingids->book_id}}" id="id" class="form-control" readonly>
               </div>
               <div class="form-group">
                 <label for="matric">Matric No:</label>
-                <input type="" value="{{$bookings->matric_no}}" name="matric_no" id="matric" class="form-control" placeholder="" readonly>
+                <input type="" value="{{$bookingids->matric_no}}" name="matric_no" id="matric" class="form-control" placeholder="" readonly>
               </div>
               <div class="form-group">
                 <label for="matric">Name:</label>
-                <input type="" value="{{$bookings->user->user_name}}" id="matric" class="form-control" placeholder="" readonly>
+                <input type="" value="{{$bookingids->user->user_name}}" id="matric" class="form-control" placeholder="" readonly>
               </div>
               <div class="form-group">
                 <input type="hidden" value="declined" name="book_status" id="name" class="form-control" placeholder="" readonly>

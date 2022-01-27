@@ -122,7 +122,7 @@
                 <div class="card card-info">
                     <div class="card-body p-3">
                         <div class="row justify-content-center">
-                            <div class="col-5 table-responsive">
+                            <div class="col-6 table-responsive">
                                 <table class="table table-bordered table-striped projects">
                                     <br>
                                     <h4>Invoice</h4>
@@ -138,7 +138,7 @@
                                             @if(isset($myParking->area_id))
                                             <td style="width: 40%" class="text-center">
                                                 {{$myParking->updated_at}}
-                                            <td style="width: 10%" class="text-center">
+                                            <td style="width: 40%" class="text-left">
                                                 {{$myParking->book_id}}
                                             <td style="width: 40%">120.00</td>
                                             @else

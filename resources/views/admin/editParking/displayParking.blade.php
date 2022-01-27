@@ -9,6 +9,7 @@
         margin-right: auto;
         width: 50%;
     }
+
     .lot:hover {
         opacity: 0.8;
     }
@@ -53,7 +54,7 @@
                     <i class="fas fa-square" style="color: #fdfd66;"></i> Pending
                 </span>
                 <span class="mr-4">
-                    <i class="fas fa-square" style="color: #AEAEAE;"></i> Disabled
+                    <i class="fas fa-square" style="color: #AEAEAE;"></i> Unavailable
                 </span>
             </div>
             <br>
@@ -67,9 +68,9 @@
                 @elseif($parkings->area_id=="C")
                 @include('parking.blokC')
                 @endif
-                <img src="{{Storage::url($parkings->area_image)}}" style="width: 600px; height:300px" class="center">
+
             </div>
-            <div class="card-body p-0">
+            <!-- <div class="card-body p-0">
                 <table class="table table-striped projects">
                     <thead>
                         <tr>
@@ -118,8 +119,8 @@
                             </td>
                         </tr>
                         @endforeach
-                    </tbody>
-                    <!-- @for($i=1; $i<=$parkings->area_total_availability; $i++)
+                    </tbody> -->
+            <!-- @for($i=1; $i<=$parkings->area_total_availability; $i++)
                             <tr>
                                 <td>
                                     {{$parkings->area_id}}{{$i}}
@@ -138,12 +139,14 @@
                     </tbody>
                     @endfor -->
 
-                </table>
+            <!-- </table> -->
 
-            </div>
+            <!-- </div> -->
+            <!-- Button trigger modal -->
 
             <!-- /.card-body -->
         </div>
         <!-- /.card -->
+    </section>
 </div>
 @endsection

@@ -53,9 +53,12 @@ Route::get('/disableParking', function () {
     return view('admin.editParking.disableParking');
 });
 
-Route::resource('parkingArea', ParkingAreaController::class);
+
 Route::get('/bookParking/{id}/edit/{lot}', [BookParkingController::class, 'edit'])->name('bookParking.edit');
+Route::get('/parkingArea/{id}/edit/{name}', [ParkingAreaController::class, 'edit'])->name('parkingArea.edit');
+Route::get('/profile/{id}/edit/{name}/{lotno}', [ProfileController::class, 'edit'])->name('profile.edit');
+Route::resource('parkingArea', ParkingAreaController::class)->except(['edit']);
 Route::resource('bookParking', BookParkingController::class)->except(['edit']);
-Route::resource('profile', ProfileController::class);
+Route::resource('profile', ProfileController::class)->except(['edit']);
 Route::resource('parkingStatus', ParkingStatusController::class);
 // Route::get('/displayParking', [App\Http\Controllers\ParkingController::class, 'index'])->name('displayParking');

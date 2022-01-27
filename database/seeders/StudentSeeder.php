@@ -22,7 +22,7 @@ class StudentSeeder extends Seeder
             'alt_email' => 'arif15iskandar@gmail.com',
             'college_name' => 'Pendeta Zaba',
             'room_no' => 'G012',
-            'student_image' => 'public\files\ObqRenGgHymdBYYFsTiYyAdzqDmyw6Es6wiT9CY7',
+            'student_image' => 'files\ObqRenGgHymdBYYFsTiYyAdzqDmyw6Es6wiT9CY7.jpg',
         ]);
 
         DB::table('student_details')->insert([
@@ -32,7 +32,7 @@ class StudentSeeder extends Seeder
             'alt_email' => 'fadzrul.aiman@gmail.com',
             'college_name' => 'Pendeta Zaba',
             'room_no' => 'G018',
-            'student_image' => 'public\files\ObqRenGgHymdBYYFsTiYyAdzqDmyw6Es6wiT9CY7',
+            'student_image' => 'files\AfPN3pz40JvN0GH7s29e0Kf3w07DqhgzC7uExAJa.jpg',
         ]);
 
         DB::table('student_details')->insert([
@@ -42,7 +42,7 @@ class StudentSeeder extends Seeder
             'alt_email' => 'hanis.merlin@gmail.com',
             'college_name' => 'Pendeta Zaba',
             'room_no' => 'A1214',
-            'student_image' => 'public\files\ObqRenGgHymdBYYFsTiYyAdzqDmyw6Es6wiT9CY7',
+            'student_image' => 'files\0ffrrrxEwRgQARrRiRSNhCy3IEpT6IYpLg1s5WJ9.jpg',
         ]);
 
         DB::table('student_details')->insert([
@@ -52,7 +52,7 @@ class StudentSeeder extends Seeder
             'alt_email' => 'ain.mazlan19@gmail.com',
             'college_name' => 'Pendeta Zaba',
             'room_no' => 'A1104',
-            'student_image' => 'public\files\ObqRenGgHymdBYYFsTiYyAdzqDmyw6Es6wiT9CY7',
+            'student_image' => 'files\9hKPYexbYQkDY0l7EPUSn2NEvN76a8rRmZatmFMr.jpg',
         ]);
 
         DB::table('student_details')->insert([

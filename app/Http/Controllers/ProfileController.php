@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\BookParking;
+use App\Models\ParkingArea;
 use App\Models\Student;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
@@ -63,9 +65,28 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id,$name,$lotno)
     {
         //
+        $role = Auth::user()->role;
+        $parkings = ParkingArea::find($id);
+        $student = Student::where('matric_no',auth()->user()->matric_no)->first();
+        $bookings = BookParking::all();
+        $booked = BookParking::where('area_id', $parkings->area_id)->get(['lot_status', 'book_id', 'lot_id'])->mapWithKeys(function ($item) {
+            return [$item->lot_id => ['lot_status' => $item->lot_status, 'book_id' => $item->book_id]];
+        });
+        $lots = collect(range(1, $parkings->area_total_availability))->mapWithKeys(function ($item) use ($parkings) {
+            return [$parkings->area_id . $item => null];
+        })->merge($booked);
+        return view('admin.editParking.enableParking', [
+            'parkings' => $parkings,
+            'name' => $name,
+            'student'=>$student,
+            'role'=>$role,
+            'lots'=>$lots,
+            'lotno'=>$lotno,
+            'bookings'=>$bookings
+        ]);
     }
 
     /**

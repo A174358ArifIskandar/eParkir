@@ -80,9 +80,7 @@
                                 {{$booking->lot_id}}
                             </td>
                             <td class="project-state">
-                                @if($booking['lot_status']=='approved')
-                                <span class="badge badge-success">Approved</span>
-                                @elseif($booking['lot_status']=='notpaid')
+                                @if($booking['lot_status']=='notpaid')
                                 <span class="badge bg-orange color-palette">Not Paid</span>
                                 @else
                                 <span class="badge badge-warning">Pending</span>

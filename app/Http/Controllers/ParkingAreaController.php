@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\BookParking;
 use App\Models\ParkingArea;
+use App\Models\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -21,13 +22,14 @@ class ParkingAreaController extends Controller
         if ($role == 'admin') {
             $parkings = ParkingArea::all();
             $bookings = BookParking::all();
-            $count=0;
-            return view('admin.editParking.editParkingArea', compact('parkings','bookings','count'));
+            $count = 0;
+            return view('admin.editParking.editParkingArea', compact('parkings', 'bookings', 'count'));
         } else {
             $parkings = ParkingArea::all();
             $bookings = BookParking::all();
-            $count=0;
-            return view('student.bookParking.studentParkingArea', compact('parkings','bookings','count'));
+            $student = Student::where('matric_no', auth()->user()->matric_no)->first();
+            $count = 0;
+            return view('student.bookParking.studentParkingArea', compact('parkings', 'bookings', 'count', 'student'));
         }
     }
 
@@ -82,16 +84,20 @@ class ParkingAreaController extends Controller
         $role = Auth::user()->role;
         $parkings = ParkingArea::findOrFail($id);
         $bookings = BookParking::all();
+        $count = 0;
+        $name = 2;
+        $student = Student::where('matric_no', auth()->user()->matric_no)->first();
         $booked = BookParking::where('area_id', $parkings->area_id)->get(['lot_status', 'book_id', 'lot_id'])->mapWithKeys(function ($item) {
             return [$item->lot_id => ['lot_status' => $item->lot_status, 'book_id' => $item->book_id]];
         });
         $lots = collect(range(1, $parkings->area_total_availability))->mapWithKeys(function ($item) use ($parkings) {
             return [$parkings->area_id . $item => null];
         })->merge($booked);
+        // dd($lots);
         if ($role == 'admin') {
-            return view('admin.editParking.displayParking', compact('parkings', 'lots','role'));
+            return view('admin.editParking.displayParking', compact('parkings', 'lots', 'role','name','bookings','count'));
         } else {
-            return view('student.bookParking.studentDisplay', compact('parkings', 'lots','role'));
+            return view('student.bookParking.studentDisplay', compact('parkings', 'lots', 'role', 'student'));
         }
     }
 
@@ -102,10 +108,28 @@ class ParkingAreaController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function edit($id)
+    public function edit($id,$name)
     {
+        $role = Auth::user()->role;
         $parkings = ParkingArea::find($id);
-        return view('admin.editParking.updateParkingArea', compact('parkings'));
+        $bookings = BookParking::all();
+        $count = 0;
+        $student = Student::where('matric_no',auth()->user()->matric_no)->first();
+        $booked = BookParking::where('area_id', $parkings->area_id)->get(['lot_status', 'book_id', 'lot_id'])->mapWithKeys(function ($item) {
+            return [$item->lot_id => ['lot_status' => $item->lot_status, 'book_id' => $item->book_id]];
+        });
+        $lots = collect(range(1, $parkings->area_total_availability))->mapWithKeys(function ($item) use ($parkings) {
+            return [$parkings->area_id . $item => null];
+        })->merge($booked);
+        return view('admin.editParking.disableParking', [
+            'parkings' => $parkings,
+            'name' => $name,
+            'student'=>$student,
+            'role'=>$role,
+            'lots'=>$lots,
+            'bookings'=>$bookings,
+            'count'=>$count
+        ]);
     }
 
     /**
@@ -143,9 +167,9 @@ class ParkingAreaController extends Controller
      */
     public function destroy($parking_id)
     {
-        $color = ParkingArea::find($parking_id);
+        $color = BookParking::find($parking_id);
         $color->delete();
         return redirect()->route('parkingArea.index')
-            ->with('success', 'Parking Area has been deleted successfully');
+            ->with('success', 'Parking Lot has been updated successfully');
     }
 }

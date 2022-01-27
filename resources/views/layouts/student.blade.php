@@ -27,7 +27,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
     function drawChart() {
 
       var data = google.visualization.arrayToDataTable([
-        ['Parking', 'Occupied', 'Available', { role: 'annotation' } ],
+        ['Parking', 'Occupied', 'Available', {
+          role: 'annotation'
+        }],
         ['Blok A', 16, 24, ''],
         ['Blok C', 15, 19, ''],
         ['Blok F', 12, 13, '']
@@ -38,8 +40,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
         width: 500,
         height: 400,
         legend: {
-        position: 'top',
-        maxLines: 3
+          position: 'top',
+          maxLines: 3
         },
         bar: {
           groupWidth: '75%'
@@ -115,7 +117,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
       <a href="/home" class="brand-link">
-        <img src="{{ asset('images/logop.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <img src="{{ asset('images/logoparkir1.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3">
         <span class="brand-text font-weight-light">eParkir</span>
       </a>
 
@@ -124,7 +126,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
           <div class="image">
-            <img src="{{ asset('dist/img/boxed-bg.jpg') }}" class="img-circle elevation-2" alt="User Image">
+            <img src="{{Storage::url($student->student_image)}}" class="img-circle elevation-2" alt="User Image">
           </div>
           <div class="info">
             <a href="#" class="d-block">{{ \Illuminate\Support\Facades\Auth::user()->user_name }} | {{ ucfirst(\Illuminate\Support\Facades\Auth::user()->role) }}</a>
@@ -148,24 +150,24 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-            <li class="<?php if ($page == 'home') {
-                          echo 'nav-item menu-open';
-                        } else {
-                          echo 'nav-item';
-                        } ?>">
-              <a href="/home" class="nav-link">
+            <li class="nav-item">
+              <a href="/home" class="<?php if ($page == 'home') {
+                                        echo 'nav-link bg-info active';
+                                      } else {
+                                        echo 'nav-link';
+                                      } ?>">
                 <i class="nav-icon fas fa-home"></i>
                 <p>
                   Dashboard
                 </p>
               </a>
             </li>
-            <li class="<?php if ($page == 'profile') {
-                          echo 'nav-item menu-open';
-                        } else {
-                          echo 'nav-item';
-                        } ?>">
-              <a href="{{route('profile.index')}}" class="nav-link">
+            <li class="nav-item">
+              <a href="{{route('profile.index')}}" class="<?php if ($page == 'profile') {
+                                                            echo 'nav-link bg-info active';
+                                                          } else {
+                                                            echo 'nav-link';
+                                                          } ?>">
                 <i class="nav-icon fas fa-user"></i>
                 <p>
                   Profile
@@ -173,12 +175,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </p>
               </a>
             </li>
-            <li class="<?php if ($page == 'parkingArea') {
-                          echo 'nav-item menu-open';
-                        } else {
-                          echo 'nav-item';
-                        } ?>">
-              <a href="{{route('parkingArea.index')}}" class="nav-link">
+            <li class="nav-item">
+              <a href="{{route('parkingArea.index')}}" class="<?php if ($page == 'parkingArea') {
+                                                                echo 'nav-link bg-info active';
+                                                              } else {
+                                                                echo 'nav-link';
+                                                              } ?>">
                 <i class="nav-icon fas fa-book"></i>
                 <p>
                   Book Parking
@@ -186,16 +188,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </p>
               </a>
             </li>
-            <li class="<?php if ($page == 'bookParking') {
-                          echo 'nav-item menu-open';
-                        } else {
-                          echo 'nav-item';
-                        } ?>">
-              <a href="{{route('bookParking.create')}}" class="nav-link">
+            <li class="nav-item">
+              <a href="{{route('bookParking.create')}}" class="<?php if ($page == 'bookParking') {
+                                                                  echo 'nav-link bg-info active';
+                                                                } else {
+                                                                  echo 'nav-link';
+                                                                } ?>">
                 <i class="nav-icon fas fa-clipboard"></i>
                 <p>
                   My Parking
-                  <span class="right badge badge-danger">1</span>
+                  <span class="right badge badge-danger"></span>
                 </p>
               </a>
             </li>

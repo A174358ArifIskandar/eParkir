@@ -41,7 +41,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <div class="row">
                 <div class="col-12">
                   <h4>
-                    <i class="fas fa-car"></i></i> E-Parkir
+                    <div class="text-center">
+                    <img src="{{ asset('images/logoparkirword1.png') }}" class="brand-image">
+                    </div>
+                    
                     <small class="float-right">Date: {{$current_date_time}}</small>
                   </h4>
                 </div>

@@ -77,10 +77,10 @@
                   @endforeach
                   <div class="progress-group">
                     {{$parking->area_name}}
-                    <span class="float-right"><b>{{$count}}</b>/{{$parking->area_total_availability}}</span>
-                    <input type="hidden" id="id" value="{{$count=$count/$parking->area_total_availability*100}}" class="form-control">
+                    <span class="float-right"><b>{{$parking->area_total_availability-$count}}</b>/{{$parking->area_total_availability}}</span>
+                    <input type="hidden" id="id" value="{{$count=($parking->area_total_availability-$count)/$parking->area_total_availability*100}}" class="form-control">
                     <div class="progress">
-                      <div class="progress-bar bg-danger" id="ProgressBar" style="width: {{$count}}%"></div>
+                      <div class="progress-bar bg-success" id="ProgressBar" style="width: {{$count}}%"></div>
                     </div>
                   </div>
                   <input type="hidden" id="id" value="{{$count=0}}" class="form-control">

@@ -20,7 +20,7 @@ class CreateBookParkingTable extends Migration
             $table->string('plate_no');
             $table->string('area_id');
             $table->string('lot_id');
-            $table->enum('lot_status',["pending","approved","notpaid"]);
+            $table->enum('lot_status',["pending","approved","notpaid","disabled"]);
             $table->string('license_image');
 
             $table->foreign('matric_no')->references('matric_no')->on('users')->onDelete('cascade');
